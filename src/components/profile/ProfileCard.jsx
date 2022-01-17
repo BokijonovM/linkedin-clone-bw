@@ -21,8 +21,11 @@ class ProfileCard extends React.Component {
     }
     render() { 
         return <div>
-             <Card className='profile-card round-border' style={{overflow:'hidden'}}>
+             <Card className='profile-card round-border' >
+                <div style={{overflow:'hidden',borderRadiusTopRight:'15px'}}>
+
                 <Card.Img variant="top" src={"https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=webp"} />
+                </div>
                 <span className="edit-bg h4 round-hover" ><GrFormEdit/></span>
                 <Card.Body>
                     <img className='profile-pic' src="https://miro.medium.com/max/1400/1*yIxkX8nAZkBxDP0gTjNrog.jpeg" alt='linkedin user'/>
@@ -71,17 +74,17 @@ class ProfileCard extends React.Component {
                         </div>
 
                         <div id='drop-selection' className='round-border grey-border '  style={{display:this.state.dropdown==='More'? 'block':'none'}}>
-                            <ul>
-                                <li className='d-flex justify-content-between'>
-                                    <span><RiShareForwardFill/></span>
+                            <ul className='list-unstyled'>
+                                <li >
+                                    <span className="mx-3"><RiShareForwardFill/></span>
                                     <span>Share Profile in a message</span>
                                 </li>
-                                <li className='d-flex justify-content-between'>
-                                    <span><FiDownload/></span>
-                                    <span>Save to pdf</span>
+                                <li >
+                                    <span className="mx-3"><FiDownload/></span>
+                                    <span className="text-left">Save to pdf</span>
                                 </li>
-                                <li className='d-flex justify-content-between'>
-                                    <span><GrDocument/></span>
+                                <li >
+                                    <span className="mx-3"><GrDocument/></span>
                                     <span>Build a resume</span>
                                 </li>
                             </ul>
