@@ -7,9 +7,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" ></div>
-      <a href="/profile">
-        <h1>hefisgdisbdk</h1>
-      </a>
       <Routes>
         <Route path="/" element={<Profile />} />
       </Routes>
