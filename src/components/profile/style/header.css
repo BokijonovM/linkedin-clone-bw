@@ -1,0 +1,9 @@
+.icons-hover-needed > div > i {
+  color: #666666;
+}
+.icons-hover-needed > div > i:hover {
+  color: #111111;
+}
+.icons-hover-needed > div:hover {
+  cursor: pointer;
+}
