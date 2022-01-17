@@ -70,7 +70,7 @@ class ProfileCard extends React.Component {
                             </ul>
                         </div>
 
-                        <div id='drop-selection' className='round-border grey-border'  style={{display:this.state.dropdown==='More'? 'block':'none'}}>
+                        <div id='drop-selection' className='round-border grey-border '  style={{display:this.state.dropdown==='More'? 'block':'none'}}>
                             <ul>
                                 <li className='d-flex justify-content-between'>
                                     <span><RiShareForwardFill/></span>
@@ -92,9 +92,11 @@ class ProfileCard extends React.Component {
                         <span className='bold'>Open to work</span> 
                         <span className="h4 round-hover"><GrFormEdit/></span>
                         </div>
+                        <div>
                         <p className='bold'> Javascript Developer, Frontend Developer, Back End Developer, Web Developer and React Developer roles
                            <br/>  <span className='h6 blue-link'>See all details</span>
                             </p>
+                        </div>
                     </div>
                 </Card.Text>
                 </Card.Body>

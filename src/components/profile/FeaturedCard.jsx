@@ -1,9 +1,24 @@
 import {GrFormEdit} from 'react-icons/gr'
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import {GoPlus} from 'react-icons/go'
+import SingleFeaturedCard from './SingleFeaturedCard';
 
 class FeaturedCard extends React.Component {
+    
+    state={
+        infos:[
+            {image:'https://www.cta.org/wp-content/uploads/2021/04/Go-4-1.png', title:'Micro Certification'},
+            {image:'https://www.dasharaditsolutions.com/assets/frontend/images/IT-certifications.jpg', title:'Multiple Certified'},
+            {image:'https://www.cta.org/wp-content/uploads/2021/09/Go2.png', title:'Sample Certificate'},
+            {image:'https://comptiacdn.azureedge.net/webcontent/images/default-source/blogs/most-popular-it-certifications.png?sfvrsn=12755259_6', title:'IT certification'},
+        ]
+    }
+
+    componentDidMount =()=>{
+       
+    }
+
     render() { 
         return <div className='bg-white round-border p-3 mt-3'>
                     <div className='d-flex justify-content-between'>
@@ -16,8 +31,10 @@ class FeaturedCard extends React.Component {
                     </div>
 
                     </div>
-                    <div className='mt-3'>
-                        <span>I believe focusing on the origin of any problem is the key to solution.</span>
+                    <div className=' featured-cards mt-3 row-cols-sm-2 row-cols-md-3 ' >{
+                       this.state.infos.map((info,i)=> <SingleFeaturedCard key={i} info={info}/>) 
+
+                    }
                     </div>
                 </div>
     }

@@ -11,14 +11,15 @@
 }
 
 .round-hover{
-    width:'15px';
-    height:'15px';
+    min-width:'25px';
+    min-height:'25px';
     border-radius: 50%;
-  
     background-color: rgba(128, 128, 128, 0);
+    box-sizing: border-box;
 }
+
 .round-hover:hover{
-    background-color: rgba(128, 128, 128, 0.418);
+    background-color: rgba(128, 128, 128, 0.22);
 }
 
 .bold{
@@ -108,3 +109,12 @@ z-index: 100;
 }
 /* Dashboard card hover*/
 /* Dashboard card End*/
+
+/* Featured Card start */
+.featured-cards{
+display:flex;
+overflow:scroll;
+flex-wrap: nowrap;
+}
+/* Featured Card hover */
+/* Featured Card end */
