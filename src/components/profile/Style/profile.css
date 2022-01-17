@@ -1,0 +1,26 @@
+/* reuseable class for all */
+.round-b{
+    border: 1px solid grey;
+    border-radius:10px;
+}
+.blue-link{
+    color:blue;
+}
+
+.rounded-btn {
+    border-radius: 20px;
+}
+/* Profile Card start */
+
+
+.profile-pic{
+ width:20%;
+ border:5px solid white;
+ border-radius:50%;
+ position:relative;
+ top:-15%;
+}
+
+
+/* Profile Card hover */
+/* Profile Card part end */
