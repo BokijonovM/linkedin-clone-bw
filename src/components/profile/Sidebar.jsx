@@ -1,9 +1,12 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 
 function Sidebar() {
   return (
     <div>
-      <h1>sidebar</h1>
+      <Row>
+        <Col className="col-lg-4"> </Col>
+      </Row>
     </div>
   );
 }
