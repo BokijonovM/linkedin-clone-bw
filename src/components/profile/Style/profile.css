@@ -10,8 +10,14 @@
     border-radius: 20px !important;
 }
 
-.round-hover:hover{
+.round-hover{
+    width:'15px';
+    height:'15px';
     border-radius: 50%;
+  
+    background-color: rgba(128, 128, 128, 0);
+}
+.round-hover:hover{
     background-color: rgba(128, 128, 128, 0.418);
 }
 

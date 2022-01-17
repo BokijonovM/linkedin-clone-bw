@@ -52,21 +52,21 @@ class ProfileCard extends React.Component {
                         <div id='drop-selection' className='round-border grey-border list-unstyled'  style={{display:this.state.dropdown==='Add Section'? 'block':'none'}}>
                             <ul>
                                 <li>Intro</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>About</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Featured</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Background</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Skill</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Accomplishments</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Aditional Information</li>
-                                <hr/>
+                                {/* <hr/> */}
                                 <li>Supported Languages</li>
-                                <hr/>
+                                {/* <hr/> */}
                             </ul>
                         </div>
 
@@ -89,7 +89,7 @@ class ProfileCard extends React.Component {
                     </div>
                     <div className='mt-3 round-border py-1 px-3' style={{backgroundColor:'rgb(232,229,223)',fontSize:'14px'}}>
                         <div className='m-0 p-0 d-flex justify-content-between'>
-                        <span clasNa>Open to work</span> 
+                        <span className='bold'>Open to work</span> 
                         <span className="h4 round-hover"><GrFormEdit/></span>
                         </div>
                         <p className='bold'> Javascript Developer, Frontend Developer, Back End Developer, Web Developer and React Developer roles

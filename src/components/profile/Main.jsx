@@ -2,7 +2,8 @@ import React from "react";
 import AboutCard from "./AboutCard";
 import DashboardCard from "./DashboardCard";
 import ProfileCard from "./ProfileCard";
-
+import FeaturedCard from "./FeaturedCard";
+import Fetchdata from "./fetch";
 function Main() {
   return (
     <div >
@@ -10,6 +11,8 @@ function Main() {
       <ProfileCard/>
       <DashboardCard/>
       <AboutCard/>
+      <FeaturedCard/>
+      <Fetchdata/>
     </div>
   );
 }
