@@ -20,6 +20,7 @@ class FeaturedCard extends React.Component {
                         <span>I believe focusing on the origin of any problem is the key to solution.</span>
                     </div>
                 </div>
+    }
 }
  
 export default FeaturedCard;
