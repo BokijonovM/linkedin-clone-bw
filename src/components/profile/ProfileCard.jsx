@@ -11,15 +11,15 @@ class ProfileCard extends React.Component {
                 <span className="edit-bg h4 round-hover" ><GrFormEdit/></span>
                 <Card.Body>
                     <img className='profile-pic' src="https://miro.medium.com/max/1400/1*yIxkX8nAZkBxDP0gTjNrog.jpeg" alt='linkedin user'/>
-                    <span className="h3 text-primary"><GrFormEdit/></span>
-                <Card.Text>
-                   <h1>Strive School</h1>
+                    <span className="h3 text-primary dRelative"><GrFormEdit/></span>
+                <Card.Text className='mt-n5'>
+                   <p className='h2 bold'>Strive School</p>
                    <p>Loading….Full Stack Developer||Front End ||Back End ||Javascript Developer||React.js Developer||Bootstrap||HTML||CSS
                         Strive School
                         Lisbon, Lisbon, Portugal  <span className='h6 bold blue-link'>Contact info</span></p>
                     <p><span className='h6 bold blue-link'>96 Connections</span></p>
                     <div>
-                        <Button className='h6 bold rounded-btn'>Open to</Button>
+                        <Button className='h6 bold rounded-btn' style={{backgroundColor:'rgb(9, 79, 168)'}}>Open to</Button>
                         <Button variant="outline-secondary" className='h6 bold rounded-btn ml-2'>Add Section</Button>
                         <Button variant="outline-secondary" className='h6 bold rounded-btn ml-2'>More</Button>
                     </div>
@@ -35,7 +35,7 @@ class ProfileCard extends React.Component {
                     </div>
                     <div className='mt-3 round-border py-1 px-3' style={{backgroundColor:'rgb(232,229,223)',fontSize:'14px'}}>
                         <div className='m-0 p-0 d-flex justify-content-between'>
-                        <span>Open to work</span> 
+                        <span clasNa>Open to work</span> 
                         <span className="h4 round-hover"><GrFormEdit/></span>
                         </div>
                         <p className='bold'> Javascript Developer, Frontend Developer, Back End Developer, Web Developer and React Developer roles

@@ -3,7 +3,7 @@
     border-radius:10px !important;
 }
 .blue-link{
-    color:rgb(11,101,194) !important;
+    color:rgb(9, 79, 168) !important;
 }
 
 .rounded-btn {
@@ -31,7 +31,16 @@
 }
 
 .grey-border-left{
-    border-right:0.5px solid rgba(162, 162, 162, 0.397);
+    border-right:0.5px solid rgba(162, 162, 162, 0.2);
+}
+
+
+.grey-border-bottom{
+    border-bottom:0.5px solid rgba(162, 162, 162, 0.205);
+}
+
+.italics{
+    font-style: italic;
 }
 /* Profile Card start */
 
