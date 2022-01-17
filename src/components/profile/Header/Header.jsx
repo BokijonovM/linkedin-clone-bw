@@ -1,10 +1,12 @@
 import React from "react";
 import { Navbar, Form, FormControl, Nav } from "react-bootstrap";
-import "./style/header.css";
+import "../style/header.css";
+import NavDropdown from "./NavDropdown";
+import NavWork from "./NavWork";
 
 function Header() {
   return (
-    <div className="w-100">
+    <div style={{ width: "100%" }}>
       <Navbar className="px-5 py-0" bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <i
@@ -58,7 +60,8 @@ function Header() {
             <div className="d-flex flex-column align-items-center mr-5">
               <i style={{ fontSize: "22px" }} class="bi bi-person-circle"></i>
               <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
-                Me<i class="bi bi-caret-down-fill"></i>
+                <NavDropdown />
+                {/* <i class="bi bi-caret-down-fill"></i> */}
               </p>
             </div>
             <div style={{ borderRight: "1px solid black" }}></div>
@@ -70,10 +73,10 @@ function Header() {
                 class="bi bi-grid-3x3-gap-fill"
               ></i>
               <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
-                Work<i class="bi bi-caret-down-fill"></i>
+                <NavWork />
               </p>
             </div>
-            <div className="d-flex flex-column align-items-center mr-3">
+            <div className="d-flex flex-column align-items-center">
               <p
                 style={{ fontSize: "12px", color: "#915907" }}
                 className="mb-0 mb-n1 mt-1"

@@ -7,3 +7,10 @@
 .icons-hover-needed > div:hover {
   cursor: pointer;
 }
+.row-2-col {
+  font-size: 12px;
+}
+.row-2-col > p > a {
+  color: #111111;
+  font-weight: 600;
+}
