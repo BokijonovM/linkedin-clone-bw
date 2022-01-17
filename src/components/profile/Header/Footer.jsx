@@ -120,10 +120,10 @@ function Footer() {
             </Form.Label>
             <Form.Control className="shadow-none" as="select">
               <option>English (English)</option>
-              <option>Italian</option>
-              <option>Polish</option>
-              <option>Russian</option>
-              <option>Uzbek</option>
+              <option>Italiano (Italian)</option>
+              <option>O'zbek (Uzbek)</option>
+              <option>Polski (Polish)</option>
+              <option>Русский (Russian)</option>
             </Form.Control>
           </Form.Group>
         </Col>
