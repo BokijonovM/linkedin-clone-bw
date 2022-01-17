@@ -67,13 +67,16 @@ function Footer() {
         </Col>
         <Col>
           <div className="d-flex">
-            <i class="bi bi-question-circle-fill mt-1 pr-1"></i>
+            <i
+              style={{ color: "#767675" }}
+              class="bi bi-question-circle-fill mt-1 pr-1"
+            ></i>
             <div>
-              <p className="mb-n2">
+              <p className="mb-n1">
                 <a
                   style={{
                     fontSize: "14px",
-                    color: "black",
+                    color: "#767675",
                     fontWeight: "600",
                   }}
                   href="#"
@@ -81,39 +84,38 @@ function Footer() {
                   Questions
                 </a>
               </p>
-              <p>
-                <a style={{ fontSize: "10px", color: "black" }} href="#">
-                  Visit our Help Center.
-                </a>
+              <p style={{ fontSize: "10px", color: "#767675" }}>
+                Visit our Help Center.
               </p>
             </div>
           </div>
           <div className="d-flex">
-            <i class="bi bi-gear-fill mt-1 mr-1"></i>
+            <i
+              style={{ color: "#767675" }}
+              class="bi bi-gear-fill mt-1 mr-1"
+            ></i>
             <div>
-              <p className="mb-n2">
+              <p className="mb-n1">
                 <a
                   style={{
                     fontSize: "14px",
-                    color: "black",
+                    color: "#767675",
                     fontWeight: "600",
                   }}
                   href="#"
                 >
-                  Manage your account and privacy
+                  Account and privacy
                 </a>
               </p>
-              <p>
-                <a style={{ fontSize: "10px", color: "black" }} href="#">
-                  Go to your Settings.
-                </a>
+              <p style={{ fontSize: "10px", color: "#767675" }}>
+                Go to your Settings.
               </p>
             </div>
           </div>
         </Col>
         <Col>
           <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label style={{ fontSize: "12px", color: "black" }}>
+            <Form.Label style={{ fontSize: "12px", color: "#767675" }}>
               Select Language
             </Form.Label>
             <Form.Control className="shadow-none" as="select">
