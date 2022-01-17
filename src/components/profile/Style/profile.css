@@ -25,6 +25,14 @@
 .pAbsolute{
     position:absolute;
 }
+
+.grey-border{
+    border:0.5px solid rgba(162, 162, 162, 0.397);
+}
+
+.grey-border-left{
+    border-right:0.5px solid rgba(162, 162, 162, 0.397);
+}
 /* Profile Card start */
 
 
@@ -45,8 +53,20 @@ background-color: white;
 border-radius:50%;
 height:2rem;
 width:2rem;
-marging:auto;
+margin:auto;
 }
 
 /* Profile Card hover */
 /* Profile Card part end */
+
+/* Dashboard card start */
+.dashboard{
+    background-color: rgb(220,230,241);
+}
+.big-numb{
+    font-size: 32px;
+    font-weight: 200;
+    color: #0A66C2;
+}
+/* Dashboard card hover*/
+/* Dashboard card End*/
