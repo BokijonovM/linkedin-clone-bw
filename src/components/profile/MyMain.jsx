@@ -6,11 +6,11 @@ import './Style/profile.css'
 function MyMain() {
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md={7}>
+      <Row className="justify-content-center" style={{backgroundColor:'rgb(243,242,238)'}}>
+        <Col sm={10} lg={7}>
           <Main />
         </Col>
-        <Col md={2}>
+        <Col lg={2}>
           <Sidebar />
         </Col>
       </Row>

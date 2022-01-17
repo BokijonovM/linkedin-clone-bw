@@ -6,7 +6,7 @@ import Profile from "./Profile";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App" style={{backgroundColor:'rgb(243,242,238)'}}></div>
+      <div className="App" ></div>
       <a href="/profile">
         <h1>hefisgdisbdk</h1>
       </a>
