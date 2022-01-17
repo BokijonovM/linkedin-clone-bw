@@ -2,8 +2,23 @@
 
 import React, { Component } from 'react';
 import {Card,Button} from 'react-bootstrap'
-import {GrFormEdit} from 'react-icons/gr'
+import {GrFormEdit, GrDocument} from 'react-icons/gr'
+import {RiShareForwardFill} from 'react-icons/ri'
+import {FiDownload} from 'react-icons/fi'
 class ProfileCard extends React.Component {
+    state={
+        dropdown:""
+    }
+
+
+    showDropdown = (input) =>{
+      if(this.state.dropdown===input){
+          this.setState({dropdown:''}) 
+    } else{
+          this.setState({dropdown:input}) 
+
+      }
+    }
     render() { 
         return <div>
              <Card className='profile-card round-border' style={{overflow:'hidden'}}>
@@ -19,19 +34,58 @@ class ProfileCard extends React.Component {
                         Lisbon, Lisbon, Portugal  <span className='h6 bold blue-link'>Contact info</span></p>
                     <p><span className='h6 bold blue-link'>96 Connections</span></p>
                     <div>
-                        <Button className='h6 bold rounded-btn' style={{backgroundColor:'rgb(9, 79, 168)'}}>Open to</Button>
-                        <Button variant="outline-secondary" className='h6 bold rounded-btn ml-2'>Add Section</Button>
-                        <Button variant="outline-secondary" className='h6 bold rounded-btn ml-2'>More</Button>
+                        <Button onClick={(e)=>this.showDropdown(e.target.innerText)} className='h6 bold rounded-btn' style={{backgroundColor:'rgb(9, 79, 168)'}}>Open to</Button>
+                        <Button onClick={(e)=>this.showDropdown(e.target.innerText)} variant="outline-secondary" className='h6 bold rounded-btn ml-2'>Add Section</Button>
+                        <Button onClick={(e)=>this.showDropdown(e.target.innerText)} variant="outline-secondary" className='h6 bold rounded-btn ml-2'>More</Button>
                     </div>
-                    <div>
-                        {/* <div>
-                       <h6> Hiring</h6>
-                            Share that you’re hiring and attract qualified candidates
+                    <div className='pRelative'>
+                        <div id='drop-open' className='round-border grey-border' style={{display:this.state.dropdown==='Open to'? 'block':'none'}}>
+                            <div>
+                            <p className='h6'> Hiring</p>
+                                Share that you’re hiring and attract qualified candidates
+                            </div>
+                            <div>
+                           <p className="h6"> Providing services</p>
+                                Showcase services you offer so new clients can discover you
+                            </div>
                         </div>
-                        <div>
-                        Providing services
-                            Showcase services you offer so new clients can discover you
-                        </div> */}
+                        <div id='drop-selection' className='round-border grey-border list-unstyled'  style={{display:this.state.dropdown==='Add Section'? 'block':'none'}}>
+                            <ul>
+                                <li>Intro</li>
+                                <hr/>
+                                <li>About</li>
+                                <hr/>
+                                <li>Featured</li>
+                                <hr/>
+                                <li>Background</li>
+                                <hr/>
+                                <li>Skill</li>
+                                <hr/>
+                                <li>Accomplishments</li>
+                                <hr/>
+                                <li>Aditional Information</li>
+                                <hr/>
+                                <li>Supported Languages</li>
+                                <hr/>
+                            </ul>
+                        </div>
+
+                        <div id='drop-selection' className='round-border grey-border'  style={{display:this.state.dropdown==='More'? 'block':'none'}}>
+                            <ul>
+                                <li className='d-flex justify-content-between'>
+                                    <span><RiShareForwardFill/></span>
+                                    <span>Share Profile in a message</span>
+                                </li>
+                                <li className='d-flex justify-content-between'>
+                                    <span><FiDownload/></span>
+                                    <span>Save to pdf</span>
+                                </li>
+                                <li className='d-flex justify-content-between'>
+                                    <span><GrDocument/></span>
+                                    <span>Build a resume</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className='mt-3 round-border py-1 px-3' style={{backgroundColor:'rgb(232,229,223)',fontSize:'14px'}}>
                         <div className='m-0 p-0 d-flex justify-content-between'>

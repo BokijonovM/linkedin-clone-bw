@@ -52,6 +52,7 @@
  position:relative;
  top:-100px;
  left:5%;
+
 }
 
 .edit-bg{
@@ -76,6 +77,28 @@ margin:auto;
     font-size: 32px;
     font-weight: 200;
     color: #0A66C2;
+}
+
+#drop-open,
+#drop-selection,
+#drop-more {
+width:270px;
+height:auto;
+padding:10px;
+box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.13);
+position:absolute;
+top:0;
+background-color: white;
+z-index: 100;
+}
+
+#drop-selection{
+    left:70px
+}
+
+#drop-more {
+    left:120px
+
 }
 /* Dashboard card hover*/
 /* Dashboard card End*/
