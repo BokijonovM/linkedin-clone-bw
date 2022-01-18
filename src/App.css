@@ -1,9 +1,11 @@
 .header-row-profile {
   position: fixed;
-  width: 100vw;
+  width: 100vw + 5px;
   z-index: 1;
   padding-right: 0px !important;
   background-color: white !important;
+  right: 0;
+  left: 0;
 }
 .profile-myMain-row {
   padding-top: 70px;
