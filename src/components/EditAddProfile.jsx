@@ -13,14 +13,14 @@ export default class EditAddProfile extends Component {
                 <a className="text-dark font-weight-bolder" href="/">
                   Edit public profile & URL
                 </a>
-                <span className="first-span ml-auto">?</span>
+                <span className="first-span ml-auto px-2">?</span>
               </div>
               <hr />
-              <div className="d-flex pb-2">
+              <div className="d-flex pb-2 align-items-center">
                 <a href="/" className="text-dark font-weight-bolder">
                   Add profile in another language
                 </a>
-                <span className="first-span ml-auto">?</span>
+                <p className="first-span ml-auto px-2">?</p>
               </div>
             </div>
           </Col>
