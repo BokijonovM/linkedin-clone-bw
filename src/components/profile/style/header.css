@@ -18,6 +18,10 @@
   height: 35px;
   border-radius: 50%;
 }
+.nav-profile-image {
+  height: 30px;
+  border-radius: 50%;
+}
 .navbar-profile {
   border-bottom: 0.5px solid grey;
 }
@@ -26,4 +30,23 @@
 }
 .extra-nav-button {
   border-radius: 99px;
+}
+.badge-required {
+  position: relative;
+}
+.badge-required > .badge {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  border-radius: 50%;
+}
+
+.badge-required-1 {
+  position: relative;
+}
+.badge-required-1 > .badge {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border-radius: 50%;
 }

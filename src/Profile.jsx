@@ -6,11 +6,11 @@ import MyMain from "./components/profile/MyMain";
 
 function Profile() {
   return (
-    <div>
-      <Row>
+    <div style={{ height: "2000px" }}>
+      <Row className="header-row-profile">
         <Header />
       </Row>
-      <Row>
+      <Row className="profile-myMain-row">
         <MyMain />
       </Row>
       <Row>

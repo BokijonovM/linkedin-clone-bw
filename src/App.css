@@ -1,0 +1,8 @@
+.header-row-profile {
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+.profile-myMain-row {
+  padding-top: 70px;
+}
