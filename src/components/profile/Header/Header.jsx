@@ -19,14 +19,14 @@ function Header() {
   window.addEventListener("scroll", extraHeader);
   return (
     <div style={{ width: "100%" }}>
-      <Navbar className="px-5 py-0 navbar-profile" bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+      <Navbar className="px-5 py-0 navbar-profile " bg="light" expand="lg">
+        <Navbar.Brand href="#home ">
           <i
             style={{
               fontSize: "35px",
               color: "#0a66c2",
             }}
-            class="bi bi-linkedin"
+            class="bi bi-linkedin pl-5"
           ></i>
         </Navbar.Brand>
         <Form inline className="form-main-nav">
@@ -102,26 +102,26 @@ function Header() {
             className="none-550-needed mx-5"
             style={{ borderRight: "1px solid black" }}
           ></div>
-          <div className="d-flex flex-column align-items-center mr-3">
+          <div className="d-flex flex-column align-items-center mr-3 nav-work-div">
             <i style={{ fontSize: "22px" }} class="bi bi-grid-3x3-gap-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               <NavWork />
             </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <div className="d-flex flex-column align-items-center pr-5">
             <p
               style={{ fontSize: "12px", color: "#915907" }}
               className="mb-0 mb-n1 mt-1"
             >
               Reactive
             </p>
-            <p style={{ fontSize: "12px", color: "#915907" }} className="mb-0">
+            <p style={{ fontSize: "12px", color: "#915907" }} className="mb-0 ">
               Premium
             </p>
           </div>
         </Nav>
       </Navbar>
-      {navbar ? <ExtraHeader /> : <p></p>}
+      {navbar ? <ExtraHeader /> : <p style={{ width: "0px" }}></p>}
     </div>
   );
 }

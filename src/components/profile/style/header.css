@@ -76,6 +76,9 @@
   .none-550-needed {
     display: none !important;
   }
+  .nav-work-div {
+    display: none !important;
+  }
 }
 @media (max-width: 410px) {
   .d-none-needed-jobs,
