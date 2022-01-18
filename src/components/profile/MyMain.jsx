@@ -2,7 +2,7 @@ import React from "react";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
 import { Row, Col } from "react-bootstrap";
-import './Style/profile.css'
+import './style/profile.css'
 function MyMain() {
   return (
     <div>
