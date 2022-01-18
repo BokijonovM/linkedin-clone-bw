@@ -14,7 +14,7 @@ function Profile() {
       <Header userOnNav={userOnNav} userPic={userPic}/>
       </Row>
       <Row className="profile-myMain-row">
-        <MyMain setUser={setUserOnNav} setUserPic={setUserPic} userPic={userPic}/>
+        <MyMain setUserOnNav={setUserOnNav} setUserPic={setUserPic} userPic={userPic}/>
       </Row>
       <Row>
         <Footer />

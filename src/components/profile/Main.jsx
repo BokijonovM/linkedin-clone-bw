@@ -17,10 +17,11 @@ function Main({setUserOnNav, setUserPic, userPic}) {
       }
     })
     let data = await response.json()
-   console.log("Profile" , data)
     if(data){
       setProfile(data)
       setUserOnNav(data)
+      console.log("Profile" , data)
+      console.log('setUserOnNav from main',setUserOnNav)
     }
   }
 

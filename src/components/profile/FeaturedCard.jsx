@@ -31,7 +31,7 @@ class FeaturedCard extends React.Component {
                     </div>
 
                     </div>
-                    <div className=' featured-cards mt-3 row-cols-sm-2 row-cols-md-3 ' >{
+                    <div className=' featured-cards mt-3  row-cols-sm-2 row-cols-md-3  row-col-xl-4' >{
                        this.state.infos.map((info,i)=> <SingleFeaturedCard key={i} info={info}/>) 
 
                     }

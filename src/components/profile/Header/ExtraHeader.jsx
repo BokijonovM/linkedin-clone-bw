@@ -7,17 +7,27 @@ import "../style/header.css";
 
 function ExtraHeader({userPic, userOnNav}) {
   
-  const[dropdown,setDropdown]=useState('')
-    
+  const [ dropdown, setDropdown] = useState('')
+  const [ pic, setPic] = useState()
+  const [ info, setInfo] = useState({})  
 
-   const showDropdown = (input) =>{
+  useEffect(()=>{
+    setInfo ( userOnNav )
+    setPic ( userPic )
+    console.log("userOnNav", userOnNav)
+    console.log("userPic",userPic)
+  },[ userOnNav ] ) 
+
+
+  const showDropdown = (input) => {
       if(dropdown===input){
           setDropdown('') 
         } else{
         setDropdown(input) 
       }
     }
-
+    
+  
   return (
     <div>
       <Navbar className="px-5 py-0 extra-navbar" bg="light" expand="lg">
@@ -32,20 +42,20 @@ function ExtraHeader({userPic, userOnNav}) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div>
-              {userOnNav && (<>
+              {info && (<>
                 <p
                 className="mb-n1"
                 style={{ fontSize: "14px", fontWeight: "600" }}
                 >
-                 {userOnNav.name} {userOnNav.surname}
+                 {info.name} {info.surname}
               </p>
               <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
-                {userOnNav.title}
+                {info.title}
               </p>
                   </>)}                 
             </div>
           </Nav>
-          <div>
+          <div className='pRelative'>
             <Button
               className="py-1 extra-nav-button shadow-none"
               variant="outline-secondary"
@@ -70,7 +80,6 @@ function ExtraHeader({userPic, userOnNav}) {
             >
               Open to
             </Button>
-          </div>
           <div>
               <div className='drop-open' style={{display:dropdown==='Open to'? 'block':'none',borderRadius:'0 10px 10px 10px',right:"40px",top:'45px'}}>
                 <DropOpenTo />
@@ -81,6 +90,7 @@ function ExtraHeader({userPic, userOnNav}) {
               <div className='drop-more' style={{display:dropdown==='More'? 'block':'none',borderRadius:'10px 0 10px 10px',right:"120px",top:'45px'}}>
                 <DropMore/>
               </div>
+          </div>
           </div>
         </Navbar.Collapse>
       </Navbar>

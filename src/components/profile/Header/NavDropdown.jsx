@@ -25,6 +25,7 @@ function NavDropdown({userOnNav,userPic}) {
       const [value, setValue] = useState("");
 
       return (
+        
         <div
           ref={ref}
           style={style}
@@ -38,11 +39,11 @@ function NavDropdown({userOnNav,userPic}) {
             onChange={e => setValue(e.target.value)}
             value={value}
           /> */}
-          <div className="mx-3 d-flex justify-content-center">
-           {userOnNav && ( <div>
-              <span>{userOnNav.name}{userOnNav.surname}</span>
-              <span>{userOnNav.bio}</span>
+           {userOnNav && ( <div className='p-3'>
+              <p className='h5'>{userOnNav.name} {userOnNav.surname}</p>
+              <p>{userOnNav.bio}</p>
             </div>)}
+          <div className="mx-3 d-flex justify-content-center">
             <Button
               className="mx-n5 w-100 py-0"
               variant="outline-primary"
