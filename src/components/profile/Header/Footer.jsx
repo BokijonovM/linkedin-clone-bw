@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Form } from "react-bootstrap";
-import "../Style/header.css";
+import "../style/header.css";
 import logo from "./Logo.svg";
 
 function Footer() {

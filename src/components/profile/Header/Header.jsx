@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Form, FormControl, Nav, Badge } from "react-bootstrap";
-import "../Style/header.css";
+import "../style/header.css";
 import NavDropdown from "./NavDropdown";
 import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
