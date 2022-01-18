@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
-import "./Style/SideBar.css";
+import "./style/SideBar.css";
 
 const PeopleViewed = () => {
   const [showMore, setShowMore] = useState(5);
@@ -38,8 +38,8 @@ const PeopleViewed = () => {
 
   return (
     <div>
-      <Row className="ml-0 mr-0">
-        <Col className="pl-0 pr-0">
+      {/* <Row className="ml-0 mr-0">
+        <Col className="pl-0 pr-0"> */}
           <section className="peopleView mt-4">
             <ul className="pl-0 mb-0 w-100">
               <div>
@@ -63,15 +63,15 @@ const PeopleViewed = () => {
                 </li>
               ))}
               <div className="button-show">
-                <button id="btn" onClick={(e) => setShowMore(showMore + 5)}>
+                <div className='pointer' id="btn" onClick={(e) => setShowMore(showMore + 5)}>
                   Show more
-                </button>
+                </div>
                 <IoIosArrowDown className="text-secondary" />
               </div>
             </ul>
           </section>
-        </Col>
-      </Row>
+        {/* </Col>
+      </Row> */}
     </div>
   );
 };
