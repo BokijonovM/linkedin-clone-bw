@@ -11,8 +11,8 @@ import DropAddSection from './ProfileCardComponents/DropAddSection'
 
 const ProfileCard = ({profile,userPic})=> {
    
-    const[dropdown,setDropdown]=useState('')
     const[showEditPage,setShowEditPage]=useState(false)
+    const[dropdown,setDropdown]=useState('')
     
 
    const showDropdown = (input) =>{
@@ -20,7 +20,6 @@ const ProfileCard = ({profile,userPic})=> {
           setDropdown('') 
         } else{
         setDropdown(input) 
-
       }
     }
 
@@ -66,14 +65,14 @@ _id: "61e5270f73d5cb0015395a9d"
                         <Button onClick={(e)=>showDropdown(e.target.innerText)} variant="outline-secondary" className='h6 bold rounded-btn ml-2'>More</Button>
                     </div>
                     <div className='pRelative'>
-                        <div id='drop-open' className='grey-border' style={{display:dropdown==='Open to'? 'block':'none',borderRadius:'0 10px 10px 10px'}}>
+                        <div id='drop-open' className='drop-open grey-border' style={{display:dropdown==='Open to'? 'block':'none',borderRadius:'0 10px 10px 10px'}}>
                             <DropOpenTo/>
                         </div>
-                        <div id='drop-selection' className='grey-border'  style={{display:dropdown==='Add Section'? 'block':'none',borderRadius:'10px 10px 10px 10px'}}>
+                        <div id='drop-selection' className='drop-selection grey-border'  style={{display:dropdown==='Add Section'? 'block':'none',borderRadius:'10px 10px 10px 10px'}}>
                          <DropAddSection/>
                         </div>
 
-                        <div id='drop-selection' className='grey-border '  style={{display:dropdown==='More'? 'block':'none',borderRadius:'10px 0 10px 10px'}}>
+                        <div id='drop-more' className='drop-more grey-border '  style={{display:dropdown==='More'? 'block':'none',borderRadius:'10px 0 10px 10px'}}>
                            <DropMore/>
                         </div>
                     </div>

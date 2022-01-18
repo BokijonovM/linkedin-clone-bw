@@ -93,9 +93,9 @@
 .myMain-first-div {
   width: 100vw !important;
 }
-#drop-open,
-#drop-selection,
-#drop-more {
+.drop-open,
+.drop-selection,
+.drop-more {
   width: 270px;
   height: auto;
   padding: 10px;
