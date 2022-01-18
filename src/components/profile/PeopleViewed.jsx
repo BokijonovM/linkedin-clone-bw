@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
-import "./SideBar.css";
+import "./Style/SideBar.css";
 
 const PeopleViewed = () => {
   const [showMore, setShowMore] = useState(5);
@@ -38,7 +38,7 @@ const PeopleViewed = () => {
 
   return (
     <div>
-      <Row>
+      <Row className="ml-0 mr-0">
         <Col className="pl-0 pr-0">
           <section className="peopleView mt-4">
             <ul className="pl-0 mb-0 w-100">

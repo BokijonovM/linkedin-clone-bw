@@ -6,8 +6,8 @@ import PeopleViewed from "./PeopleViewed";
 function Sidebar() {
   return (
     <div>
-      <Row className="d-block-flex mr-4  ">
-        <Col className="col-3 bg-secondary ml-auto p-4">
+      <Row className="d-block-flex mr-5  ">
+        <Col className="mt-5">
           <aside>
             {" "}
             <EditAddProfile />

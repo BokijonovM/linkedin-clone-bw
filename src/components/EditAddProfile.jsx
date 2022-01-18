@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
-import "./profile/SideBar.css";
+import "./profile/Style/SideBar.css";
 
 export default class EditAddProfile extends Component {
   render() {
     return (
       <>
-        <Row>
+        <Row className="ml-0 mr-0">
           <Col id="editComp">
             <div className="editDiv">
               <div className="d-flex pt-2">
