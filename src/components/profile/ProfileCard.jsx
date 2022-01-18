@@ -5,11 +5,13 @@ import {Card,Button} from 'react-bootstrap'
 import {GrFormEdit, GrDocument} from 'react-icons/gr'
 import {IoIosArrowDown} from 'react-icons/io'
 import Profile from '../../Profile';
-import DropOpenTo from './DropDown/DropOpenTo';
-import DropMore from './DropDown/DropMore';
+import DropOpenTo from './ProfileCardComponents/DropOpenTo';
+import DropMore from './ProfileCardComponents/DropMore';
+import EditPage from './ProfileCardComponents/EditPage';
 class ProfileCard extends React.Component {
     state={
-        dropdown:""
+        dropdown:"",
+        showEditPage:false
     }
 
 
@@ -47,8 +49,12 @@ _id: "61e5270f73d5cb0015395a9d"
                 <span className="edit-bg h4 round-hover" ><GrFormEdit/></span>
                 <Card.Body>
                     <img className='profile-pic' src="https://miro.medium.com/max/1400/1*yIxkX8nAZkBxDP0gTjNrog.jpeg" alt='linkedin user'/>
-                    <span className="h3 text-primary dRelative"><GrFormEdit/></span>
+                    <span className="round-hover  h3 text-primary dRelative" onClick={(e)=>this.setState({showEditPage:true})}><GrFormEdit/></span>
+                 
                 <Card.Text className='mt-n5'>
+                <div className='pAbsolute w-100' style={{display:this.state.showEditPage? 'block':'none', zIndex:'10'}}>
+                        <EditPage/>
+                    </div>
                    <p className='h2 bold'>{this.props.profile.name} {this.props.profile.surname}</p>
                    <p>{this.props.profile.title}
                         Strive School
