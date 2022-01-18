@@ -1,0 +1,136 @@
+/* reuseable class for all */
+.round-border{
+    border-radius:10px !important;
+}
+.blue-link{
+    color:rgb(9, 79, 168) !important;
+}
+
+.rounded-btn {
+    border-radius: 20px !important;
+}
+
+.round-hover{
+    min-width:'25px';
+    min-height:'25px';
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0);
+    box-sizing: border-box;
+}
+
+.round-hover:hover{
+    background-color: rgba(128, 128, 128, 0.22);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.pRelative{
+    position:relative;
+}
+.pAbsolute{
+    position:absolute;
+}
+
+.grey-border{
+    border:0.5px solid rgba(162, 162, 162, 0.397);
+}
+
+.grey-border-left{
+    border-right:0.5px solid rgba(162, 162, 162, 0.2);
+}
+
+
+.grey-border-bottom{
+    border-bottom:0.5px solid rgba(162, 162, 162, 0.205);
+}
+
+.italics{
+    font-style: italic;
+}
+
+.font14{
+    font-size: 14px;
+}
+/* Profile Card start */
+
+
+.profile-pic{
+ width:30%;
+ border:5px solid white;
+ border-radius:50%;
+ position:relative;
+ top:-100px;
+ left:5%;
+
+}
+
+.edit-bg{
+position: absolute;
+right: 20px;
+top:20px;
+background-color: white;
+border-radius:50%;
+height:2rem;
+width:2rem;
+margin:auto;
+}
+
+/* Profile Card hover */
+/* Profile Card part end */
+
+/* Dashboard card start */
+.dashboard{
+    background-color: rgb(220,230,241);
+}
+.big-numb{
+    font-size: 32px;
+    font-weight: 200;
+    color: #0A66C2;
+}
+
+#drop-open,
+#drop-selection,
+#drop-more {
+width:270px;
+height:auto;
+padding:10px;
+box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.13);
+position:absolute;
+top:0;
+background-color: white;
+z-index: 100;
+}
+
+#drop-selection{
+    left:70px;
+width:300px;
+
+}
+
+#drop-more {
+    left:120px
+
+}
+/* Dashboard card hover*/
+/* Dashboard card End*/
+
+/* Featured Card start */
+.featured-cards{
+display:flex;
+overflow:scroll;
+flex-wrap: nowrap;
+}
+/* Featured Card hover */
+/* Featured Card end */
+
+
+/* Education Experience Licenses Card start */
+/* .education hr:last-of-type,
+.experience hr:last-of-type,
+.licenses hr:last-of-type {
+    display:none;
+} */
+/* Education Experience Licenses Card hover */
+/* Education Experience Licenses Card end */
