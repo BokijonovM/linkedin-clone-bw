@@ -11,10 +11,10 @@ function MyMain() {
         className="justify-content-center mt-4"
         
       >
-        <Col sm={10} lg={7}>
+        <Col sm={10} md={7} lg={7}>
           <Main />
         </Col>
-        <Col sm={2} lg={3}>
+        <Col sm={0} md={3} lg={3}>
           <Sidebar />
         </Col>
       </Row>

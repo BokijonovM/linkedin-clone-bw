@@ -3,9 +3,10 @@
 import React, { Component } from 'react';
 import {Card,Button} from 'react-bootstrap'
 import {GrFormEdit, GrDocument} from 'react-icons/gr'
-import {RiShareForwardFill} from 'react-icons/ri'
-import {FiDownload} from 'react-icons/fi'
 import {IoIosArrowDown} from 'react-icons/io'
+import Profile from '../../Profile';
+import DropOpenTo from './DropDown/DropOpenTo';
+import DropMore from './DropDown/DropMore';
 class ProfileCard extends React.Component {
     state={
         dropdown:""
@@ -20,6 +21,22 @@ class ProfileCard extends React.Component {
 
       }
     }
+
+/*{_id: '61e5270f73d5cb0015395a9d', name: 'Rajib', surname: 'Jonchhen', email: 'onlyrajib@gmail.com', username: 'onlyrajib', …}
+area: "Lisbon,Portugal"
+bio: "Loading Full Stack Developer.."
+createdAt: "2022-01-17T08:21:35.995Z"
+email: "onlyrajib@gmail.com"
+image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+name: "Rajib"
+surname: "Jonchhen"
+title: "student"
+updatedAt: "2022-01-17T08:21:35.995Z"
+username: "onlyrajib"
+__v: 0
+_id: "61e5270f73d5cb0015395a9d"
+[[Prototype]]: Object*/
+
     render() { 
         return <div>
              <Card className='profile-card round-border' >
@@ -32,10 +49,10 @@ class ProfileCard extends React.Component {
                     <img className='profile-pic' src="https://miro.medium.com/max/1400/1*yIxkX8nAZkBxDP0gTjNrog.jpeg" alt='linkedin user'/>
                     <span className="h3 text-primary dRelative"><GrFormEdit/></span>
                 <Card.Text className='mt-n5'>
-                   <p className='h2 bold'>Strive School</p>
-                   <p>Loading….Full Stack Developer||Front End ||Back End ||Javascript Developer||React.js Developer||Bootstrap||HTML||CSS
+                   <p className='h2 bold'>{this.props.profile.name} {this.props.profile.surname}</p>
+                   <p>{this.props.profile.title}
                         Strive School
-                        Lisbon, Lisbon, Portugal  <span className='h6 bold blue-link'>Contact info</span></p>
+                        {this.props.profile.area} <span className='h6 bold blue-link'>Contact info</span></p>
                     <p><span className='h6 bold blue-link'>96 Connections</span></p>
                     <div>
                         <Button onClick={(e)=>this.showDropdown(e.target.innerText)} className='h6 bold rounded-btn' style={{backgroundColor:'rgb(9, 79, 168)'}}>Open to</Button>
@@ -44,74 +61,14 @@ class ProfileCard extends React.Component {
                     </div>
                     <div className='pRelative'>
                         <div id='drop-open' className='grey-border' style={{display:this.state.dropdown==='Open to'? 'block':'none',borderRadius:'0 10px 10px 10px'}}>
-                            <div>
-                            <p className='h6'> Hiring</p>
-                                <p>Share that you’re hiring and attract qualified candidates</p>
-                            </div>
-                            <div>
-                           <p className="h6"> Providing services</p>
-                                <p>Showcase services you offer so new clients can discover you</p>
-                            </div>
+                            <DropOpenTo/>
                         </div>
                         <div id='drop-selection' className='grey-border'  style={{display:this.state.dropdown==='Add Section'? 'block':'none',borderRadius:'10px 10px 10px 10px'}}>
-                            <ul className='list-unstyled'>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Info</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>About</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Featured</span>
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Background</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Skill</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Accomplishments</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Aditional Information</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                                <hr/>
-                                <li className='d-flex justify-content-between'>
-                                    <span>Supported Languages</span> 
-                                    <span><IoIosArrowDown/></span>
-                                </li>
-                            </ul>
+                         
                         </div>
 
                         <div id='drop-selection' className='grey-border '  style={{display:this.state.dropdown==='More'? 'block':'none',borderRadius:'10px 0 10px 10px'}}>
-                            <ul className='list-unstyled'>
-                                <li >
-                                    <span className="mx-3"><RiShareForwardFill/></span>
-                                    <span>Share Profile in a message</span>
-                                </li>
-                                <li >
-                                    <span className="mx-3"><FiDownload/></span>
-                                    <span className="text-left">Save to pdf</span>
-                                </li>
-                                <li >
-                                    <span className="mx-3"><GrDocument/></span>
-                                    <span>Build a resume</span>
-                                </li>
-                            </ul>
+                           <DropMore/>
                         </div>
                     </div>
                     <div className='mt-3 round-border py-1 px-3' style={{backgroundColor:'rgb(232,229,223)',fontSize:'14px'}}>
@@ -120,7 +77,7 @@ class ProfileCard extends React.Component {
                         <span className="h4 round-hover"><GrFormEdit/></span>
                         </div>
                         <div>
-                        <p className='bold'> Javascript Developer, Frontend Developer, Back End Developer, Web Developer and React Developer roles
+                        <p className='bold'> {this.props.profile.bio}
                            <br/>  <span className='h6 blue-link'>See all details</span>
                             </p>
                         </div>
