@@ -55,7 +55,7 @@ class ProfileCard extends React.Component {
               <div>
                 <Button
                   onClick={e => this.showDropdown(e.target.innerText)}
-                  className="h6 bold rounded-btn"
+                  className="h6 bold rounded-btn shadow-none"
                   style={{ backgroundColor: "rgb(9, 79, 168)" }}
                 >
                   Open to
@@ -63,14 +63,14 @@ class ProfileCard extends React.Component {
                 <Button
                   onClick={e => this.showDropdown(e.target.innerText)}
                   variant="outline-secondary"
-                  className="h6 bold rounded-btn ml-2"
+                  className="h6 bold rounded-btn ml-2 shadow-none"
                 >
                   Add Section
                 </Button>
                 <Button
                   onClick={e => this.showDropdown(e.target.innerText)}
                   variant="outline-secondary"
-                  className="h6 bold rounded-btn ml-2"
+                  className="h6 bold rounded-btn ml-2 shadow-none"
                 >
                   More
                 </Button>

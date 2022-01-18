@@ -87,11 +87,18 @@
   position: absolute;
   right: 20px;
   top: 20px;
-  background-color: white;
+  background-color: #f3f2ee;
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
-  margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+}
+.edit-bg,
+.edit-bg-img {
+  cursor: pointer;
+  background-color: #f3f2ee !important;
 }
 
 /* Profile Card hover */
