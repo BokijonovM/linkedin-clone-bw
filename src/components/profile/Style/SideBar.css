@@ -53,7 +53,7 @@ button {
 }
 
 .text-secondary {
-  font-size: small !important;
+  font-size: 12px !important;
   font-weight: 500 !important;
 }
 
@@ -67,4 +67,9 @@ button {
   margin-top: 0px;
   margin-bottom: 25px;
   margin-left: 5rem;
+}
+
+.btn-connect:hover {
+  border-color: black;
+  background-color: #f3f2ee;
 }

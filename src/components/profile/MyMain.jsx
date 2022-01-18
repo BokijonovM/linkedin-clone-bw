@@ -10,7 +10,13 @@ function MyMain() {
       style={{ backgroundColor: "rgb(243,242,238)" }}
     >
       {/* <Container> */}
-      <Row className="justify-content-center mt-4">
+      <Row
+        className="justify-content-center mt-4"
+        style={{
+          marginLeft: "-80px",
+          marginRight: "-100px",
+        }}
+      >
         <Col sm={10} lg={7}>
           <Main />
         </Col>
