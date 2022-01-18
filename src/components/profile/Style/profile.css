@@ -49,6 +49,10 @@
 .italics{
     font-style: italic;
 }
+
+.font14{
+    font-size: 14px;
+}
 /* Profile Card start */
 
 
@@ -100,7 +104,9 @@ z-index: 100;
 }
 
 #drop-selection{
-    left:70px
+    left:70px;
+width:300px;
+
 }
 
 #drop-more {
@@ -118,3 +124,13 @@ flex-wrap: nowrap;
 }
 /* Featured Card hover */
 /* Featured Card end */
+
+
+/* Education Experience Licenses Card start */
+/* .education hr:last-of-type,
+.experience hr:last-of-type,
+.licenses hr:last-of-type {
+    display:none;
+} */
+/* Education Experience Licenses Card hover */
+/* Education Experience Licenses Card end */

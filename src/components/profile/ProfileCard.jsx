@@ -5,6 +5,7 @@ import {Card,Button} from 'react-bootstrap'
 import {GrFormEdit, GrDocument} from 'react-icons/gr'
 import {RiShareForwardFill} from 'react-icons/ri'
 import {FiDownload} from 'react-icons/fi'
+import {IoIosArrowDown} from 'react-icons/io'
 class ProfileCard extends React.Component {
     state={
         dropdown:""
@@ -22,7 +23,7 @@ class ProfileCard extends React.Component {
     render() { 
         return <div>
              <Card className='profile-card round-border' >
-                <div style={{overflow:'hidden',borderRadiusTopRight:'15px'}}>
+                <div style={{overflow:'hidden',borderRadius:'10px 10px 0 0'}}>
 
                 <Card.Img variant="top" src={"https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=webp"} />
                 </div>
@@ -42,38 +43,37 @@ class ProfileCard extends React.Component {
                         <Button onClick={(e)=>this.showDropdown(e.target.innerText)} variant="outline-secondary" className='h6 bold rounded-btn ml-2'>More</Button>
                     </div>
                     <div className='pRelative'>
-                        <div id='drop-open' className='round-border grey-border' style={{display:this.state.dropdown==='Open to'? 'block':'none'}}>
+                        <div id='drop-open' className='grey-border' style={{display:this.state.dropdown==='Open to'? 'block':'none',borderRadius:'0 10px 10px 10px'}}>
                             <div>
                             <p className='h6'> Hiring</p>
-                                Share that you’re hiring and attract qualified candidates
+                                <p>Share that you’re hiring and attract qualified candidates</p>
                             </div>
                             <div>
                            <p className="h6"> Providing services</p>
-                                Showcase services you offer so new clients can discover you
+                                <p>Showcase services you offer so new clients can discover you</p>
                             </div>
                         </div>
-                        <div id='drop-selection' className='round-border grey-border list-unstyled'  style={{display:this.state.dropdown==='Add Section'? 'block':'none'}}>
-                            <ul>
-                                <li>Intro</li>
-                                {/* <hr/> */}
-                                <li>About</li>
-                                {/* <hr/> */}
-                                <li>Featured</li>
-                                {/* <hr/> */}
-                                <li>Background</li>
-                                {/* <hr/> */}
-                                <li>Skill</li>
-                                {/* <hr/> */}
-                                <li>Accomplishments</li>
-                                {/* <hr/> */}
-                                <li>Aditional Information</li>
-                                {/* <hr/> */}
-                                <li>Supported Languages</li>
-                                {/* <hr/> */}
+                        <div id='drop-selection' className='grey-border'  style={{display:this.state.dropdown==='Add Section'? 'block':'none',borderRadius:'10px 10px 10px 10px'}}>
+                            <ul className='list-unstyled'>
+                                <li className='d-flex justify-content-between'><span>Info</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>About</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Featured</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Background</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Skill</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Accomplishments</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Aditional Information</span> <span><IoIosArrowDown/></span></li>
+                                <hr/>
+                                <li className='d-flex justify-content-between'><span>Supported Languages</span> <span><IoIosArrowDown/></span></li>
                             </ul>
                         </div>
 
-                        <div id='drop-selection' className='round-border grey-border '  style={{display:this.state.dropdown==='More'? 'block':'none'}}>
+                        <div id='drop-selection' className='grey-border '  style={{display:this.state.dropdown==='More'? 'block':'none',borderRadius:'10px 0 10px 10px'}}>
                             <ul className='list-unstyled'>
                                 <li >
                                     <span className="mx-3"><RiShareForwardFill/></span>
