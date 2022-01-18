@@ -14,7 +14,7 @@ const PeopleViewed = () => {
         {
           headers: {
             Authorization:
-              " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1M2IwMjczZDVjYjAwMTUzOTVhYTEiLCJpYXQiOjE2NDI0MTI4MDIsImV4cCI6MTY0MzYyMjQwMn0.Rbm3B63oIh5acqeuTn3D6U538MLbS0-vfoNT62fpFGA",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1M2IwMjczZDVjYjAwMTUzOTVhYTEiLCJpYXQiOjE2NDI0MTI4MDIsImV4cCI6MTY0MzYyMjQwMn0.Rbm3B63oIh5acqeuTn3D6U538MLbS0-vfoNT62fpFGA",
           },
         }
       );
@@ -50,7 +50,7 @@ const PeopleViewed = () => {
               <a className="text-dark font-weight-bolder d-flex" href="/">
                 <img className="img-fluid" src={u.image} alt="user" />
                 <div className="mt-3">
-                  {u.name} <n />
+                  {u.name}
                   {u.surname}
                   <p className="text-secondary mb-0">{u.title}</p>
                 </div>
