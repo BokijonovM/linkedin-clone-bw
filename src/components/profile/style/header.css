@@ -14,6 +14,9 @@
   color: #767675;
   font-weight: 600;
 }
+.row-2-col > p {
+  margin-bottom: 5px;
+}
 .extra-nav-image {
   height: 35px;
   border-radius: 50%;
@@ -49,4 +52,34 @@
   top: 0;
   right: 10px;
   border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .form-main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .icons-hover-needed > div > p {
+    display: none;
+  }
+  .badge-required-1 > .badge {
+    right: -12px;
+  }
+}
+@media (max-width: 650px) {
+  .flex-column-needed {
+    flex-direction: column;
+  }
+}
+@media (max-width: 550px) {
+  .none-550-needed {
+    display: none !important;
+  }
+}
+@media (max-width: 410px) {
+  .d-none-needed-jobs,
+  .d-none-needed-network {
+    display: none !important;
+  }
 }

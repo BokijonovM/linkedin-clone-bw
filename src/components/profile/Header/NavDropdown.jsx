@@ -78,15 +78,15 @@ function NavDropdown() {
         </Dropdown.Item>
         <Dropdown.Item eventKey="2">Setting & Privacy</Dropdown.Item>
         <Dropdown.Item eventKey="3">Help</Dropdown.Item>
-        <Dropdown.Item eventKey="1">Language</Dropdown.Item>
+        <Dropdown.Item eventKey="4">Language</Dropdown.Item>
         <hr />
-        <Dropdown.Item eventKey="1" style={{ fontWeight: "700" }}>
+        <Dropdown.Item eventKey="5" style={{ fontWeight: "700" }}>
           Manage
         </Dropdown.Item>
-        <Dropdown.Item eventKey="2">Post Activity</Dropdown.Item>
-        <Dropdown.Item eventKey="2">job Posting Account</Dropdown.Item>
+        <Dropdown.Item eventKey="6">Post Activity</Dropdown.Item>
+        <Dropdown.Item eventKey="7">job Posting Account</Dropdown.Item>
         <hr />
-        <Dropdown.Item eventKey="1">Sign Out</Dropdown.Item>
+        <Dropdown.Item eventKey="8">Sign Out</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

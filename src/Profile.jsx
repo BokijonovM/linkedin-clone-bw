@@ -6,7 +6,7 @@ import MyMain from "./components/profile/MyMain";
 
 function Profile() {
   return (
-    <div style={{ height: "2000px" }}>
+    <div>
       <Row className="header-row-profile">
         <Header />
       </Row>

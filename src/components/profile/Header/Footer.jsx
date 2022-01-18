@@ -17,7 +17,7 @@ function Footer() {
           />
         </Col>
       </Row>
-      <Row>
+      <Row className="flex-column-needed" md={6}>
         <Col className="row-2-col">
           <p>
             <a href="#">About</a>
@@ -134,7 +134,7 @@ function Footer() {
             style={{
               fontSize: "12px",
             }}
-            className="pb-3"
+            className="py-3"
           >
             LinkedIn Corporation © 2022
           </p>
