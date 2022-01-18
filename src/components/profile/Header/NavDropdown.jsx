@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { FormControl, Dropdown } from "react-bootstrap";
+import { FormControl, Dropdown, Button } from "react-bootstrap";
 
 function NavDropdown() {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -31,13 +31,25 @@ function NavDropdown() {
           className={className}
           aria-labelledby={labeledBy}
         >
-          <FormControl
+          {/* <FormControl
             autoFocus
             className="mx-3 my-2 w-auto"
             placeholder="Type to filter..."
             onChange={e => setValue(e.target.value)}
             value={value}
-          />
+          /> */}
+          <div className="mx-3 d-flex justify-content-center">
+            <Button
+              className="mx-n5 w-100 py-0"
+              variant="outline-primary"
+              style={{
+                borderRadius: "99px",
+              }}
+            >
+              View Profile
+            </Button>
+          </div>
+          <hr />
           <ul className="list-unstyled">
             {React.Children.toArray(children).filter(
               child =>
@@ -60,13 +72,21 @@ function NavDropdown() {
         Me
       </Dropdown.Toggle>
 
-      <Dropdown.Menu as={CustomMenu} alignRight>
-        <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-        <Dropdown.Item eventKey="3" active>
-          Orange
+      <Dropdown.Menu style={{ width: "240px" }} as={CustomMenu} alignRight>
+        <Dropdown.Item eventKey="1" style={{ fontWeight: "700" }}>
+          Account
         </Dropdown.Item>
-        <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+        <Dropdown.Item eventKey="2">Setting & Privacy</Dropdown.Item>
+        <Dropdown.Item eventKey="3">Help</Dropdown.Item>
+        <Dropdown.Item eventKey="1">Language</Dropdown.Item>
+        <hr />
+        <Dropdown.Item eventKey="1" style={{ fontWeight: "700" }}>
+          Manage
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="2">Post Activity</Dropdown.Item>
+        <Dropdown.Item eventKey="2">job Posting Account</Dropdown.Item>
+        <hr />
+        <Dropdown.Item eventKey="1">Sign Out</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

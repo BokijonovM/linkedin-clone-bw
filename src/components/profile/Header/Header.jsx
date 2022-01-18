@@ -3,11 +3,12 @@ import { Navbar, Form, FormControl, Nav } from "react-bootstrap";
 import "../style/header.css";
 import NavDropdown from "./NavDropdown";
 import NavWork from "./NavWork";
+import ExtraHeader from "./ExtraHeader";
 
 function Header() {
   return (
     <div style={{ width: "100%" }}>
-      <Navbar className="px-5 py-0" bg="light" expand="lg">
+      <Navbar className="px-5 py-0 navbar-profile" bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <i
             style={{
@@ -93,6 +94,7 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <ExtraHeader />
     </div>
   );
 }

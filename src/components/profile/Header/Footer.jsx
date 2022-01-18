@@ -45,7 +45,7 @@ function Footer() {
             <a href="#">Careers</a>
           </p>
           <p>
-            <a href="#">Add choice</a>
+            <a href="#">Add Choices</a>
           </p>
           <p>
             <a href="#">Mobile</a>
