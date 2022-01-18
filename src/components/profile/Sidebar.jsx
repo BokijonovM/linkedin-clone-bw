@@ -1,11 +1,20 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import EditAddProfile from "../EditAddProfile";
+import PeopleViewed from "./PeopleViewed";
 
 function Sidebar() {
   return (
     <div>
-      <Row>
-        <Col className="col-lg-4"> </Col>
+      <Row className="d-block-flex mr-4  ">
+        <Col className="col-3 bg-secondary ml-auto p-4">
+          <aside>
+            {" "}
+            <EditAddProfile />
+            <PeopleViewed />
+            <PeopleViewed />
+          </aside>
+        </Col>
       </Row>
     </div>
   );
