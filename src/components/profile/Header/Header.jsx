@@ -10,7 +10,7 @@ function Header() {
   const [navbar, setNavbar] = useState(false);
 
   const extraHeader = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 380) {
       setNavbar(true);
     } else {
       setNavbar(false);
