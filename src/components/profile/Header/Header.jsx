@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function Header({userOnNav,userPic}) {
   const [navbar, setNavbar] = useState(false);
-
+  
   const extraHeader = () => {
     if (window.scrollY >= 300) {
       setNavbar(true);
@@ -16,6 +16,7 @@ function Header({userOnNav,userPic}) {
       setNavbar(false);
     }
   };
+
   window.addEventListener("scroll", extraHeader);
   return (
     <div style={{ width: "100%" }}>

@@ -10,7 +10,7 @@ const [bio,setBio]=useState('')
 const [title,setTitle]=useState('')
 const [area,setArea]=useState('')
 
-useEffect(()=>{
+useEffect(() => {
    setName(profile.name)
    setSurname(profile.surname)
    setEmail(profile.email)
@@ -20,8 +20,8 @@ useEffect(()=>{
 },[])
 
 
-const handleSubmit=async(e)=>{
-    e.preventdefault()
+const handleSubmit = async (e) => {
+    // e.preventDefault()
     let user={
         name:name,
         surname:surname,
@@ -29,20 +29,27 @@ const handleSubmit=async(e)=>{
         bio:bio,
         title:title,
         area:area,
-    }  
+    };
     console.log(user)
-    let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
-    method:"POST",   
+    try {
+        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
+    method:"PUT",   
         body: JSON.stringify(user), 
         headers: {
             "Content-Type" : "application/JSON",  
-            Authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8',
+            Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8'
 
         }
     })
-    let data = await response.json()
     if(response.ok){
+        let data = await response.json()
         console.log(data)
+        console.log('data changed')
+    }else {
+       console.log('error')
+    }
+    } catch (error) {
+        console.log(error)
     }
 }
 
@@ -74,7 +81,7 @@ return(
   
     <Modal.Footer>
       <Button variant="secondary" onClick={(e)=>setShowEditPage(false)}>Close</Button>
-      <Button variant="primary" onClick={(e)=> handleSubmit()}>Save changes</Button>
+      <Button variant="primary" onClick={(e)=> handleSubmit(e)}>Save changes</Button>
     </Modal.Footer>
   </Modal.Dialog>
 )

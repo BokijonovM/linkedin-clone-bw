@@ -21,6 +21,7 @@ const PeopleViewed = () => {
     
       if (apiCall.ok) {
         let user = await apiCall.json();
+        console.log(user)
         setInfo(user);
       } else {
         console.log("Something wrong");
