@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
-import "../Style/header.css";
+import "../style/header.css";
 
 function ExtraHeader() {
   return (
