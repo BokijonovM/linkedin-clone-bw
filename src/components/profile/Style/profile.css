@@ -1,134 +1,130 @@
 /* reuseable class for all */
-.round-border{
-    border-radius:10px !important;
+.round-border {
+  border-radius: 10px !important;
 }
-.blue-link{
-    color:rgb(9, 79, 168) !important;
+.blue-link {
+  color: rgb(9, 79, 168) !important;
 }
 
 .rounded-btn {
-    border-radius: 20px !important;
+  border-radius: 20px !important;
 }
 
-.round-hover{
-    min-width:'25px';
-    min-height:'25px';
-    border-radius: 50%;
-    background-color: rgba(128, 128, 128, 0);
-    box-sizing: border-box;
+.round-hover {
+  min-width: "25px";
+  min-height: "25px";
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0);
+  box-sizing: border-box;
 }
 
-.round-hover:hover{
-    background-color: rgba(128, 128, 128, 0.22);
+.round-hover:hover {
+  background-color: rgba(128, 128, 128, 0.22);
 }
 
-.bold{
-    font-weight: bold;
+.bold {
+  font-weight: bold;
 }
 
-.pRelative{
-    position:relative;
+.pRelative {
+  position: relative;
 }
-.pAbsolute{
-    position:absolute;
-}
-
-.grey-border{
-    border:0.5px solid rgba(162, 162, 162, 0.397);
+.pAbsolute {
+  position: absolute;
 }
 
-.grey-border-left{
-    border-right:0.5px solid rgba(162, 162, 162, 0.2);
+.grey-border {
+  border: 0.5px solid rgba(162, 162, 162, 0.397);
 }
 
-
-.grey-border-bottom{
-    border-bottom:0.5px solid rgba(162, 162, 162, 0.205);
+.grey-border-left {
+  border-right: 0.5px solid rgba(162, 162, 162, 0.2);
 }
 
-.italics{
-    font-style: italic;
+.grey-border-bottom {
+  border-bottom: 0.5px solid rgba(162, 162, 162, 0.205);
 }
 
-.font14{
-    font-size: 14px;
+.italics {
+  font-style: italic;
 }
 
-.pointer{
-    cursor: pointer;
+.font14 {
+  font-size: 14px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 /* Profile Card start */
 
-
-.profile-pic{
- width:30%;
- border:5px solid white;
- border-radius:50%;
- position:relative;
- top:-100px;
- left:5%;
-
+.profile-pic {
+  width: 30%;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: relative;
+  top: -100px;
+  left: 5%;
 }
 
-.edit-bg{
-position: absolute;
-right: 20px;
-top:20px;
-background-color: white;
-border-radius:50%;
-height:2rem;
-width:2rem;
-margin:auto;
+.edit-bg {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: white;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  margin: auto;
 }
 
 /* Profile Card hover */
 /* Profile Card part end */
 
 /* Dashboard card start */
-.dashboard{
-    background-color: rgb(220,230,241);
+.dashboard {
+  background-color: rgb(220, 230, 241);
 }
-.big-numb{
-    font-size: 32px;
-    font-weight: 200;
-    color: #0A66C2;
+.big-numb {
+  font-size: 32px;
+  font-weight: 200;
+  color: #0a66c2;
 }
-
+.myMain-first-div {
+  width: 100vw !important;
+}
 #drop-open,
 #drop-selection,
 #drop-more {
-width:270px;
-height:auto;
-padding:10px;
-box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.13);
-position:absolute;
-top:0;
-background-color: white;
-z-index: 100;
+  width: 270px;
+  height: auto;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.13);
+  position: absolute;
+  top: 0;
+  background-color: white;
+  z-index: 100;
 }
 
-#drop-selection{
-    left:70px;
-width:300px;
-
+#drop-selection {
+  left: 70px;
+  width: 300px;
 }
 
 #drop-more {
-    left:120px
-
+  left: 120px;
 }
 /* Dashboard card hover*/
 /* Dashboard card End*/
 
 /* Featured Card start */
-.featured-cards{
-display:flex;
-overflow:scroll;
-flex-wrap: nowrap;
+.featured-cards {
+  display: flex;
+  overflow: scroll;
+  flex-wrap: nowrap;
 }
 /* Featured Card hover */
 /* Featured Card end */
-
 
 /* Education Experience Licenses Card start */
 /* .education hr:last-of-type,

@@ -5,13 +5,14 @@ import { Row, Col, Container } from "react-bootstrap";
 import "./style/profile.css";
 function MyMain() {
   return (
-    <div style={{ backgroundColor: "rgb(243,242,238)" }}>
+    <div
+      className="myMain-first-div"
+      style={{ backgroundColor: "rgb(243,242,238)" }}
+    >
       {/* <Container> */}
-      <Row
-        className="justify-content-center mt-4"
-        
-      >
-        <Col sm={10} md={7} lg={7}>
+   
+      <Row className="justify-content-center mt-4">
+        <Col sm={10} lg={7}>
           <Main />
         </Col>
         <Col sm={0} md={3} lg={3}>
