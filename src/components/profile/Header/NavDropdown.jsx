@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FormControl, Dropdown, Button } from "react-bootstrap";
 
-function NavDropdown() {
+function NavDropdown({userOnNav,userPic}) {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
       style={{ color: "black" }}
@@ -39,6 +39,10 @@ function NavDropdown() {
             value={value}
           /> */}
           <div className="mx-3 d-flex justify-content-center">
+           {userOnNav && ( <div>
+              <span>{userOnNav.name}{userOnNav.surname}</span>
+              <span>{userOnNav.bio}</span>
+            </div>)}
             <Button
               className="mx-n5 w-100 py-0"
               variant="outline-primary"

@@ -3,7 +3,7 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 import { Row, Col, Container } from "react-bootstrap";
 import "./style/profile.css";
-function MyMain() {
+function MyMain({setUserOnNav, setUserPic, userPic}) {
   return (
     <div
       className="myMain-first-div"
@@ -13,7 +13,7 @@ function MyMain() {
    
       <Row className="justify-content-center mt-4">
         <Col sm={10} lg={7}>
-          <Main />
+          <Main setUserOnNav={setUserOnNav} setUserPic={setUserPic} userPic={userPic}/>
         </Col>
         <Col sm={0} md={3} lg={3}>
           <Sidebar />

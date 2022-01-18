@@ -2,14 +2,14 @@ import React from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import "../style/header.css";
 
-function ExtraHeader() {
+function ExtraHeader({userPic, userOnNav}) {
   return (
     <div>
       <Navbar className="px-5 py-0 extra-navbar" bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <img
             className="extra-nav-image"
-            src="https://th.bing.com/th/id/OIP.jLRYKf5qar60c9VI6rPMjAHaHZ?pid=ImgDet&rs=1"
+            src={userPic}
             alt=""
           />
         </Navbar.Brand>
@@ -17,15 +17,17 @@ function ExtraHeader() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div>
-              <p
+              {userOnNav && (<>
+                <p
                 className="mb-n1"
                 style={{ fontSize: "14px", fontWeight: "600" }}
-              >
-                Name
+                >
+                 {userOnNav.name} {userOnNav.surname}
               </p>
               <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
-                Title
+                {userOnNav.title}
               </p>
+                  </>)}                 
             </div>
           </Nav>
           <div>

@@ -5,7 +5,7 @@ import ProfileCard from "./ProfileCard";
 import FeaturedCard from "./FeaturedCard";
 import Experience from "./Experience";
 
-function Main() {
+function Main({setUserOnNav, setUserPic, userPic}) {
 
   const[profile,setProfile]=useState()
 
@@ -21,18 +21,20 @@ function Main() {
    
     if(data){
       setProfile(data)
+      setUserOnNav(data)
     }
   }
 
   useState(()=>{
     fetchProfile()
+    setUserPic("https://miro.medium.com/max/1400/1*yIxkX8nAZkBxDP0gTjNrog.jpeg")
   },[])
 
 
   return (
 
     <div >    
-      {profile && <ProfileCard profile={profile}/>}
+      {profile && <ProfileCard profile={profile} userPic={userPic}/>}
       <DashboardCard/>
       <AboutCard/>
       <FeaturedCard/>

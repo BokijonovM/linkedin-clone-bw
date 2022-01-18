@@ -6,7 +6,7 @@ import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
 
-function Header() {
+function Header({userOnNav,userPic}) {
   const [navbar, setNavbar] = useState(false);
 
   const extraHeader = () => {
@@ -26,7 +26,7 @@ function Header() {
               fontSize: "35px",
               color: "#0a66c2",
             }}
-            class="bi bi-linkedin"
+            className="bi bi-linkedin"
           ></i>
         </Navbar.Brand>
         <Form inline className="form-main-nav">
@@ -39,19 +39,19 @@ function Header() {
 
         <Nav className="ml-auto icons-hover-needed d-flex flex-row">
           <div className="d-flex flex-column align-items-center mr-4">
-            <i style={{ fontSize: "22px" }} class="bi bi-house-fill"></i>
+            <i style={{ fontSize: "22px" }} className="bi bi-house-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Home
             </p>
           </div>
           <div className="d-flex flex-column align-items-center mr-4 d-none-needed-network">
-            <i style={{ fontSize: "22px" }} class="bi bi-people-fill"></i>
+            <i style={{ fontSize: "22px" }} className="bi bi-people-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               My Network
             </p>
           </div>
           <div className="d-flex flex-column align-items-center pr-4 badge-required d-none-needed-jobs">
-            <i style={{ fontSize: "22px" }} class="bi bi-briefcase-fill"></i>
+            <i style={{ fontSize: "22px" }} className="bi bi-briefcase-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Jobs
             </p>
@@ -66,13 +66,13 @@ function Header() {
             </Badge>
           </div>
           <div className="d-flex flex-column align-items-center mr-4">
-            <i style={{ fontSize: "22px" }} class="bi bi-chat-dots-fill"></i>
+            <i style={{ fontSize: "22px" }} className="bi bi-chat-dots-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Messaging
             </p>
           </div>
           <div className="d-flex flex-column align-items-center mr-4 badge-required-1">
-            <i style={{ fontSize: "22px" }} class="bi bi-bell-fill"></i>
+            <i style={{ fontSize: "22px" }} className="bi bi-bell-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Notifications
             </p>
@@ -90,11 +90,11 @@ function Header() {
             {/* <i style={{ fontSize: "22px" }} class="bi bi-person-circle"></i> */}
             <img
               className="nav-profile-image"
-              src="https://th.bing.com/th/id/OIP.jLRYKf5qar60c9VI6rPMjAHaHZ?pid=ImgDet&rs=1"
+              src={userPic}
               alt=""
             />
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n1">
-              <NavDropdown />
+              <NavDropdown userOnNav={userOnNav} userPic={userPic}/>
               {/* <i class="bi bi-caret-down-fill"></i> */}
             </p>
           </div>
@@ -121,7 +121,7 @@ function Header() {
           </div>
         </Nav>
       </Navbar>
-      {navbar ? <ExtraHeader /> : <p></p>}
+      {navbar ? <ExtraHeader userPic={userPic} userOnNav={userOnNav}/> : <p></p>}
     </div>
   );
 }
