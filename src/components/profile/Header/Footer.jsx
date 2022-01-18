@@ -17,7 +17,7 @@ function Footer() {
           />
         </Col>
       </Row>
-      <Row className="flex-column-needed" md={6}>
+      <Row className="flex-column-needed justify-content-between" md={6}>
         <Col className="row-2-col">
           <p>
             <a href="#">About</a>
