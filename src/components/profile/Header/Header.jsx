@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Form, FormControl, Nav, Badge } from "react-bootstrap";
-import "../style/header.css";
+import "../Style/header.css";
 import NavDropdown from "./NavDropdown";
 import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
@@ -99,11 +99,9 @@ function Header() {
             </p>
           </div>
           <div
-            className="none-550-needed ml-5"
+            className="none-550-needed mx-5"
             style={{ borderRight: "1px solid black" }}
           ></div>
-        </Nav>
-        <Nav className="ml-5 icons-hover-needed none-550-needed d-flex flex-row">
           <div className="d-flex flex-column align-items-center mr-3">
             <i style={{ fontSize: "22px" }} class="bi bi-grid-3x3-gap-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">

@@ -1,9 +1,21 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
+import EditAddProfile from "../EditAddProfile";
+import PeopleViewed from "./PeopleViewed";
 
 function Sidebar() {
   return (
     <div>
-      <h1>sidebar</h1>
+      <Row className="d-block-flex mr-4  ">
+        <Col className="col-3 bg-secondary ml-auto p-4">
+          <aside>
+            {" "}
+            <EditAddProfile />
+            <PeopleViewed />
+            <PeopleViewed />
+          </aside>
+        </Col>
+      </Row>
     </div>
   );
 }

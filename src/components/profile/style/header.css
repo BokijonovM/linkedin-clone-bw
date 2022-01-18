@@ -83,3 +83,7 @@
     display: none !important;
   }
 }
+.dropdown-menu {
+  left: -200px;
+  position: absolute !important;
+}
