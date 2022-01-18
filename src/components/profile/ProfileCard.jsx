@@ -51,7 +51,7 @@ _id: "61e5270f73d5cb0015395a9d"
                     <span className="round-hover  h3 text-primary pAbsolute" style={{right:'20px'}} onClick={(e)=>setShowEditPage(true)}><GrFormEdit/></span>
                  
                 <Card.Text style={{marginTop:'-80px'}}>
-                <div className='pAbsolute w-100' style={{display:showEditPage? 'block':'none', zIndex:'10'}}>
+                <div className='pAbsolute w-100' style={{display:showEditPage? 'block':'none', zIndex:'10',top:'-30px', background:'rgb(0,0,0,0.3)'}} fluid>
                        {profile && <EditPage profile={profile} setShowEditPage={setShowEditPage}/>}
                     </div>
                    <p className='h2 bold'>{profile.name} {profile.surname}</p>

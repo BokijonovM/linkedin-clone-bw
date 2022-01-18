@@ -21,7 +21,7 @@ useEffect(()=>{
 
 
 const handleSubmit=async(e)=>{
-    e.preventDefault()
+    e.preventdefault()
     let user={
         name:name,
         surname:surname,
@@ -30,7 +30,7 @@ const handleSubmit=async(e)=>{
         title:title,
         area:area,
     }  
-    
+    console.log(user)
     let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
     method:"POST",   
         body: JSON.stringify(user), 
@@ -63,7 +63,7 @@ return(
         <input type='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
 
         <label for='bio'>Bio *</label>
-        <input type='text' id='bio' value='' onChange={(e)=>setBio(e.target.value)}/>
+        <input type='text' id='bio' value={bio} onChange={(e)=>setBio(e.target.value)}/>
 
         <label for='title'>Title *</label>
         <input type='text' id='title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
