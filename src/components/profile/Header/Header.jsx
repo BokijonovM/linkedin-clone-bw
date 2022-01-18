@@ -121,7 +121,7 @@ function Header() {
           </div>
         </Nav>
       </Navbar>
-      {navbar ? <ExtraHeader /> : <p></p>}
+      {navbar ? <ExtraHeader /> : <small></small>}
     </div>
   );
 }

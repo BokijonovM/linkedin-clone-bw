@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import EditAddProfile from "../EditAddProfile";
 import PeopleViewed from "./PeopleViewed";
+import "./SideBar.css";
 
 function Sidebar() {
   return (

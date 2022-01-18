@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import Header from "./components/profile/Header/Header";
 import Footer from "./components/profile/Header/Footer";
 import MyMain from "./components/profile/MyMain";
+import "./components/profile/SideBar.css";
 
 function Profile() {
   return (

@@ -3,6 +3,8 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 import { Row, Col } from "react-bootstrap";
 import "./style/profile.css";
+import "./SideBar.css";
+
 function MyMain() {
   return (
     <div>

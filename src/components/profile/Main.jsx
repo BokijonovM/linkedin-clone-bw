@@ -7,13 +7,12 @@ import Experience from "./Experience";
 
 function Main() {
   return (
-    <div >
-      <h1>main part</h1>
-      <ProfileCard/>
-      <DashboardCard/>
-      <AboutCard/>
-      <FeaturedCard/>
-      <Experience/>
+    <div>
+      <ProfileCard />
+      <DashboardCard />
+      <AboutCard />
+      <FeaturedCard />
+      <Experience />
     </div>
   );
 }
