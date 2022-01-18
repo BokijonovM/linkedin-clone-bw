@@ -54,7 +54,7 @@ const PeopleViewed = () => {
                     <div className="mt-3">
                       {u.name} <n />
                       {u.surname}
-                      <p className="text-secondary">{u.title}</p>
+                      <p className="text-secondary mb-0">{u.title}</p>
                     </div>
                   </a>
                   <div className="">
