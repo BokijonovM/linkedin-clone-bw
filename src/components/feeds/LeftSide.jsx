@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {Col} from "react-bootstrap"
+import { Col } from "react-bootstrap";
 
 const LeftSide = () => {
   //{ userPic, userOnNav }
-  const [userPost, setUserPost] = useState({});
+  const [userPost, setUserPost] = useState("");
 
   let fetchPost = async () => {
     try {
@@ -21,8 +21,8 @@ const LeftSide = () => {
         let post = await apiCall.json();
         setUserPost(post);
         console.log(post);
-      } else{
-        console.log("API is NOT ok")
+      } else {
+        console.log("API is NOT ok");
       }
     } catch (error) {
       console.log("Error Catch", error);
@@ -43,8 +43,12 @@ const LeftSide = () => {
           <img src="" alt="" />
         </div>
         <div className="text-dark">Doston Azimboev</div>{" "}
-        <p className="text-dark">Customer Advisor at Boots UK</p>
-        {userPost.map(user => (<p>{user.user.name}</p> <p>{user.user.lastname}</p>) )}
+        {userPost.map((user) => (
+          <div>
+            {/* <p>{user.user.name}</p>
+            <p>{user.user.lastname}</p> */}
+          </div>
+        ))}
       </Col>
     </>
   );
