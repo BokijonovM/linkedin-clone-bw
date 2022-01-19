@@ -4,17 +4,16 @@ import Header from "./components/profile/Header/Header";
 import Footer from "./components/profile/Header/Footer";
 import MyMain from "./components/profile/MyMain";
 
-function Profile() {
+function Profile({profile}) {
 
-  const[userOnNav,setUserOnNav]=useState()
-  const[userPic,setUserPic]=useState()
+  
   return (
     <div>
       <Row className="header-row-profile">
-      <Header userOnNav={userOnNav} userPic={userPic}/>
+      <Header profile={profile}/>
       </Row>
       <Row className="profile-myMain-row">
-        <MyMain setUserOnNav={setUserOnNav} setUserPic={setUserPic} userPic={userPic}/>
+        <MyMain profile={profile}/>
       </Row>
       <Row>
         <Footer />

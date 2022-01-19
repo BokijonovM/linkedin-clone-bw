@@ -5,14 +5,14 @@ import NewsFeed from "./NewsFeed";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
 
-function MyMainFeed() {
+function MyMainFeed({profile}) {
   return (
     <div>
       <MyNavbar />
       <Container>
         <Row className="justify-content-center">
           <Col md={2}>
-            <LeftSide />
+            {profile && <LeftSide  profile={profile}/>}
           </Col>
           <Col md={7}>
             <NewsFeed />

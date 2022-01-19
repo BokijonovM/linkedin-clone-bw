@@ -59,6 +59,7 @@ export default function AddEditExperience ({setShowAddExperience, list, userId }
       if (response.ok) {
         let data = await response.json();
         console.log('display after adding experience',data);
+        
       } else {
         console.log("error");
       }

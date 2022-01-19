@@ -6,7 +6,7 @@ import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
 
-function Header({ userOnNav, userPic }) {
+function Header({profile}) {
   const [navbar, setNavbar] = useState(false);
 
   const extraHeader = () => {
@@ -95,9 +95,9 @@ function Header({ userOnNav, userPic }) {
           </div>
           <div className="d-flex flex-column align-items-center ">
             {/* <i style={{ fontSize: "22px" }} className="bi bi-person-circle"></i> */}
-            <img className="nav-profile-image" src={userPic} alt="" />
+            <img className="nav-profile-image" src={profile.image} alt="" />
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n1">
-              <NavDropdown userOnNav={userOnNav} userPic={userPic} />
+              <NavDropdown profile={profile} />
               {/* <i class="bi bi-caret-down-fill"></i> */}
             </p>
           </div>
