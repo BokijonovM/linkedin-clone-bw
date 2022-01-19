@@ -101,6 +101,17 @@
   background-color: #f3f2ee !important;
 }
 
+.modal-box{
+  z-index: 10;
+  position:fixed;
+  left: 0;
+  top: 0px;
+  height: 100vh;
+  padding-top: 50px;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+}
+
 /* Profile Card hover */
 /* Profile Card part end */
 

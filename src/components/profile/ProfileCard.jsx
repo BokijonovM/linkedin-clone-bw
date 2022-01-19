@@ -59,18 +59,9 @@ _id: "61e5270f73d5cb0015395a9d"
 
         <div style={{ marginTop: "60px" }}>
           <div
-            className="pAbsolute w-100"
+            className="pAbsolute w-100 modal-box"
             style={{
               display: showEditPage ? "block" : "none",
-              zIndex: "10",
-              position: "fixed",
-              left: "0",
-              top: "0px",
-              height: "100vh",
-              paddingTop: "50px",
-              // background: "rgb(0,0,0,0.3)",
-              background: "rgba(255,255,255,0.2)",
-              backdropFilter: "blur(5px)",
             }}
             fluid
           >

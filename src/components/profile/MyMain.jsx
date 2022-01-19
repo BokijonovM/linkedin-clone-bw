@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "./Main";
-import Sidebar from "./Sidebar";
+import Sidebar from "../profile/Sidebar/Sidebar";
 import { Row, Col, Container } from "react-bootstrap";
 import "./style/profile.css";
 function MyMain({ setUserOnNav, setUserPic, userPic }) {

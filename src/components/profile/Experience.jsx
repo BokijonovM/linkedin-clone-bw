@@ -1,39 +1,28 @@
 import React, { Component } from "react";
 import DisplayList from "./DisplayList";
 import { useEffect, useState } from "react";
-
+import { GoPlus } from "react-icons/go";
+import AddExperience from "./ProfileCardComponents/AddExperience";
 const Experience = ({ userId }) => {
   //
-  const [info, setInfo] = useState(
-    []
-    // _id: "",
-    // image: "",
-    // role: "",
-    // company: "",
-    // startDate: "",
-    // endDate: "",
-    // area: "",
-  );
+  const [ info, setInfo] = useState([]);
+  const [ showAddExperience , setShowAddExperience ] = useState (false)
+  const [ experienceId , setExperienceId ] = useState ()
+  
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps !== this.props) {
-  //     this.setState({
-  //       experiences:
-  //     });
-  //   }
-  // }
+  
+  
   useEffect(() => {
     fetchExperiences();
-    console.log("use effext")
   }, [userId]);
 
-  const fetchExperiences = async (userId) => {
+  const fetchExperiences = async () => {
     //preventDefault()
     console.log("fetch experience")
 
     try {
       let apiCall = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/6163f500a890cc0015cf07e2/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
         {
           headers: {
             Authorization:
@@ -41,9 +30,6 @@ const Experience = ({ userId }) => {
           },
         }
       );
-    console.log("fetch experience ",apiCall)
-
-
       if (apiCall.ok) {
         let data = await apiCall.json();
         console.log("RESPONSE TEST", data);
@@ -56,7 +42,26 @@ const Experience = ({ userId }) => {
 
   return (
     <div className="bg-white p-3 mt-3 round-border">
-      <p className="h4">Experience</p>
+      <p className="h4 d-flex justify-content-between">
+        Experience
+       <span className="mx-2 round-hover" onClick={(e)=>setShowAddExperience(true)}>
+            <GoPlus />
+          </span>
+        </p>
+        <div style={{ marginTop: "60px" }}>
+          <div
+              className="pAbsolute w-100 modal-box"
+              style={{
+                display: showAddExperience? "block" : "none",
+              }}
+              fluid
+            >
+              {userId && info && (
+                <AddExperience  userId={userId} setShowAddExperience={setShowAddExperience} info={info}/>
+              )}
+          </div>
+          </div>
+          
       <div className="experience">
         {info && info.map((list, i) => <DisplayList key={i} list={list} />)}
       </div>
