@@ -82,8 +82,8 @@ _id: "61e5270f73d5cb0015395a9d"
             {profile.name} {profile.surname}
           </p>
           <p>
-            {" "}
-            {profile.title} at Strive School {profile.area}
+            {profile.title} at Strive School <br /> {profile.area}
+            <i className="bi bi-dot"></i>
             <span className="h6 bold blue-link">Contact info</span>
           </p>
           <p className="h6 bold blue-link">96 Connections</p>
