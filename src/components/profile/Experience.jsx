@@ -56,7 +56,7 @@ const Experience = ({ userId }) => {
               }}
               fluid
             >
-              {userId && info && (
+              {userId && (
                 <AddExperience  userId={userId} setShowAddExperience={setShowAddExperience} info={info}/>
               )}
           </div>
@@ -65,17 +65,6 @@ const Experience = ({ userId }) => {
       <div className="experience">
         {info && info.map((list, i) => <DisplayList key={i} list={list} />)}
       </div>
-      <hr />
-      <p>Education</p>
-      <div className="education">
-        {info && info.map((list, j) => <DisplayList key={j} list={list} />)}
-      </div>
-      <hr />
-      <p>Licenses & Certifications</p>
-      <div className="licenses">
-        {info && info.map((list, k) => <DisplayList key={k} list={list} />)}
-      </div>
-      <hr />
     </div>
   );
 };
