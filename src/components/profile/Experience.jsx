@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DisplayList from "./DisplayList";
 import { useEffect, useState } from "react";
 import { GoPlus } from "react-icons/go";
-import AddExperience from "./ProfileCardComponents/AddExperience";
+import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 const Experience = ({ userId }) => {
   //
   const [ info, setInfo] = useState([]);
@@ -57,7 +57,7 @@ const Experience = ({ userId }) => {
               fluid
             >
               {userId && (
-                <AddExperience  userId={userId} setShowAddExperience={setShowAddExperience}/>
+                <AddEditExperience  userId={userId} setShowAddExperience={setShowAddExperience}/>
               )}
           </div>
           </div>

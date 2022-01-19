@@ -3,7 +3,7 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-export default function AddExperience ({setShowAddExperience, list, userId }) {
+export default function AddEditExperience ({setShowAddExperience, list, userId }) {
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -19,8 +19,8 @@ export default function AddExperience ({setShowAddExperience, list, userId }) {
    if(list){
     setRole(list.role);
     setCompany(list.company);
-    setStartDate(list.startDate);
-    setEndDate(list.endDate);
+    setStartDate(new Date(list.startDate));
+    setEndDate(new Date(list.endDate));
     setDescription(list.description);
     setArea(list.area);
     console.log(list, userId,'from the add experience page')
@@ -123,6 +123,7 @@ const handleDelete = async() => {
           id="startDate"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
+          placeholder={startDate}
         />
 
         <label for="endDate">endDate *</label>
@@ -131,6 +132,8 @@ const handleDelete = async() => {
           id="endDate"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
+          placeholder={endDate}
+
         />
 
         <label for="description">Description *</label>
@@ -155,7 +158,7 @@ const handleDelete = async() => {
           Close
         </Button>
         <Button variant="danger" onClick={(e) => handleDelete(e)} style={{display:showDeleteBtn? 'block':'none'}}>
-         Delete Experience
+         Delete
         </Button>
         <Button variant="primary" onClick={(e) => handleSubmit(e)}>
           Save changes

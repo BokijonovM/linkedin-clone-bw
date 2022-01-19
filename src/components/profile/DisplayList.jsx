@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { GoThreeBars } from "react-icons/go";
 import { GrFormEdit } from "react-icons/gr";
 import { format, parseISO } from "date-fns";
-import AddExperience from "./ProfileCardComponents/AddExperience";
+import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 
 const DisplayList = ({list, userId}) => {
   
@@ -24,7 +24,8 @@ const DisplayList = ({list, userId}) => {
           <p className="p-0 m-0">{list.company}</p>
           {/* <p className="p-0 m-0 font14">{list.description}</p> */}
           <p className="p-0 m-0 font14">
-            {list.startDate}-{list.endDate}
+            {format(new Date(list.startDate), 'MMMM do yyyy')} -
+            {format(new Date(list.endDate), 'MMMM do yyyy')}
           </p>
           <span>{list.area}</span>
           <hr />
@@ -48,7 +49,7 @@ const DisplayList = ({list, userId}) => {
               fluid
             >
               {userId && (
-                <AddExperience  userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
+                <AddEditExperience  userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
               )}
           </div>
           </div>
