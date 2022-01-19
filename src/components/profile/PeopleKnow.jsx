@@ -45,7 +45,7 @@ const PeopleKnow = () => {
             {" "}
             <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
-          {info.slice(5, showMore).map(u => (
+          {info.slice(3, showMore).map(u => (
             <li className="" key={u._id}>
               <a className="text-dark font-weight-bolder d-flex" href="/">
                 <img className="img-fluid" src={u.image} alt="user" />
@@ -54,9 +54,7 @@ const PeopleKnow = () => {
                     {u.name} &nbsp;
                     {u.surname}
                   </p>
-                  <p className="text-secondary mb-0">
-                    {u.title.slice(0, 30) + "..."}
-                  </p>
+                  <p className="text-secondary mb-0">{u.title.slice(0, 35)}</p>
                 </div>
               </a>
               <div className="">
