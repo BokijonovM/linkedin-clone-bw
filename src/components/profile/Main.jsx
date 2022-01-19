@@ -9,8 +9,10 @@ function Main({profile}) {
   const[userId, setUserId] = useState()
 
   useEffect(()=>{
-    setUserId(profile._id)
-  },[])
+    if(profile){
+      setUserId(profile._id)
+    }
+  },[profile])
   return (
 
     <div >    

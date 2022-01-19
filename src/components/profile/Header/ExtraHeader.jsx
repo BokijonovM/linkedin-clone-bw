@@ -15,7 +15,6 @@ function ExtraHeader({profile}) {
     if(profile){
       setInfo ( profile )
       setPic ( profile.image )
-      console.log('from extra header',profile)
     }
   },[ profile ] ) 
 
@@ -42,7 +41,7 @@ function ExtraHeader({profile}) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <div>
+            {profile && <div>
                 <p
                 className="mb-n1"
                 style={{ fontSize: "14px", fontWeight: "600" }}
@@ -51,9 +50,8 @@ function ExtraHeader({profile}) {
               </p>
               <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
                 {profile.title}
-              </p>
-                                
-            </div>
+              </p>              
+            </div>}
           </Nav>
           <div className='pRelative'>
             <Button

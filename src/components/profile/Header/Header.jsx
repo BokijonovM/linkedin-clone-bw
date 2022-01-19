@@ -124,7 +124,7 @@ function Header({profile}) {
           </div>
         </Nav>
       </Navbar>
-       {profile && navbar? <ExtraHeader profile={{profile}}/> : <span style={{ width: "0px" }}></span>}
+       {(profile && navbar)? <ExtraHeader profile={{profile}}/> : <span style={{ width: "0px" }}></span>}
     </div>
   );
 }

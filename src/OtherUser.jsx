@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Footer from "./components/profile/Header/Footer";
 import Header from './components/profile/Header/Header'
 import Sidebar from "./components/profile/Sidebar/Sidebar";
-import Main from "./components/profile/Main";
+import MyMain from "./components/profile/MyMain";
 
 
 
@@ -20,11 +20,11 @@ const fetchProfile = async() => {
   })
   let data = await response.json()
   if(data){
-    setProfile(data[5])
+    setProfile(data[293])
     let rajib = data.filter((item)=>item.name.toLowerCase().include('rajib'))
 
-    console.log("data from other page",data[0])
-    console.log(rajib)
+    console.log("data from other page",data[11])
+    console.log(data[0]._id)
   
   }
 }
@@ -36,23 +36,9 @@ useEffect(()=>{
 
 
 
-    return (<Row
-                className="justify-content-center mt-4"
-                style={{
-                marginLeft: "-80px",
-                marginRight: "-100px",
-                }}
-            >
-                <Col sm={10} lg={7}>
-                {profile && <Main
-                    setProfile={setProfile}
-                    profile={profile}
-                    />}
-                </Col>
-                <Col sm={0} md={3} lg={3}>
-                <Sidebar />
-                </Col>
-            </Row>
+    return (<div>
+                {profile && <MyMain profile={profile}/>}
+            </div>
      );
 }
 
