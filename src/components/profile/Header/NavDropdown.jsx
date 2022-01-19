@@ -40,7 +40,7 @@ function NavDropdown({userOnNav,userPic}) {
             value={value}
           /> */}
            {userOnNav && ( <div className='p-3'>
-              <p className='h5'>{userOnNav.name} {userOnNav.surname}</p>
+              <p className='h5'> {userOnNav.name} {userOnNav.surname}</p>
               <p>{userOnNav.bio}</p>
             </div>)}
           <div className="mx-3 d-flex justify-content-center">

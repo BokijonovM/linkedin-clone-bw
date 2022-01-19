@@ -88,7 +88,7 @@ function Header({userOnNav,userPic}) {
             </Badge>
           </div>
           <div className="d-flex flex-column align-items-center ">
-            {/* <i style={{ fontSize: "22px" }} class="bi bi-person-circle"></i> */}
+            {/* <i style={{ fontSize: "22px" }} className="bi bi-person-circle"></i> */}
             <img
               className="nav-profile-image"
               src={userPic}

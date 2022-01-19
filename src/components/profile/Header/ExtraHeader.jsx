@@ -14,8 +14,6 @@ function ExtraHeader({userPic, userOnNav}) {
   useEffect(()=>{
     setInfo ( userOnNav )
     setPic ( userPic )
-    console.log("userOnNav", userOnNav)
-    console.log("userPic",userPic)
   },[ userOnNav ] ) 
 
 

@@ -4,7 +4,7 @@ import {GrFormEdit} from 'react-icons/gr'
 
 class DisplayList extends React.Component {
     render() { 
-        return <div className='d-flex justify-content-between  '>
+        return <div className='d-flex justify-content-between  mt-2'>
                 <div style={{width:'120px',height:'120px', overflow:'hidden'}}>
                     {/* <img src='https://image.shutterstock.com/image-vector/color-square-composition-text-geometric-600w-1337231156.jpg' className="w-100"/> */}
                     <img src={this.props.list.image} alt={this.props.list.info} className='w-100'/>

@@ -120,7 +120,7 @@
 /* Featured Card start */
 .featured-cards {
   display: flex;
-  overflow: scroll;
+  overflow-x: scroll;
   flex-wrap: nowrap;
 }
 /* Featured Card hover */
