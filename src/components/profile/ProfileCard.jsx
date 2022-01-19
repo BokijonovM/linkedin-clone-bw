@@ -90,7 +90,7 @@ _id: "61e5270f73d5cb0015395a9d"
           <div>
             <Button
               onClick={e => showDropdown(e.target.innerText)}
-              className="h6 bold rounded-btn"
+              className="h6 bold rounded-btn shadow-none"
               style={{ backgroundColor: "rgb(9, 79, 168)" }}
             >
               Open to
@@ -98,14 +98,14 @@ _id: "61e5270f73d5cb0015395a9d"
             <Button
               onClick={e => showDropdown(e.target.innerText)}
               variant="outline-secondary"
-              className="h6 bold rounded-btn ml-2"
+              className="h6 bold rounded-btn ml-2 shadow-none"
             >
               Add Section
             </Button>
             <Button
               onClick={e => showDropdown(e.target.innerText)}
               variant="outline-secondary"
-              className="h6 bold rounded-btn ml-2"
+              className="h6 bold rounded-btn ml-2 shadow-none"
             >
               More
             </Button>

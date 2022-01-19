@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
 import "./style/SideBar.css";
 
@@ -14,14 +13,15 @@ const PeopleViewed = () => {
         {
           headers: {
             Authorization:
-              " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1M2IwMjczZDVjYjAwMTUzOTVhYTEiLCJpYXQiOjE2NDI0MTI4MDIsImV4cCI6MTY0MzYyMjQwMn0.Rbm3B63oIh5acqeuTn3D6U538MLbS0-vfoNT62fpFGA",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1M2IwMjczZDVjYjAwMTUzOTVhYTEiLCJpYXQiOjE2NDI0MTI4MDIsImV4cCI6MTY0MzYyMjQwMn0.Rbm3B63oIh5acqeuTn3D6U538MLbS0-vfoNT62fpFGA",
           },
         }
       );
-    
+      console.log(apiCall);
+
       if (apiCall.ok) {
         let user = await apiCall.json();
-        console.log(user)
+        console.log(user);
         setInfo(user);
       } else {
         console.log("Something wrong");
@@ -43,7 +43,7 @@ const PeopleViewed = () => {
         <ul className="pl-0 mb-0 w-100">
           <div>
             {" "}
-            <h2 className="text-heading-medium pt-3">People also viewed</h2>
+            <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
           {info.slice(0, showMore).map(u => (
             <li className="" key={u._id}>
@@ -51,10 +51,10 @@ const PeopleViewed = () => {
                 <img className="img-fluid" src={u.image} alt="user" />
                 <div className="mt-3">
                   <p className="mb-0" style={{ fontSize: "14px" }}>
-                    {u.name} <n />
+                    {u.name} &nbsp;
                     {u.surname}
                   </p>
-                  <p className="text-secondary mb-0">{u.title}</p>
+                  <p className="text-secondary mb-0">{u.title.slice(0, 35)}</p>
                 </div>
               </a>
               <div className="">
