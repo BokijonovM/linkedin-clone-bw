@@ -33,7 +33,7 @@ function App() {
     <BrowserRouter>
       <div className="App"></div>
       <Routes>
-        <Route path="/" element={<MyMainFeed />} />
+        <Route path="/" element={profile && <MyMainFeed  profile={profile}/>} />
         <Route path="/profile" element={profile && <Profile  profile={profile}/>} />
         <Route path="/OtherUser/:userId" element={<OtherUser />} />
         <Route path="*" element={<PageError />} />

@@ -5,16 +5,19 @@ import DropMore from "../ProfileCardComponents/DropMore";
 import DropOpenTo from "../ProfileCardComponents/DropOpenTo";
 import "../style/header.css";
 
-function ExtraHeader({userPic, userOnNav}) {
+function ExtraHeader({profile}) {
   
   const [ dropdown, setDropdown] = useState('')
-  const [ pic, setPic] = useState()
-  const [ info, setInfo] = useState({})  
+  const [ info,setInfo]= useState()
+  const [ pic,setPic]= useState()
 
   useEffect(()=>{
-    setInfo ( userOnNav )
-    setPic ( userPic )
-  },[ userOnNav ] ) 
+    if(profile){
+      setInfo ( profile )
+      setPic ( profile.image )
+      console.log('from extra header',profile)
+    }
+  },[ profile ] ) 
 
 
   const showDropdown = (input) => {
@@ -32,7 +35,7 @@ function ExtraHeader({userPic, userOnNav}) {
         <Navbar.Brand href="#home">
           <img
             className="extra-nav-image"
-            src={userPic}
+            src={profile.image}
             alt=""
           />
         </Navbar.Brand>
@@ -40,17 +43,16 @@ function ExtraHeader({userPic, userOnNav}) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div>
-              {info && (<>
                 <p
                 className="mb-n1"
                 style={{ fontSize: "14px", fontWeight: "600" }}
-                >
-                 {info.name} {info.surname}
+                > 
+                {profile.name} {profile.surname}
               </p>
               <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
-                {info.title}
+                {profile.title}
               </p>
-                  </>)}                 
+                                
             </div>
           </Nav>
           <div className='pRelative'>
