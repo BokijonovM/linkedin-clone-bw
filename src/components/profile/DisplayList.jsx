@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import { GoThreeBars } from "react-icons/go";
 import { GrFormEdit } from "react-icons/gr";
 import { format, parseISO } from "date-fns";
-import EditExperience from "./ProfileCardComponents/EditExperience";
+import AddExperience from "./ProfileCardComponents/AddExperience";
 
 const DisplayList = ({list, userId}) => {
   
-  const[showEditExperience, setShowEditExperience]= useState(false)
+  const[showAddExperience, setShowAddExperience]= useState(false)
   
 
  
@@ -30,7 +30,7 @@ const DisplayList = ({list, userId}) => {
           <hr />
         </div>
         <div>
-          <span className="h3 text-primary dRelative" onClick={(e)=>setShowEditExperience(true)}>
+          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)}>
             <GrFormEdit />
           </span>
 
@@ -38,10 +38,21 @@ const DisplayList = ({list, userId}) => {
           <span>
             <GoThreeBars />
           </span>
-          <div style={{display:showEditExperience? 'block':'none'}}>{
-            userId &&  <EditExperience userId={userId}  />
-            }
+
+          <div style={{ marginTop: "60px" }}>
+          <div
+              className="pAbsolute w-100 modal-box"
+              style={{
+                display: showAddExperience? "block" : "none",
+              }}
+              fluid
+            >
+              {userId && (
+                <AddExperience  userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
+              )}
           </div>
+          </div>
+
         </div>
       </div>
     );

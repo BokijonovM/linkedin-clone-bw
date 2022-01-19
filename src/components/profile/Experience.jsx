@@ -57,7 +57,7 @@ const Experience = ({ userId }) => {
               fluid
             >
               {userId && (
-                <AddExperience  userId={userId} setShowAddExperience={setShowAddExperience} info={info}/>
+                <AddExperience  userId={userId} setShowAddExperience={setShowAddExperience}/>
               )}
           </div>
           </div>

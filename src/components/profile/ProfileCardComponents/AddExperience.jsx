@@ -3,7 +3,7 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-export default function AddExperience ({setShowAddExperience, info, userId }) {
+export default function AddExperience ({setShowAddExperience, list, userId }) {
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -11,16 +11,27 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
 
+  const[ method,setMethod]=useState("POST")
+  const[url,setUrl]=useState(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`)
+  const[showDeleteBtn,SetShowDeleteBtn] = useState(false)
+  const[heading,setHeading] = useState('Add Experience')
   useEffect(() => {
-    setRole(info.role);
-    setCompany(info.company);
-    setStartDate(info.startDate);
-    setEndDate(info.endDate);
-    setDescription(info.description);
-    setArea(info.area);
-    console.log(info, userId,'from the add experience page')
-
+   if(list){
+    setRole(list.role);
+    setCompany(list.company);
+    setStartDate(list.startDate);
+    setEndDate(list.endDate);
+    setDescription(list.description);
+    setArea(list.area);
+    console.log(list, userId,'from the add experience page')
+    setMethod("PUT")
+    setUrl(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`)
+    setHeading('Edit Experience')
+    SetShowDeleteBtn(true)
+   }
   }, []);
+
+
 
   const handleSubmit = async (e) => {
     // e.preventDefault()
@@ -34,10 +45,9 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
     };
     console.log(experience);
     try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
+      let response = await fetch(url,
         {
-          method: "POST",
+          method,
           body: JSON.stringify(experience),
           headers: {
             "Content-Type": "application/JSON",
@@ -57,10 +67,36 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
     }
   };
 
+const handleDelete = async() => {
+  try {
+    let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`,
+      {
+        method:'DELETE',
+        headers: {
+          "Content-Type": "application/JSON",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8",
+        },
+      }
+    );
+    if (response.ok) {
+      let data = await response.json();
+      console.log('display after delete experience',data);
+    } else {
+      console.log("error");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
+
   return (
     <Modal.Dialog>
       <Modal.Header closeButton onClick={(e)=>setShowAddExperience(false)}>
-        <Modal.Title>Edit Intro</Modal.Title>
+        <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
 
       <Modal.Body className="d-flex flex-column text-left">
@@ -117,6 +153,9 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
       <Modal.Footer>
         <Button variant="secondary" onClick={(e)=>setShowAddExperience(false)}>
           Close
+        </Button>
+        <Button variant="danger" onClick={(e) => handleDelete(e)} style={{display:showDeleteBtn? 'block':'none'}}>
+         Delete Experience
         </Button>
         <Button variant="primary" onClick={(e) => handleSubmit(e)}>
           Save changes
