@@ -73,3 +73,28 @@ button {
   border-color: black;
   background-color: #f3f2ee;
 }
+
+.left-profile {
+  background-color: rgb(195, 193, 193);
+  border: 1px solid white;
+  border-radius: 9px;
+  margin-top: 2rem;
+  position: absolute;
+  display: flex;
+}
+
+.user-bg-image {
+  background-color: #cccccc;
+  /* background-image: url("https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=png"); */
+  width: 100%;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.user-image {
+  position: relative;
+  left: 35%;
+  bottom: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+}
