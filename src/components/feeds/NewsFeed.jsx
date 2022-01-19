@@ -3,9 +3,11 @@ import { Row, Col, Form, FormControl } from "react-bootstrap";
 import "./style.css";
 import { useState, useEffect } from "react";
 import SingleNews from "./SingleNews";
+import Loader from "./Loader";
 
 function NewsFeed() {
   const [posts, setPosts] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +25,7 @@ function NewsFeed() {
           let dataRes = await response.json();
           console.log("data if", dataRes);
           setPosts(dataRes);
+          setIsLoading(false);
         } else {
           console.log("Error");
         }
@@ -35,7 +38,7 @@ function NewsFeed() {
 
   return (
     <div>
-      <Col>
+      <Col className="d-flex flex-column align-items-center">
         <Row className="mt-2 start-post-div px-4 pt-4 pb-2 flex-column">
           <div className="d-flex justify-content-between ">
             <img
@@ -73,15 +76,24 @@ function NewsFeed() {
         </Row>
 
         <hr
-          className="w-100"
           style={{
+            width: "500px",
             color: "#000000",
             backgroundColor: "#000000",
             height: 0.5,
             borderColor: "#000000",
           }}
         />
-        <SingleNews />
+        <Row className="px-3 pb-2 flex-column mb-5">
+          {isLoading ? (
+            <Loader />
+          ) : (
+            posts.map((post, i) => {
+              return <SingleNews key={i} posts={post} />;
+            })
+          )}
+        </Row>
+        {/* <SingleNews /> */}
       </Col>
     </div>
   );

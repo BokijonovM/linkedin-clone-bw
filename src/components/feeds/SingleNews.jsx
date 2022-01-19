@@ -2,10 +2,13 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import "./style.css";
 
-function SingleNews() {
+function SingleNews({ posts }) {
   return (
     <div>
-      <Row className="mt-2 start-post-div px-4 pt-4 pb-2 flex-column mb-5">
+      <Row
+        className=" start-post-div px-4 pt-4 pb-2 flex-column mb-2"
+        style={{ width: "550px" }}
+      >
         <div>
           <div className="d-flex flex-column">
             <div className="d-flex  flex-column">
@@ -20,10 +23,11 @@ function SingleNews() {
                     className="mb-n1 mt-n2"
                     style={{ fontSize: "14px", fontWeight: "600" }}
                   >
-                    Name Surname <i className="bi bi-dot"></i> 1st
+                    {posts.user.name} {posts.user.surname}{" "}
+                    <i className="bi bi-dot"></i> 1st
                   </p>
                   <p className="mb-n1" style={{ fontSize: "12px" }}>
-                    Title
+                    {posts.user.title}
                   </p>
                   <p className="mb-n1" style={{ fontSize: "10px" }}>
                     Date and time <i className="bi bi-dot"></i> 19h{" "}
@@ -32,18 +36,14 @@ function SingleNews() {
                 </div>
               </div>
               <div>
-                <p>
-                  This week sees the start of employees from 30 large companies
-                  trialing a “4 day work week” for 6 months to see if
-                  productivity goes up or down.
-                </p>
+                <p className="w-100">{posts.text}</p>
               </div>
               <div>
-                <img
+                {/* <img
                   className="w-100 mb-3"
                   src="https://images.unsplash.com/photo-1496262967815-132206202600?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2123&q=80"
                   alt=""
-                />
+                /> */}
                 <i
                   class="bi bi-hand-thumbs-up-fill"
                   style={{ color: "#c7e1fa" }}
