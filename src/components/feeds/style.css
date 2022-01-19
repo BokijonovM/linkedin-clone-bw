@@ -1,0 +1,92 @@
+.icons-hover-needed > div > i {
+  color: #666666;
+}
+.icons-hover-needed > div > i:hover {
+  color: #111111;
+}
+.icons-hover-needed > div:hover {
+  cursor: pointer;
+}
+.row-2-col {
+  font-size: 12px;
+}
+.row-2-col > p > a {
+  color: #767675;
+  font-weight: 600;
+}
+.row-2-col > p {
+  margin-bottom: 5px;
+}
+.extra-nav-image {
+  height: 35px;
+  border-radius: 50%;
+}
+.nav-profile-image {
+  height: 30px;
+  border-radius: 50%;
+}
+.navbar-profile {
+  border-bottom: 0.5px solid grey;
+}
+.extra-navbar {
+  border-bottom: 0.5px solid grey;
+}
+.extra-nav-button {
+  border-radius: 99px;
+}
+.badge-required {
+  position: relative;
+}
+.badge-required > .badge {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  border-radius: 50%;
+}
+
+.badge-required-1 {
+  position: relative;
+}
+.badge-required-1 > .badge {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .form-main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .icons-hover-needed > div > p {
+    display: none;
+  }
+  .badge-required-1 > .badge {
+    right: -12px;
+  }
+}
+@media (max-width: 650px) {
+  .flex-column-needed {
+    flex-direction: column;
+  }
+}
+@media (max-width: 550px) {
+  .none-550-needed {
+    display: none !important;
+  }
+  .nav-work-div {
+    display: none !important;
+  }
+}
+@media (max-width: 410px) {
+  .d-none-needed-jobs,
+  .d-none-needed-network {
+    display: none !important;
+  }
+}
+.dropdown-menu {
+  left: -200px;
+  position: absolute !important;
+}
