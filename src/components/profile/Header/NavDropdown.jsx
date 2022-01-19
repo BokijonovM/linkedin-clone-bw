@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FormControl, Dropdown, Button } from "react-bootstrap";
 
-function NavDropdown({userOnNav,userPic}) {
+function NavDropdown({ userOnNav, userPic }) {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
       style={{ color: "black" }}
@@ -25,7 +25,6 @@ function NavDropdown({userOnNav,userPic}) {
       const [value, setValue] = useState("");
 
       return (
-        
         <div
           ref={ref}
           style={style}
@@ -39,10 +38,15 @@ function NavDropdown({userOnNav,userPic}) {
             onChange={e => setValue(e.target.value)}
             value={value}
           /> */}
-           {userOnNav && ( <div className='p-3'>
-              <p className='h5'> {userOnNav.name} {userOnNav.surname}</p>
+          {userOnNav && (
+            <div className="p-3">
+              <p className="h5">
+                {" "}
+                {userOnNav.name} {userOnNav.surname}
+              </p>
               <p>{userOnNav.bio}</p>
-            </div>)}
+            </div>
+          )}
           <div className="mx-3 d-flex justify-content-center">
             <Button
               className="mx-n5 w-100 py-0"

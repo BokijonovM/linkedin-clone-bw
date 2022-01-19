@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Dropdown, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavDropdown({ userOnNav, userPic }) {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -48,7 +49,7 @@ function NavDropdown({ userOnNav, userPic }) {
             </div>
           )}
           <div className="mx-3 d-flex justify-content-center">
-            <Button
+            {/* <Button
               className="mx-n5 w-100 py-0"
               variant="outline-primary"
               style={{
@@ -56,6 +57,18 @@ function NavDropdown({ userOnNav, userPic }) {
               }}
             >
               View Profile
+            </Button> */}
+
+            <Button
+              className="mx-n5 w-100 py-0 d-flex"
+              variant="outline-primary"
+              style={{
+                borderRadius: "99px",
+              }}
+            >
+              <a href="/profile" className="view-profile-a">
+                View Profile
+              </a>
             </Button>
           </div>
           <hr />

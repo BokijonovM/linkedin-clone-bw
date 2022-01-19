@@ -90,3 +90,9 @@
   left: -200px;
   position: absolute !important;
 }
+.view-profile-a:hover {
+  color: #fff !important;
+}
+.view-profile-a {
+  color: #111111 !important;
+}
