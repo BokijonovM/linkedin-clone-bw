@@ -6,11 +6,11 @@ import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
 
-function Header({userOnNav,userPic}) {
+function Header({ userOnNav, userPic }) {
   const [navbar, setNavbar] = useState(false);
-  
+
   const extraHeader = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 380) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -20,14 +20,14 @@ function Header({userOnNav,userPic}) {
   window.addEventListener("scroll", extraHeader);
   return (
     <div style={{ width: "100%" }}>
-      <Navbar className="px-5 py-0 navbar-profile" bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+      <Navbar className="px-5 py-0 navbar-profile " bg="light" expand="lg">
+        <Navbar.Brand href="#home ">
           <i
             style={{
               fontSize: "35px",
               color: "#0a66c2",
             }}
-            className="bi bi-linkedin"
+            class="bi bi-linkedin pl-5"
           ></i>
         </Navbar.Brand>
         <Form inline className="form-main-nav">
@@ -52,7 +52,10 @@ function Header({userOnNav,userPic}) {
             </p>
           </div>
           <div className="d-flex flex-column align-items-center pr-4 badge-required d-none-needed-jobs">
-            <i style={{ fontSize: "22px" }} className="bi bi-briefcase-fill"></i>
+            <i
+              style={{ fontSize: "22px" }}
+              className="bi bi-briefcase-fill"
+            ></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Jobs
             </p>
@@ -67,7 +70,10 @@ function Header({userOnNav,userPic}) {
             </Badge>
           </div>
           <div className="d-flex flex-column align-items-center mr-4">
-            <i style={{ fontSize: "22px" }} className="bi bi-chat-dots-fill"></i>
+            <i
+              style={{ fontSize: "22px" }}
+              className="bi bi-chat-dots-fill"
+            ></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               Messaging
             </p>
@@ -89,13 +95,9 @@ function Header({userOnNav,userPic}) {
           </div>
           <div className="d-flex flex-column align-items-center ">
             {/* <i style={{ fontSize: "22px" }} className="bi bi-person-circle"></i> */}
-            <img
-              className="nav-profile-image"
-              src={userPic}
-              alt=""
-            />
+            <img className="nav-profile-image" src={userPic} alt="" />
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n1">
-              <NavDropdown userOnNav={userOnNav} userPic={userPic}/>
+              <NavDropdown userOnNav={userOnNav} userPic={userPic} />
               {/* <i class="bi bi-caret-down-fill"></i> */}
             </p>
           </div>
@@ -103,26 +105,26 @@ function Header({userOnNav,userPic}) {
             className="none-550-needed mx-5"
             style={{ borderRight: "1px solid black" }}
           ></div>
-          <div className="d-flex flex-column align-items-center mr-3">
+          <div className="d-flex flex-column align-items-center mr-3 nav-work-div">
             <i style={{ fontSize: "22px" }} class="bi bi-grid-3x3-gap-fill"></i>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               <NavWork />
             </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <div className="d-flex flex-column align-items-center pr-5">
             <p
               style={{ fontSize: "12px", color: "#915907" }}
               className="mb-0 mb-n1 mt-1"
             >
               Reactive
             </p>
-            <p style={{ fontSize: "12px", color: "#915907" }} className="mb-0">
+            <p style={{ fontSize: "12px", color: "#915907" }} className="mb-0 ">
               Premium
             </p>
           </div>
         </Nav>
       </Navbar>
-      {navbar ? <ExtraHeader userPic={userPic} userOnNav={userOnNav}/> : <p></p>}
+      {navbar ? <ExtraHeader /> : <p style={{ width: "0px" }}></p>}
     </div>
   );
 }
