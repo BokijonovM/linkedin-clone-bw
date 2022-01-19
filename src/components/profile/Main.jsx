@@ -7,7 +7,7 @@ import Experience from "./Experience";
 function Main({profile}) {
 
   const[userId, setUserId] = useState()
-  
+
   useEffect(()=>{
     setUserId(profile._id)
   },[])
@@ -16,7 +16,7 @@ function Main({profile}) {
     <div >    
       {profile && <ProfileCard profile={profile} />}
       <DashboardCard/>
-      <AboutCard/>
+      {profile && <AboutCard/>}
       <FeaturedCard/>
      {userId && <Experience userId={userId}/>}
     </div>

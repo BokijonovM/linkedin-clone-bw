@@ -7,6 +7,7 @@ import { Col } from "react-bootstrap";
 import MyMainFeed from "./components/feeds/MyMainFeed";
 import OtherUser from "./OtherUser";
 import PageError from "./PageError";
+import MyLayout from "./MyLayout";
 
 function App() {
   const[profile,setProfile]=useState()
@@ -31,11 +32,13 @@ function App() {
   
   return (
     <BrowserRouter>
-      <div className="App"></div>
+      <div className="App" style={{backgroundColor:'rgb(243,242,238)'}}></div>
       <Routes>
         <Route path="/" element={profile && <MyMainFeed  profile={profile}/>} />
         <Route path="/profile" element={profile && <Profile  profile={profile}/>} />
-        <Route path="/OtherUser/:userId" element={<OtherUser />} />
+        <Route path="/OtherUser" element={<MyLayout profile={profile}>
+                                          <OtherUser/>
+                                        </MyLayout>} />
         <Route path="*" element={<PageError />} />
       </Routes>
     </BrowserRouter>

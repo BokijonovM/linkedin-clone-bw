@@ -1,5 +1,6 @@
 import {GrFormEdit} from 'react-icons/gr'
 import React, { Component } from 'react';
+import Profile from '../../Profile';
  
 class AboutCard extends React.Component {
     render() { 
@@ -10,7 +11,7 @@ class AboutCard extends React.Component {
 
                     </div>
                     <div className='mt-3'>
-                        <span>I believe focusing on the origin of any problem is the key to solution.</span>
+                        <span>{Profile.bio}</span>
                     </div>
                 </div>
     }
