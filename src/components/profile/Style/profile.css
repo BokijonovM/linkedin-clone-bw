@@ -133,7 +133,9 @@
   left: 70px;
   width: 300px;
 }
-
+.overflow-y-hided-needed::-webkit-scrollbar {
+  display: none;
+}
 #drop-more {
   left: 120px;
 }
