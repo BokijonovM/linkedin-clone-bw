@@ -5,7 +5,7 @@ import NewsFeed from "./NewsFeed";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
 
-function MyMainFeed() {
+function MyMainFeed({ userPic, userOnNav }) {
   return (
     <div>
       <MyNavbar />

@@ -45,7 +45,7 @@ const PeopleKnow = () => {
             {" "}
             <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
-          {info.slice(3, showMore).map(u => (
+          {info.slice(3, showMore).map((u) => (
             <li className="" key={u._id}>
               <a className="text-dark font-weight-bolder d-flex" href="/">
                 <img className="img-fluid" src={u.image} alt="user" />
@@ -68,7 +68,7 @@ const PeopleKnow = () => {
             <div
               className="pointer"
               id="btn"
-              onClick={e => setShowMore(showMore + 5)}
+              onClick={(e) => setShowMore(showMore)}
             >
               Show more
             </div>
