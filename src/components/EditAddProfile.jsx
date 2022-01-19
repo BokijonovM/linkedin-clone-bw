@@ -9,14 +9,14 @@ export default class EditAddProfile extends Component {
         <Row className="ml-0 mr-0">
           <Col id="editComp">
             <div className="editDiv">
-              <div className="d-flex pt-2">
+              <div className="d-flex align-items-center pt-2 mb-n1">
                 <a className="text-dark font-weight-bolder" href="/">
                   Edit public profile & URL
                 </a>
-                <span className="first-span ml-auto px-2">?</span>
+                <p className="first-span ml-auto px-2">?</p>
               </div>
               <hr />
-              <div className="d-flex pb-2 align-items-center">
+              <div className="d-flex pb-2 align-items-center mt-n2">
                 <a href="/" className="text-dark font-weight-bolder">
                   Add profile in another language
                 </a>
