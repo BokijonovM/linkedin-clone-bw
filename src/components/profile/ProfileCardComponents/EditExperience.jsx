@@ -3,13 +3,16 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-export default function AddExperience ({setShowAddExperience, info, userId }) {
+export default function EditExperience ({setShowAddExperience, info, userId }) {
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
+
+  const[expId,setExpId] = useState()
+
 
   useEffect(() => {
     setRole(info.role);
@@ -18,6 +21,7 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
     setEndDate(info.endDate);
     setDescription(info.description);
     setArea(info.area);
+    setExpId(info._id)
     console.log(info, userId,'from the add experience page')
 
   }, []);
@@ -35,9 +39,9 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
     console.log(experience);
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}` ,
         {
-          method: "POST",
+          method: "PUT",
           body: JSON.stringify(experience),
           headers: {
             "Content-Type": "application/JSON",
@@ -48,7 +52,8 @@ export default function AddExperience ({setShowAddExperience, info, userId }) {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log('display after adding experience',data);
+        console.log(data);
+        console.log("data changed");
       } else {
         console.log("error");
       }

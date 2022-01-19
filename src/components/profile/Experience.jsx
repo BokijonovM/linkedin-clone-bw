@@ -63,7 +63,7 @@ const Experience = ({ userId }) => {
           </div>
           
       <div className="experience">
-        {info && info.map((list, i) => <DisplayList key={i} list={list} />)}
+        {info && info.map((list, i) => <DisplayList key={i} list={list} userId={userId}/>)}
       </div>
     </div>
   );
