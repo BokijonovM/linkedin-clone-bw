@@ -14,7 +14,7 @@ function MyMainFeed() {
           <Col md={2}>
             <LeftSide />
           </Col>
-          <Col md={7}>
+          <Col className="px-4" md={7}>
             <NewsFeed />
           </Col>
           <Col md={3}>

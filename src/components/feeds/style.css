@@ -25,6 +25,10 @@
   height: 30px;
   border-radius: 50%;
 }
+.nav-profile-image-1 {
+  height: 50px;
+  border-radius: 50%;
+}
 .navbar-profile {
   border-bottom: 0.5px solid grey;
 }
@@ -95,4 +99,45 @@
 }
 .view-profile-a {
   color: #111111 !important;
+}
+.start-post-div {
+  background-color: white !important;
+  border-radius: 10px;
+}
+.start-post-form {
+  border-radius: 99px;
+}
+.post-post-icons-div > p > i {
+  font-size: 20px;
+  color: #70b5f9;
+}
+.post-post-icons-div > p {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center !important;
+}
+.post-post-icons-div > p:hover {
+  background-color: #f3f2ef;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.bi-hand-thumbs-up-fill {
+  background-color: #75b1ef;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 3px;
+  padding-top: 1px;
+  border-radius: 50%;
+}
+.like-comment-share-save > p {
+  padding: 10px;
+  border-radius: 10px;
+}
+.like-comment-share-save > p:hover {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f3f2ef;
+  cursor: pointer;
 }
