@@ -75,16 +75,16 @@ button {
 }
 
 .left-profile {
-  background-color: rgb(195, 193, 193);
-  border: 1px solid white;
+  background-color: white;
+  border: 1px solid rgb(233, 38, 38);
   border-radius: 9px;
   margin-top: 2rem;
   position: absolute;
-  display: flex;
+  /* display: flex; */
 }
 
 .user-bg-image {
-  background-color: #cccccc;
+  background-color: #ffffff;
   /* background-image: url("https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=png"); */
   width: 100%;
   border-top-left-radius: 9px;
@@ -93,8 +93,56 @@ button {
 
 .user-image {
   position: relative;
-  left: 35%;
-  bottom: 2.5rem;
-  flex-direction: column;
-  justify-content: center;
+  left: 32%;
+  bottom: 3rem;
+  width: 25%;
+  border: 3px solid white;
+}
+.user-img-wrapper {
+  margin-bottom: -3rem;
+}
+.user-names {
+  margin-top: 0%;
+  text-align: center;
+}
+
+.user-title {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 1rem;
+  font-size: small;
+  border-bottom: 1px solid gainsboro;
+}
+
+li > .text-muted,
+.text-primary {
+  font-size: small;
+}
+.a-link:hover {
+  background-color: rgb(161, 43, 43) !important;
+}
+.second-part-user {
+  border-bottom: 1px solid gainsboro;
+}
+
+#third-part-user:hover {
+  background-color: gainsboro;
+}
+
+#third-part-user {
+  /* padding-left: 20px; */
+
+  text-decoration: none;
+}
+
+h3 {
+  font-size: smaller;
+  color: gray;
+}
+
+.get-hired {
+  font-weight: 700;
+  color: black;
+  font-size: small;
+  text-align: center;
 }
