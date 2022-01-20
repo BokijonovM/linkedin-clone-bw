@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={profile && <MyMainFeed  profile={profile}/>} />
         <Route path="/profile" element={profile && <Profile  profile={profile}/>} />
-        <Route path="/OtherUser" element={<MyLayout profile={profile}>
+        <Route path="/OtherUser/:userId" element={<MyLayout profile={profile}>
                                           <OtherUser/>
                                         </MyLayout>} />
         <Route path="*" element={<PageError />} />
