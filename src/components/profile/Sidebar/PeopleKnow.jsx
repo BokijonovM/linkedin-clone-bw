@@ -47,7 +47,7 @@ const PeopleKnow = () => {
             <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
           {info.slice(3, showMore).map(u => (
-            // <Link to={'/OtherUser/' + u._id}/>
+            <Link to={'/OtherUser/' + u._id}>
             <div className="" key={u._id}>
               <div className="text-dark font-weight-bolder d-flex">
                 <img className="img-fluid" src={u.image} alt="user" />
@@ -65,7 +65,7 @@ const PeopleKnow = () => {
                 </button>
               </div>
             </div>
-            // </Link>
+            </Link>
           ))}
           <div className="button-show">
             <div

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
 import "../style/SideBar.css";
@@ -47,6 +48,7 @@ const PeopleViewed = () => {
             <h2 className="text-heading-medium pt-3">People also viewed</h2>
           </div>
           {info.slice(0, showMore).map(u => (
+            <Link to={'/OtherUser/' + u._id}>
             <div className="" key={u._id}>
               <a className="text-dark font-weight-bolder d-flex" href="/">
                 <img className="img-fluid" src={u.image} alt="user" />
@@ -64,6 +66,7 @@ const PeopleViewed = () => {
                 </button>
               </div>
             </div>
+            </Link>
           ))}
           <div className="button-show">
             <div
