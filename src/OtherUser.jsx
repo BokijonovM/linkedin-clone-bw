@@ -29,7 +29,8 @@ const fetchProfile = async(id) => {
 }
 
 useEffect(()=>{  
-  let isCancelled = false; 
+  
+  let isCancelled = true; 
   if(params.userId){
     let userId = params.userId
     setId(userId)
@@ -37,7 +38,7 @@ useEffect(()=>{
   fetchProfile(userId)
 
   return () => {
-    isCancelled = true;
+    isCancelled = false;
   };
   }
 },[params.userId])

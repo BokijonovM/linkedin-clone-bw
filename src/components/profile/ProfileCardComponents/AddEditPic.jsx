@@ -10,19 +10,20 @@ const AddEditPic = ({showAddEditPic,handleCloseAddEditPic}) => {
 
     const handleUpload = async(e) => {
         e.preventDefault();
+
         const formData = new FormData();
-        
+        formData.append(
+            "profile",
+            selectedFile
+          )
+
         console.log(formData)
        
     try {
         let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/61e5270f73d5cb0015395a9d/picture`,{
             method:'POST',
-            body: formData.append(
-                "profile",
-                selectedFile
-              ),
+            body: formData,
             headers:{
-                "Content-Type": "application/JSON",
                 Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8'
             }
         })
