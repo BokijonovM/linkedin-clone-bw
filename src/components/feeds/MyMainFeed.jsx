@@ -4,16 +4,15 @@ import { Row, Col, Container } from "react-bootstrap";
 import NewsFeed from "./NewsFeed";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
+import Footer from "./Footer";
 
-function MyMainFeed({profile}) {
+function MyMainFeed({ profile }) {
   return (
     <div>
       <MyNavbar />
       <Container>
         <Row className="justify-content-center">
-          <Col md={2}>
-            {profile && <LeftSide  profile={profile}/>}
-          </Col>
+          <Col md={2}>{profile && <LeftSide profile={profile} />}</Col>
           <Col className="px-4" md={7}>
             <NewsFeed />
           </Col>
@@ -22,6 +21,7 @@ function MyMainFeed({profile}) {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 }
