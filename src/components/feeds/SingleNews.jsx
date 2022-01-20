@@ -2,8 +2,7 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import "./style.css";
 import { parseISO, format } from "date-fns";
-import Loader from "./Loader";
-import { useState, useEffect } from "react";
+import PostDropDown from "./PostDropDown";
 
 function SingleNews({ posts }) {
   // const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +27,7 @@ function SingleNews({ posts }) {
               <div className="d-flex align-items-center mb-3">
                 <img
                   className="nav-profile-image-1"
-                  src="https://th.bing.com/th/id/R.2d083db2480f8bc1be770e83ced8e705?rik=D17WYQgsM%2fx8Kw&pid=ImgRaw&r=0"
+                  src={posts.user.image}
                   alt=""
                 ></img>
                 <div className="ml-3">
@@ -36,16 +35,19 @@ function SingleNews({ posts }) {
                     className="mb-n1 mt-n2"
                     style={{ fontSize: "14px", fontWeight: "600" }}
                   >
-                    {posts.username}
+                    {posts.user.name} {posts.user.surname}
                     <i className="bi bi-dot"></i> 1st
                   </p>
                   <p className="mb-n1" style={{ fontSize: "12px" }}>
-                    title
+                    {posts.user.title}
                   </p>
                   <p className="mb-n1" style={{ fontSize: "10px" }}>
                     {format(parseISO(posts.updatedAt), "MMMM do yyyy | HH:mm")}
                     <i className="bi bi-dot"></i> <i class="bi bi-globe2"></i>
                   </p>
+                </div>
+                <div className="ml-auto">
+                  <PostDropDown />
                 </div>
               </div>
               <div>
