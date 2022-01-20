@@ -30,6 +30,7 @@ function SingleNews({ posts }) {
                   </p>
                   <p className="mb-n1" style={{ fontSize: "12px" }}>
                     {/* {posts.user.title} */}
+                    title
                   </p>
                   <p className="mb-n1" style={{ fontSize: "10px" }}>
                     {format(parseISO(posts.updatedAt), "MMMM do yyyy | HH:mm")}
@@ -40,6 +41,7 @@ function SingleNews({ posts }) {
               </div>
               <div>
                 <p className="w-100">{posts.text}</p>
+                {/* <p className="w-100">{posts.user.area}</p> */}
               </div>
               <div>
                 {/* <img

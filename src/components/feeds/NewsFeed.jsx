@@ -160,6 +160,7 @@ function NewsFeed({ setPostsAdded, data }) {
                 <Form.Control
                   className="w-100 shadow-none border-0"
                   as="textarea"
+                  onChange={e => setPost(e.target.value)}
                   rows={4}
                 />
               </Form.Group>
