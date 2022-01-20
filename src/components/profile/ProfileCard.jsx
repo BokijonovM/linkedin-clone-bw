@@ -7,7 +7,7 @@ import DropMore from "./ProfileCardComponents/DropMore";
 import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
 
-const ProfileCard = ({ profile, userPic }) => {
+const ProfileCard = ({ profile }) => {
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
 
@@ -48,7 +48,7 @@ _id: "61e5270f73d5cb0015395a9d"
         <GrFormEdit />
       </span>
       <Card.Body>
-        <img className="profile-pic" src={userPic} alt="linkedin user" />
+        <img className="profile-pic" src={profile.image} alt="linkedin user" />
         <span
           className="round-hover  h3 text-primary pAbsolute"
           style={{ right: "20px" }}
@@ -59,18 +59,9 @@ _id: "61e5270f73d5cb0015395a9d"
 
         <div style={{ marginTop: "60px" }}>
           <div
-            className="pAbsolute w-100"
+            className="pAbsolute w-100 modal-box"
             style={{
               display: showEditPage ? "block" : "none",
-              zIndex: "10",
-              position: "fixed",
-              left: "0",
-              top: "0px",
-              height: "100vh",
-              paddingTop: "50px",
-              // background: "rgb(0,0,0,0.3)",
-              background: "rgba(255,255,255,0.2)",
-              backdropFilter: "blur(5px)",
             }}
             fluid
           >

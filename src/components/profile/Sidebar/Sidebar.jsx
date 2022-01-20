@@ -1,8 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import EditAddProfile from "../EditAddProfile";
+import EditAddProfile from "./EditAddProfile";
 import PeopleViewed from "./PeopleViewed";
-
 import PeopleKnow from "./PeopleKnow";
 
 function Sidebar() {

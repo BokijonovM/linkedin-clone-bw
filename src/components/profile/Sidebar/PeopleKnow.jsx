@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
-import "./style/SideBar.css";
+import {Link} from 'react-router-dom'
+import "../style/SideBar.css";
 
-const PeopleViewed = () => {
+const PeopleKnow = () => {
   const [showMore, setShowMore] = useState(5);
   const [info, setInfo] = useState([]);
 
@@ -41,29 +41,31 @@ const PeopleViewed = () => {
       {/* <Row className="ml-0 mr-0">
         <Col className="pl-0 pr-0"> */}
       <section className="peopleView mt-4">
-        <ul className="pl-0 mb-0 w-100">
+        <div className="pl-0 mb-0 w-100">
           <div>
             {" "}
-            <h2 className="text-heading-medium pt-3">People also viewed</h2>
+            <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
-          {info.slice(0, showMore).map(u => (
-            <li className="" key={u._id}>
-              <a className="text-dark font-weight-bolder d-flex" href="/">
+          {info.slice(3, showMore).map(u => (
+            <Link to={'/OtherUser/' + u._id}>
+            <div className="" key={u._id}>
+              <div className="text-dark font-weight-bolder d-flex">
                 <img className="img-fluid" src={u.image} alt="user" />
                 <div className="mt-3">
                   <p className="mb-0" style={{ fontSize: "14px" }}>
-                    {u.name} <n />
+                    {u.name} &nbsp;
                     {u.surname}
                   </p>
-                  <p className="text-secondary mb-0">{u.title}</p>
+                  <p className="text-secondary mb-0">{u.title.slice(0, 35)}</p>
                 </div>
-              </a>
+              </div>
               <div className="">
                 <button className="btn btn-connect py-0 shadow-none px-4 mt-n3">
                   Connect
                 </button>
               </div>
-            </li>
+            </div>
+            </Link>
           ))}
           <div className="button-show">
             <div
@@ -75,7 +77,7 @@ const PeopleViewed = () => {
             </div>
             <IoIosArrowDown className="text-secondary" />
           </div>
-        </ul>
+        </div>
       </section>
       {/* </Col>
       </Row> */}
@@ -83,4 +85,4 @@ const PeopleViewed = () => {
   );
 };
 
-export default PeopleViewed;
+export default PeopleKnow;

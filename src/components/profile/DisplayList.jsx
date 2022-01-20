@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { GoThreeBars } from "react-icons/go";
 import { GrFormEdit } from "react-icons/gr";
 import { format, parseISO } from "date-fns";
+import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 
-class DisplayList extends React.Component {
-  render() {
+const DisplayList = ({list, userId}) => {
+  
+  const[showAddExperience, setShowAddExperience]= useState(false)
+  
+
+ 
     return (
       <div className="d-flex justify-content-between  ">
         <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
@@ -12,26 +17,21 @@ class DisplayList extends React.Component {
             src="https://image.shutterstock.com/image-vector/color-square-composition-text-geometric-600w-1337231156.jpg"
             className="w-100 mt-2"
           />
-          {/* <img src={this.props.list.image} alt="" className="w-100" /> */}
+          {/* <img src={list.image} alt="" className="w-100" /> */}
         </div>
         <div className="w-100 ml-3">
-          <p className="h5 bold p-0 m-0">{this.props.list.role}</p>
-          <p className="p-0 m-0">{this.props.list.company}</p>
-          {/* <p className="p-0 m-0 font14">{this.props.list.description}</p> */}
+          <p className="h5 bold p-0 m-0">{list.role}</p>
+          <p className="p-0 m-0">{list.company}</p>
+          {/* <p className="p-0 m-0 font14">{list.description}</p> */}
           <p className="p-0 m-0 font14">
-            {this.props.list.startDate}-{this.props.list.endDate}
+            {format(new Date(list.startDate), 'MMMM do yyyy')} -
+            {format(new Date(list.endDate), 'MMMM do yyyy')}
           </p>
-          <span>{this.props.list.area}</span>
+          <span>{list.area}</span>
           <hr />
-          {/* "": "CTO",
-    "company": "Strive School",
-    "startDate": "2019-06-16",
-    "endDate": "2019-06-16", 									// could be null
-    "description": "Doing stuff",
-    "area": "Berlin", */}
         </div>
         <div>
-          <span className="h3 text-primary dRelative">
+          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)}>
             <GrFormEdit />
           </span>
 
@@ -39,10 +39,25 @@ class DisplayList extends React.Component {
           <span>
             <GoThreeBars />
           </span>
+
+          <div style={{ marginTop: "60px" }}>
+          <div
+              className="pAbsolute w-100 modal-box"
+              style={{
+                display: showAddExperience? "block" : "none",
+              }}
+              fluid
+            >
+              {userId && (
+                <AddEditExperience  userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
+              )}
+          </div>
+          </div>
+
         </div>
       </div>
     );
-  }
+  
 }
 
 export default DisplayList;

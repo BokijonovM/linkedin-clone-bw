@@ -1,9 +1,9 @@
 import React from "react";
 import Main from "./Main";
-import Sidebar from "./Sidebar";
+import Sidebar from "../profile/Sidebar/Sidebar";
 import { Row, Col, Container } from "react-bootstrap";
 import "./style/profile.css";
-function MyMain({ setUserOnNav, setUserPic, userPic }) {
+function MyMain({ profile, setProfile }) {
   return (
     <div
       className="myMain-first-div"
@@ -19,9 +19,8 @@ function MyMain({ setUserOnNav, setUserPic, userPic }) {
       >
         <Col sm={10} lg={7}>
           <Main
-            setUserOnNav={setUserOnNav}
-            setUserPic={setUserPic}
-            userPic={userPic}
+            setProfile={setProfile}
+            profile={profile}
           />
         </Col>
         <Col sm={0} md={3} lg={3}>
