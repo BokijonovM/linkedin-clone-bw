@@ -4,35 +4,43 @@ import Footer from "./components/profile/Header/Footer";
 import Header from './components/profile/Header/Header'
 import Sidebar from "./components/profile/Sidebar/Sidebar";
 import MyMain from "./components/profile/MyMain";
+import { useParams } from "react-router-dom";
 
 
 
 const OtherUser = ({userId}) =>{
 
+const params = useParams()
 const[ profile , setProfile ] = useState ()
 const[ id,setId ] = useState () 
 
-const fetchProfile = async() => {
-  let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/",{
+const fetchProfile = async(id) => {
+  let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/" + id,{
     headers:{
       Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU2ZWQ0Y2MyYzE4ODAwMTVhYjk0YjUiLCJpYXQiOjE2NDI1MjM5ODEsImV4cCI6MTY0MzczMzU4MX0.Co-ZiB-K6ynPob1rwDlJ3Nkq2YC6J9ewG5ExQJ2sT00'
     }
   })
-  let data = await response.json()
-  if(data){
-    setProfile(data[293])
-    let rajib = data.filter((item)=>item.name.toLowerCase().include('rajib'))
-
-    console.log("data from other page",data[11])
-    console.log(data[0]._id)
-  
+  if(response.ok){
+    let data = await response.json()
+    setProfile(data)
+    console.log("id from other page",id)
+    console.log("data from other page",data)
   }
 }
 
-useEffect(()=>{
-    setId('')
-  fetchProfile()
-},[])
+useEffect(()=>{  
+  let isCancelled = false; 
+  if(params.userId){
+    let userId = params.userId
+    setId(userId)
+  console.log(userId)
+  fetchProfile(userId)
+
+  return () => {
+    isCancelled = true;
+  };
+  }
+},[params.userId])
 
 
 

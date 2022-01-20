@@ -12,10 +12,13 @@ function NewsFeed({ setPostsAdded, data }) {
   const [post, setPost] = useState("");
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
-
   const [postValue, setPostValue] = useState("");
-
+  
   const [submitted, setSubmitted] = useState(false);
+  
+  const [endPost,setEndPost] = useState(10)
+  
+
 
   const handlePostValue = e => {
     setPostValue(e.target.value);
@@ -80,6 +83,18 @@ function NewsFeed({ setPostsAdded, data }) {
     }
   };
 
+  const showMore = (number) => {
+    if(posts.length > 10) {
+      setEndPost(endPost + 10)
+    }
+  }
+
+  const showLess = (number) => {
+    if(endPost > 10) {
+      setEndPost(endPost - 10)
+    }
+  }
+
   return (
     <div>
       <Col className="d-flex flex-column align-items-center">
@@ -136,11 +151,15 @@ function NewsFeed({ setPostsAdded, data }) {
           {isLoading ? (
             <Loader />
           ) : (
-            posts.reverse().map(post => {
+            posts.reverse().slice(0,endPost).map(post => {
               return <SingleNews key={post._id} posts={post} />;
             })
           )}
         </Row>
+            <div>
+              <span className='mr-4 mb-4 p-2 round-border grey-border pointer' onClick={(e)=>showMore(+10)}>Show More</span> 
+              <span className='mr-4 mb-4 p-2 round-border grey-border pointer'  onClick={(e)=>showLess(-10)}>Show Less</span>
+            </div>
       </Col>
       <Modal show={addPost} onHide={closeAddPost}>
         <Modal.Dialog className="w-100 border-0 px-3">
