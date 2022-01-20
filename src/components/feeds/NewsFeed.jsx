@@ -88,8 +88,8 @@ function NewsFeed() {
           {isLoading ? (
             <Loader />
           ) : (
-            posts.map((post, i) => {
-              return <SingleNews key={i} posts={post} />;
+            posts.map(post => {
+              return <SingleNews key={post._id} posts={post} />;
             })
           )}
         </Row>
