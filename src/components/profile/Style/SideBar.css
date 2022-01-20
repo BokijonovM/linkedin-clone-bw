@@ -144,5 +144,28 @@ h3 {
   font-weight: 700;
   color: black;
   font-size: small;
-  text-align: center;
+}
+
+.second-main-part {
+  border: 1px solid red;
+  border-radius: 9px;
+}
+
+.ul-li {
+  padding-left: 5px;
+  display: list-item;
+
+  list-style-position: outside;
+}
+.header {
+  font-weight: 700;
+  font-size: small;
+}
+.time {
+  font-size: smaller;
+}
+
+.right-side-main {
+  border: 1px solid red;
+  border-radius: 9px;
 }

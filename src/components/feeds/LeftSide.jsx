@@ -8,7 +8,7 @@ function LeftSide({ profile }) {
   });
   return (
     <>
-      <div className="temporary">
+      <div className="main-wrapper">
         <div className="left-profile">
           <div className="bg-image-wrapper">
             <img
@@ -31,7 +31,7 @@ function LeftSide({ profile }) {
           </a>
           <p className="user-title text-muted">{profile.title}</p>
           <div className="second-part-user mt-1 mb-1">
-            <ul className="p-3">
+            <ul className="p-3 mb-0">
               <a className="text-dark a-link text-decoration-none" href="/#">
                 <li className="d-flex pl-0">
                   <div className="text-muted font-weight-bolder">
@@ -57,17 +57,39 @@ function LeftSide({ profile }) {
           <div className="pl-3 pt-1">
             <a id="third-part-user" href="/#">
               <h3>Access exclusice tools & insights</h3>
-              <span className="get-hired text-decoration-none">
+              <a href="/#" className="get-hired text-decoration-none">
                 Get Hired Faster, Try Premium Free
-              </span>
+              </a>
             </a>
           </div>
-          <div>
+          <div className="border-top">
             <a href="/#">
-              <span className="get-hired">
+              <p className="get-hired text-decoration-none p-3 mb-0">
                 {/* <BsBookmarkFill />  */}My Items
-              </span>
+              </p>
             </a>
+          </div>
+        </div>
+        <div className="second-main-part mt-3">
+          <div>
+            <section>Recent</section>
+            <div></div>
+          </div>
+          <div>
+            <section>Groups</section>
+            <div></div>
+          </div>
+          <div>
+            <section>Events</section>
+            <div>+</div>
+          </div>
+          <div>
+            <section>Followed Hashtags</section>
+            <div></div>
+          </div>
+          <div>
+            <section>Discover more</section>
+            <div></div>
           </div>
         </div>
       </div>
