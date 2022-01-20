@@ -13,6 +13,15 @@ function NewsFeed({ setPostsAdded, data }) {
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
+  const [postValue, setPostValue] = useState("");
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handlePostValue = e => {
+    setPostValue(e.target.value);
+    setSubmitted(false);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       closeAddPost();
@@ -28,7 +37,7 @@ function NewsFeed({ setPostsAdded, data }) {
         );
         if (response.ok) {
           let dataRes = await response.json();
-          console.log("data if", dataRes);
+
           setPosts(dataRes);
           setIsLoading(false);
         } else {
@@ -55,11 +64,14 @@ function NewsFeed({ setPostsAdded, data }) {
           headers: {
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+            "Content-type": "application/json",
           },
         }
       );
       if (res.ok) {
-        const data = await res.json();
+        let data = await res.json();
+        console.log(data);
+        // setPost(data.stringify());
       } else {
         console.error("fetch failed");
       }
@@ -75,7 +87,7 @@ function NewsFeed({ setPostsAdded, data }) {
           <div className="d-flex justify-content-between align-items-center">
             <img
               className="nav-profile-image-1 mr-3"
-              src="https://th.bing.com/th/id/R.2d083db2480f8bc1be770e83ced8e705?rik=D17WYQgsM%2fx8Kw&pid=ImgRaw&r=0"
+              src="https://th.bing.com/th/id/R.8e2c571ff125b3531705198a15d3103c?rik=gzhbzBpXBa%2bxMA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fuser-png-icon-big-image-png-2240.png&ehk=VeWsrun%2fvDy5QDv2Z6Xm8XnIMXyeaz2fhR3AgxlvxAc%3d&risl=&pid=ImgRaw&r=0"
               alt=""
             />
             <div>
@@ -124,7 +136,7 @@ function NewsFeed({ setPostsAdded, data }) {
           {isLoading ? (
             <Loader />
           ) : (
-            posts.map(post => {
+            posts.reverse().map(post => {
               return <SingleNews key={post._id} posts={post} />;
             })
           )}
@@ -160,6 +172,7 @@ function NewsFeed({ setPostsAdded, data }) {
                 <Form.Control
                   className="w-100 shadow-none border-0"
                   as="textarea"
+                  required
                   onChange={e => setPost(e.target.value)}
                   rows={4}
                 />
@@ -182,6 +195,7 @@ function NewsFeed({ setPostsAdded, data }) {
                 <Button
                   onClick={addPostFunction}
                   className="shadow-none modal-post-btn border-0"
+                  disabled={!post}
                 >
                   Post
                 </Button>
