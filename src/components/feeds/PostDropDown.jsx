@@ -59,6 +59,17 @@ function PostDropDown({ userOnNav, userPic }) {
       <Dropdown.Menu style={{ width: "240px" }} as={CustomMenu} alignRight>
         <div className="post-dropdown">
           <div className="d-flex align-items-center justify-content-between px-3 py-2 mx-2">
+            <i class="bi bi-pencil-square"></i>
+            <div>
+              <p
+                className="mb-0"
+                style={{ fontWeight: "600", fontSize: "12px" }}
+              >
+                Edit
+              </p>
+            </div>
+          </div>
+          <div className="d-flex align-items-center justify-content-between px-3 py-2 mx-2">
             <i class="bi bi-download"></i>
             <div>
               <p

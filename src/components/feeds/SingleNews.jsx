@@ -1,19 +1,14 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Row, Button, Modal } from "react-bootstrap";
 import "./style.css";
 import { parseISO, format } from "date-fns";
 import PostDropDown from "./PostDropDown";
+import { useState } from "react";
 
 function SingleNews({ posts }) {
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [data, setData] = useState(null);
-  // useEffect(() => {
-  //   const PostData = () => {
-  //     setData(posts);
-  //     setIsLoading(false);
-  //   };
-  //   PostData();
-  // }, []);
+  const [addPost, setAddPost] = useState(false);
+  const showAddPost = () => setAddPost(true);
+  const closeAddPost = () => setAddPost(false);
 
   return (
     <div>
@@ -46,7 +41,15 @@ function SingleNews({ posts }) {
                     <i className="bi bi-dot"></i> <i class="bi bi-globe2"></i>
                   </p>
                 </div>
-                <div className="ml-auto">
+                <div className="ml-auto d-flex align-items-center">
+                  <Button
+                    onClick={showAddPost}
+                    className="py-0"
+                    size="sm"
+                    variant="secondary"
+                  >
+                    Edit
+                  </Button>
                   <PostDropDown />
                 </div>
               </div>
@@ -90,6 +93,23 @@ function SingleNews({ posts }) {
           </div>
         </div>
       </Row>
+      <Modal show={addPost} onHide={closeAddPost}>
+        <Modal.Dialog className="w-100 border-0 px-3">
+          <Modal.Header closeButton>
+            <Modal.Title>Updated Post</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <p>Modal body text goes here.</p>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button className="shadow-none" variant="primary">
+              Edit
+            </Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </Modal>
     </div>
   );
 }
