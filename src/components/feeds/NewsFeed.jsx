@@ -13,12 +13,11 @@ function NewsFeed({ setPostsAdded, data }) {
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
   const [postValue, setPostValue] = useState("");
-  
   const [submitted, setSubmitted] = useState(false);
-  
-  const [endPost,setEndPost] = useState(10)
-  
+  const [endPost, setEndPost] = useState(10);
 
+  const [image, setImage] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handlePostValue = e => {
     setPostValue(e.target.value);
@@ -51,6 +50,7 @@ function NewsFeed({ setPostsAdded, data }) {
       }
     };
     fetchData();
+    addPostFunction();
   }, []);
 
   const addPostFunction = async e => {
@@ -75,6 +75,34 @@ function NewsFeed({ setPostsAdded, data }) {
         let data = await res.json();
         console.log(data);
         // setPost(data.stringify());
+        if (selectedFile !== null) {
+          addImage(data._id);
+        }
+      } else {
+        console.error("fetch failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const addImage = async id => {
+    let fd = new FormData();
+    fd.append("post", selectedFile);
+    try {
+      const res = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+        {
+          method: "POST",
+          body: fd,
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setImage(data);
       } else {
         console.error("fetch failed");
       }
@@ -83,17 +111,17 @@ function NewsFeed({ setPostsAdded, data }) {
     }
   };
 
-  const showMore = (number) => {
-    if(posts.length > 10) {
-      setEndPost(endPost + 10)
+  const showMore = number => {
+    if (posts.length > 10) {
+      setEndPost(endPost + 10);
     }
-  }
+  };
 
-  const showLess = (number) => {
-    if(endPost > 10) {
-      setEndPost(endPost - 10)
+  const showLess = number => {
+    if (endPost > 10) {
+      setEndPost(endPost - 10);
     }
-  }
+  };
 
   return (
     <div>
@@ -151,15 +179,28 @@ function NewsFeed({ setPostsAdded, data }) {
           {isLoading ? (
             <Loader />
           ) : (
-            posts.reverse().slice(0,endPost).map(post => {
-              return <SingleNews key={post._id} posts={post} />;
-            })
+            posts
+              .reverse()
+              .slice(0, endPost)
+              .map(post => {
+                return <SingleNews key={post._id} posts={post} />;
+              })
           )}
         </Row>
-            <div>
-              <span className='mr-4 mb-4 p-2 round-border grey-border pointer' onClick={(e)=>showMore(+10)}>Show More</span> 
-              <span className='mr-4 mb-4 p-2 round-border grey-border pointer'  onClick={(e)=>showLess(-10)}>Show Less</span>
-            </div>
+        <div>
+          <span
+            className="mr-4 mb-4 p-2 round-border grey-border pointer"
+            onClick={e => showMore(+10)}
+          >
+            Show More
+          </span>
+          <span
+            className="mr-4 mb-4 p-2 round-border grey-border pointer"
+            onClick={e => showLess(-10)}
+          >
+            Show Less
+          </span>
+        </div>
       </Col>
       <Modal show={addPost} onHide={closeAddPost}>
         <Modal.Dialog className="w-100 border-0 px-3">

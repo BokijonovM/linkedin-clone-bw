@@ -103,6 +103,7 @@
 .start-post-div {
   background-color: white !important;
   border-radius: 10px;
+  width: 550px;
 }
 .start-post-form {
   border-radius: 99px;
@@ -157,4 +158,18 @@
   border-radius: 99px;
   color: grey;
   border-color: grey;
+}
+.post-dropdown > div {
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.post-dropdown > div:hover {
+  background-color: #f3f2ef;
+  cursor: pointer;
+}
+.post-dropdown > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
