@@ -6,11 +6,19 @@ import DropOpenTo from "./ProfileCardComponents/DropOpenTo";
 import DropMore from "./ProfileCardComponents/DropMore";
 import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
+import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
 const ProfileCard = ({ profile }) => {
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
+  
+  // edit picture
+  const [showAddEditPic, setShowAddEditPic] = useState(false);
 
+const handleCloseAddEditPic = () => setShowAddEditPic(false);
+const handleShowAddEditPic = () => setShowAddEditPic(true);
+
+  
   const showDropdown = input => {
     if (dropdown === input) {
       setDropdown("");
@@ -19,20 +27,11 @@ const ProfileCard = ({ profile }) => {
     }
   };
 
-  /*{_id: '61e5270f73d5cb0015395a9d', name: 'Rajib', surname: 'Jonchhen', email: 'onlyrajib@gmail.com', username: 'onlyrajib', …}
-area: "Lisbon,Portugal"
-bio: "Loading Full Stack Developer.."
-createdAt: "2022-01-17T08:21:35.995Z"
-email: "onlyrajib@gmail.com"
-image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-name: "Rajib"
-surname: "Jonchhen"
-title: "student"
-updatedAt: "2022-01-17T08:21:35.995Z"
-username: "onlyrajib"
-__v: 0
-_id: "61e5270f73d5cb0015395a9d"
-[[Prototype]]: Object*/
+/* <span className="mx-2 round-hover" onClick={(e)=>setShowAddEditPic(true)}>
+            <GoPlus />
+          </span>
+        </p>
+       */
 
   return (
     <Card className="profile-card round-border">
@@ -48,7 +47,24 @@ _id: "61e5270f73d5cb0015395a9d"
         <GrFormEdit />
       </span>
       <Card.Body>
-        <img className="profile-pic" src={profile.image} alt="linkedin user" />
+        <img  
+        onClick={(e)=>setShowAddEditPic(true)}
+         className="profile-pic" 
+         src={profile.image} 
+         alt="linkedin user" />
+           <div style={{ marginTop: "60px" }}>
+          <div
+              className="pAbsolute w-100 modal-box"
+              style={{
+                display: showAddEditPic? "block" : "none",
+              }}
+              fluid
+            >
+                <AddEditPic 
+                showAddEditPic={showAddEditPic} 
+                handleCloseAddEditPic = { handleCloseAddEditPic}/>
+          </div>
+          </div>
         <span
           className="round-hover  h3 text-primary pAbsolute"
           style={{ right: "20px" }}
