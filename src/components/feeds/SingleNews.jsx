@@ -1,6 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import "./style.css";
+import { parseISO, format } from "date-fns";
 
 function SingleNews({ posts }) {
   return (
@@ -31,7 +32,8 @@ function SingleNews({ posts }) {
                     {/* {posts.user.title} */}
                   </p>
                   <p className="mb-n1" style={{ fontSize: "10px" }}>
-                    {posts.updatedAt} <i className="bi bi-dot"></i> 19h{" "}
+                    {format(parseISO(posts.updatedAt), "MMMM do yyyy | HH:mm")}
+                    {/* <i className="bi bi-dot"></i> 19h{" "} */}
                     <i className="bi bi-dot"></i> <i class="bi bi-globe2"></i>
                   </p>
                 </div>

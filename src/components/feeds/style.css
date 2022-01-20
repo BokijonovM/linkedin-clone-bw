@@ -141,3 +141,20 @@
   background-color: #f3f2ef;
   cursor: pointer;
 }
+.modal-post-btn {
+  border-radius: 99px;
+  background-color: #f3f2ef;
+  font-weight: 600;
+  color: grey;
+}
+.modal-post-btn:hover {
+  color: grey;
+  background-color: #f3f2ef;
+}
+.start-post-btn,
+.start-post-btn:hover {
+  background-color: #f3f2ef;
+  border-radius: 99px;
+  color: grey;
+  border-color: grey;
+}
