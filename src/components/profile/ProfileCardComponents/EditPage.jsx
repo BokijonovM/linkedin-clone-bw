@@ -20,6 +20,7 @@ export default function EditPage({ profile, setShowEditPage }) {
 
   const handleSubmit = async e => {
     // e.preventDefault()
+    setShowEditPage(false)
     let user = {
       name: name,
       surname: surname,

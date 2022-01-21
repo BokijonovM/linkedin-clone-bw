@@ -27,7 +27,7 @@ function RightSide() {
           </div>
             
           <div className='d-flex '>
-            <div style={{width:'75px', height:'75px',marginRight:'5px'}}>
+            <div style={{width:'75px', height:'75px', marginRight:'5px'}}>
               <img className='w-100' src='https://c8.alamy.com/compfr/pw574a/lettre-h-luxury-concept-design-de-logo-modele-pw574a.jpg' alt='mercedez'/>
             </div>
             <div>
@@ -36,7 +36,7 @@ function RightSide() {
               <button className='rounded-btn grey-border  my-3 p-1 px-3'><i className="bold bi bi-plus"></i>Follow</button>
             </div>
           </div>
-          <p className='bold grey-hover mt-2 mb-n2'>View all recommendations <i class="bi bi-arrow-right"></i></p>        
+          <p className='bold grey-hover mt-2 mb-n2'>View all recommendations <i className="bi bi-arrow-right"></i></p>        
   </div>
       <div>
         <img className='w-100 my-3 round-border' src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt=''/>
@@ -47,11 +47,11 @@ function RightSide() {
             <span>Accessibility</span>
             <span>Help Center</span>
 
-            <span>Privacy & Terms <i class="bi bi-chevron-down"></i></span> 
+            <span>Privacy & Terms <i className="bi bi-chevron-down"></i></span> 
             <span>Ad Choices</span>
             <span>Advertising</span>
 
-            <span>Business Services <i class="bi bi-chevron-down"></i></span>
+            <span>Business Services <i className="bi bi-chevron-down"></i></span>
             <span>Get the LinkedIn app</span>
             <span>More</span>
             <p>

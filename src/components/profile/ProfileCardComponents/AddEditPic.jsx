@@ -9,6 +9,7 @@ const AddEditPic = ({showAddEditPic,handleCloseAddEditPic}) => {
     
 
     const handleUpload = async(e) => {
+        handleCloseAddEditPic()
         e.preventDefault();
 
         const formData = new FormData();

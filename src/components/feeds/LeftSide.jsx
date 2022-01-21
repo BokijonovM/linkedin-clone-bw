@@ -50,7 +50,7 @@ function LeftSide({profile}) {
 <p><IoIosPeople className='mr-2'/>Full Stack Developer</p> 
 <p><IoIosPeople className='mr-2'/>Java technologies</p>
 <p><IoIosPeople className='mr-2'/>UI & Microservices</p>
-<p>Show more <i class="bi bi-chevron-down"></i></p>
+<p>Show more <i className="bi bi-chevron-down"></i></p>
 
 <p className='mt-4 blue-link bold d-flex justify-content-between'>
   <span>Events</span> 
