@@ -10,7 +10,9 @@ import MyHeaderMain from "../profile/Header/MyHeaderMain";
 function MyMainFeed({ profile }) {
   return (
     <div>
-      <MyHeaderMain profile={profile} />
+      <Row className="header-row-myFeed">
+        <MyHeaderMain profile={profile} />
+      </Row>
       <Container>
         <Row className="justify-content-center">
           <Col className="text-center" md={3}>

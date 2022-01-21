@@ -201,3 +201,8 @@
   border-radius: 10px;
   margin-top: 10px;
 }
+.header-row-myFeed {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+}
