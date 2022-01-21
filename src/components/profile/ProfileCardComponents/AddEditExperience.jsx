@@ -3,7 +3,7 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
-export default function AddEditExperience ({setShowAddExperience, list, userId }) {
+export default function AddEditExperience ({setShowAddExperience, list, userId, fetchExperiences }) {
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -42,6 +42,7 @@ setSelectedPic(e.target.files[0])
 
   const handleSubmit = async (e) => {
     // e.preventDefault()
+    setShowAddExperience(false)
     let experience = {
       role: role,
       company: company,
@@ -65,6 +66,7 @@ setSelectedPic(e.target.files[0])
       );
       if (response.ok) {
         let data = await response.json();
+        fetchExperiences()
         console.log('display after adding experience',data);
         this.props.history.push('/profile')
       } else {
@@ -76,6 +78,7 @@ setSelectedPic(e.target.files[0])
   };
 
 const handleDelete = async() => {
+  setShowAddExperience(false)
   try {
     let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`,
       {
@@ -89,6 +92,7 @@ const handleDelete = async() => {
     );
     if (response.ok) {
       let data = await response.json();
+      fetchExperiences()
       console.log('display after delete experience',data);
     } else {
       console.log("error");

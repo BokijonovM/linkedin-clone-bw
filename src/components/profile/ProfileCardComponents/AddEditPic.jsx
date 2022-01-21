@@ -12,6 +12,7 @@ const AddEditPic = ({showAddEditPic,handleCloseAddEditPic}) => {
         e.preventDefault();
 
         const formData = new FormData();
+        handleCloseAddEditPic()
         formData.append(
             "profile",
             selectedFile
