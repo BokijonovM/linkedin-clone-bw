@@ -44,7 +44,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
           <hr />
         </div>
         <div>
-          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
+          <span className="h3  round-hover text-primary dRelative" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
             <GrFormEdit />
           </span>
 
