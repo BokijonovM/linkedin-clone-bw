@@ -5,12 +5,12 @@ import NewsFeed from "./NewsFeed";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
 import Footer from "./Footer";
-import Header from "../profile/Header/Header";
+import MyHeaderMain from "../profile/Header/MyHeaderMain";
 
 function MyMainFeed({ profile }) {
   return (
     <div>
-      <Header profile={profile} />
+      <MyHeaderMain profile={profile} />
       <Container>
         <Row className="justify-content-center">
           <Col className="text-center" md={3}>
