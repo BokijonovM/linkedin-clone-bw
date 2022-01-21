@@ -8,7 +8,7 @@ import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
 import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
-const ProfileCard = ({ profile }) => {
+const ProfileCard = ({ profile, fetchProfile }) => {
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
   
@@ -85,7 +85,7 @@ useEffect(()=>{
             fluid
           >
             {profile && (
-              <EditPage profile={profile} setShowEditPage={setShowEditPage} />
+              <EditPage fetchProfile={fetchProfile} profile={profile} setShowEditPage={setShowEditPage} />
             )}
           </div>
           <p className="h2 bold">

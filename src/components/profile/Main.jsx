@@ -4,7 +4,7 @@ import DashboardCard from "./DashboardCard";
 import ProfileCard from "./ProfileCard";
 import FeaturedCard from "./FeaturedCard";
 import Experience from "./Experience";
-function Main({profile}) {
+function Main({profile, fetchProfile}) {
 
   const[userId, setUserId] = useState()
 
@@ -16,7 +16,7 @@ function Main({profile}) {
   return (
 
     <div >    
-      {profile && <ProfileCard profile={profile} />}
+      {profile && <ProfileCard fetchProfile={fetchProfile} profile={profile} />}
       <DashboardCard/>
       {profile && <AboutCard/>}
       <FeaturedCard/>
