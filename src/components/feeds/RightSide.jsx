@@ -51,6 +51,7 @@ function RightSide() {
               alt="mercedez"
             />
           </div>
+
           <div>
             <p className="bold m-0 p-0">lorem for ipsum </p>
             <p className="m-0 p-0">Travlorem ipsumcedez</p>
@@ -69,6 +70,9 @@ function RightSide() {
           src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
           alt=""
         />
+      </div>
+      <div>
+        <img className="w-100 right-image" src={logo} alt="" />
       </div>
 
       <div
