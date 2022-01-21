@@ -15,6 +15,8 @@ export default function AddEditExperience ({setShowAddExperience, list, userId }
   const[url,setUrl]=useState(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`)
   const[showDeleteBtn,SetShowDeleteBtn] = useState(false)
   const[heading,setHeading] = useState('Add Experience')
+  const [selectedPic, setSelectedPic] = useState()
+  const [showAddPic, setShowAddPic] = useState (false)
   useEffect(() => {
    if(list){
     setRole(list.role);
@@ -28,10 +30,14 @@ export default function AddEditExperience ({setShowAddExperience, list, userId }
     setUrl(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`)
     setHeading('Edit Experience')
     SetShowDeleteBtn(true)
+    setShowAddPic(true)
    }
   }, []);
 
 
+const handleChangePic = (e) => {
+setSelectedPic(e.target.files[0])
+}
 
   const handleSubmit = async (e) => {
     // e.preventDefault()
@@ -59,7 +65,7 @@ export default function AddEditExperience ({setShowAddExperience, list, userId }
       if (response.ok) {
         let data = await response.json();
         console.log('display after adding experience',data);
-        
+        this.props.history.push('/profile')
       } else {
         console.log("error");
       }
@@ -91,7 +97,29 @@ const handleDelete = async() => {
   }
 };
 
+const handleSavePic = async(e) => {
+  e.preventDefault();
 
+  const formData = new FormData()
+  formData.append("experience", selectedPic)
+  try {
+    let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}/picture`,{
+      method:'POST',
+      body:formData,
+      headers:{
+        Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8"
+      }
+    })
+    console.log(userId,formData,selectedPic.name,list._id)
+    if(response.ok){
+      console.log("Image saved successfully")
+    } else{
+      console.log("Error on uploading image")
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
   return (
@@ -101,6 +129,14 @@ const handleDelete = async() => {
       </Modal.Header>
 
       <Modal.Body className="d-flex flex-column text-left">
+        <div className='d-flex my-3'style={{display:showDeleteBtn? 'block':'none'}} >
+          <div>
+          <label>Add Picture of Company</label>
+        <input type='file' onChange={(e)=> setSelectedPic(e.target.files[0])}/>
+          <span>{selectedPic && selectedPic.name}</span>
+          </div>
+        <Button variant='success' onClick={(e)=>handleSavePic(e)}>Save</Button>
+        </div>
         <label for="role">Role *</label>
         <input
           type="text"
@@ -161,7 +197,7 @@ const handleDelete = async() => {
         <Button variant="danger" onClick={(e) => handleDelete(e)} style={{display:showDeleteBtn? 'block':'none'}}>
          Delete
         </Button>
-        <Button variant="primary" onClick={(e) => handleSubmit(e)}>
+        <Button variant="primary" onClick={(e) => {handleSubmit(e); handleSavePic(e)}}>
           Save changes
         </Button>
       </Modal.Footer>

@@ -52,7 +52,7 @@ class DashboardCard extends React.Component {
                 </div>
 
                 <div className='d-flex'>
-                    <span className='h4 pl-3 pr-3'><GiPoliceBadge/></span>
+                    <span className='h4 pl-3 pr-3'><i class="bi bi-bookmark-fill"></i></span>
 
                     <div>
                         <p>
