@@ -15,8 +15,8 @@ const AboutCard = ()=> {
         return <div className='bg-white round-border p-3 mt-3'>
                     <div className='d-flex justify-content-between'>
                         <span className='h4'> About</span>
-                        <span className="h4 round-hover"  style={{display:editable? 'block':'none'}}
-><GrFormEdit/></span>
+                        <span className="h4 round-hover"  style={{display:editable? 'block':'none'}}>
+    <GrFormEdit/></span>
 
                     </div>
                     <div className='mt-3'>
