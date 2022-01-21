@@ -192,3 +192,10 @@
   text-overflow: ellipsis;
   margin: 5px 0;
 }
+
+
+/* footer of feed */
+.footer-feeds span:hover {
+  color: rgb(9, 79, 168);
+  text-decoration: underline;
+}
