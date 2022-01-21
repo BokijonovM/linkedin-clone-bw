@@ -57,13 +57,13 @@ const Experience = ({ userId }) => {
               fluid
             >
               {userId && (
-                <AddEditExperience  userId={userId} setShowAddExperience={setShowAddExperience}/>
+                <AddEditExperience  fetchExperiences={fetchExperiences} userId={userId} setShowAddExperience={setShowAddExperience}/>
               )}
           </div>
           </div>
           
       <div className="experience">
-        {info && info.map((list, i) => <DisplayList key={i} list={list} userId={userId}/>)}
+        {info && info.map((list, i) => <DisplayList fetchExperiences={fetchExperiences} key={i} list={list} userId={userId}/>)}
       </div>
     </div>
   );

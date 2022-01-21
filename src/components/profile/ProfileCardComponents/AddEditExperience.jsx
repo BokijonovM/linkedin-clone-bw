@@ -3,7 +3,7 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
-export default function AddEditExperience ({setShowAddExperience, list, userId }) {
+export default function AddEditExperience ({setShowAddExperience, list, userId, fetchExperiences }) {
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -66,6 +66,7 @@ setSelectedPic(e.target.files[0])
       );
       if (response.ok) {
         let data = await response.json();
+        fetchExperiences()
         console.log('display after adding experience',data);
         this.props.history.push('/profile')
       } else {

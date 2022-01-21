@@ -4,7 +4,7 @@ import { GrFormEdit } from "react-icons/gr";
 import { format, parseISO } from "date-fns";
 import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 
-const DisplayList = ({list, userId}) => {
+const DisplayList = ({list, userId, fetchExperiences}) => {
   
   const[showAddExperience, setShowAddExperience]= useState(false)
   
@@ -49,7 +49,7 @@ const DisplayList = ({list, userId}) => {
               fluid
             >
               {userId && (
-                <AddEditExperience  userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
+                <AddEditExperience  fetchExperiences={fetchExperiences} userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>
               )}
           </div>
           </div>
