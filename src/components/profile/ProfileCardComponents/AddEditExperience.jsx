@@ -78,6 +78,7 @@ setSelectedPic(e.target.files[0])
   };
 
 const handleDelete = async() => {
+  setShowAddExperience(false)
   try {
     let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`,
       {
@@ -91,6 +92,7 @@ const handleDelete = async() => {
     );
     if (response.ok) {
       let data = await response.json();
+      fetchExperiences()
       console.log('display after delete experience',data);
     } else {
       console.log("error");
