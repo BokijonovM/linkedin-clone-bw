@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Button, Modal, Form } from "react-bootstrap";
 import "./style.css";
 import { parseISO, format } from "date-fns";
@@ -14,6 +14,7 @@ function SingleNews({ posts }) {
 
   const [selectedPost, setSelectedPost] = useState([]);
 
+  
   const handleDeletePost = async () => {
     try {
       const response = await fetch(

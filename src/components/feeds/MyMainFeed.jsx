@@ -10,17 +10,15 @@ import MyHeaderMain from "../profile/Header/MyHeaderMain";
 function MyMainFeed({ profile }) {
   return (
     <div>
-      <MyHeaderMain profile={profile} />
+      <MyHeaderMain profile={profile}/>
       <Container>
         <Row className="justify-content-center">
-          <Col className="text-center" md={3}>
-            {profile && <LeftSide profile={profile} />}
-          </Col>
+          <Col className='text-center' md={3}>{profile && <LeftSide profile={profile} />}</Col>
           <Col className="px-4" md={6}>
-            <NewsFeed />
+          {profile &&  <NewsFeed profile={profile}/>}
           </Col>
-          <Col md={3}>
-            <RightSide />
+          <Col md={4}>
+            <RightSide/>
           </Col>
         </Row>
       </Container>
