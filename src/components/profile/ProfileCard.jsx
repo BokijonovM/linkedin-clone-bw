@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { GrFormEdit, GrDocument } from "react-icons/gr";
 import Profile from "../../Profile";
@@ -18,7 +18,11 @@ const ProfileCard = ({ profile }) => {
 const handleCloseAddEditPic = () => setShowAddEditPic(false);
 const handleShowAddEditPic = () => setShowAddEditPic(true);
 
+useEffect(()=>{
   
+},[showEditPage])  
+
+
   const showDropdown = input => {
     if (dropdown === input) {
       setDropdown("");

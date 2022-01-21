@@ -111,6 +111,10 @@
   background: rgba(0,0,0,0.3);
 }
 
+.grey-hover:hover{
+  background-color: rgba(128, 128, 128, 0.219);
+}
+
   /* add-edit-pic-buttons */
   /* .add-edit-pic-buttons{
     display:flex;
@@ -180,11 +184,11 @@
 /* Featured Card hover */
 /* Featured Card end */
 
-/* Education Experience Licenses Card start */
-/* .education hr:last-of-type,
-.experience hr:last-of-type,
-.licenses hr:last-of-type {
-    display:none;
-} */
-/* Education Experience Licenses Card hover */
-/* Education Experience Licenses Card end */
+/* sidebar-left-second box */
+.left-sidebar-2 p{
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  margin: 5px 0;
+}
