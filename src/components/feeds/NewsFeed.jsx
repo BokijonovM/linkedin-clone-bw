@@ -75,34 +75,6 @@ function NewsFeed({ profile }) {
         let data = await res.json();
         console.log(data);
         // setPost(data.stringify());
-        if (selectedFile !== null) {
-          addImage(data._id);
-        }
-      } else {
-        console.error("fetch failed");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const addImage = async id => {
-    let fd = new FormData();
-    fd.append("post", selectedFile);
-    try {
-      const res = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/${id}`,
-        {
-          method: "POST",
-          body: fd,
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
-          },
-        }
-      );
-      if (res.ok) {
-        const data = await res.json();
-        setImage(data);
       } else {
         console.error("fetch failed");
       }

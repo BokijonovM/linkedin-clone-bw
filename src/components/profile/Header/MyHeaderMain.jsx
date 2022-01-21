@@ -5,7 +5,7 @@ import NavDropdown from "./NavDropdown";
 import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function MyHeaderMain({ profile }) {
   const [navbar, setNavbar] = useState(false);
@@ -40,13 +40,13 @@ function MyHeaderMain({ profile }) {
         </Form>
 
         <Nav className="ml-auto icons-hover-needed d-flex flex-row">
-          <Link to='/'>
-          <div className="d-flex flex-column align-items-center mr-4">
-            <i style={{ fontSize: "22px" }} className="bi bi-house-fill"></i>
-            <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
-              Home
-            </p>
-          </div>
+          <Link to="/">
+            <div className="d-flex flex-column align-items-center mr-4">
+              <i style={{ fontSize: "22px" }} className="bi bi-house-fill"></i>
+              <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
+                Home
+              </p>
+            </div>
           </Link>
           <div className="d-flex flex-column align-items-center mr-4 d-none-needed-network">
             <i style={{ fontSize: "22px" }} className="bi bi-people-fill"></i>
@@ -98,8 +98,12 @@ function MyHeaderMain({ profile }) {
           </div>
           <div className="d-flex flex-column align-items-center ">
             {/* <i style={{ fontSize: "22px" }} className="bi bi-person-circle"></i> */}
-            <Link to='/profile' >
-            <img className="nav-profile-image" src={profile.image} alt="profile pic" />
+            <Link to="/profile">
+              <img
+                className="nav-profile-image"
+                src={profile.image}
+                alt="profile pic"
+              />
             </Link>
             <p style={{ fontSize: "12px" }} className="mb-0 mt-n1">
               <NavDropdown profile={profile} />
@@ -130,7 +134,7 @@ function MyHeaderMain({ profile }) {
         </Nav>
       </Navbar>
       {profile && navbar ? (
-        <ExtraHeader profile={{ profile }} />
+        <ExtraHeader profile={profile} />
       ) : (
         <span style={{ width: "0px" }}></span>
       )}
