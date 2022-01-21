@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap'
 import {useState, useEffect} from 'react'
 import { GrFormEdit } from 'react-icons/gr'
 import { axios } from 'axios'
-const AddEditPic = ({showAddEditPic,handleCloseAddEditPic}) => {
+const AddEditPic = ({showAddEditPic,handleCloseAddEditPic,profileImg}) => {
 
     const[selectedFile,setSelectedFile] = useState(null)
     
@@ -46,11 +46,12 @@ setSelectedFile(e.target.files[0])
 
 return (
     
-    <Modal show={showAddEditPic} onHide={handleCloseAddEditPic} animation={true} className='w-100'>
+    <Modal  show={showAddEditPic} onHide={handleCloseAddEditPic} animation={true} className='w-100'>
     <Modal.Header closeButton>
-        <Modal.Title>Helllo</Modal.Title>
+        <Modal.Title>Change Profile Picture</Modal.Title>
     </Modal.Header>
     <Modal.Body>
+        <img src={selectedFile || profileImg} alt='change profile pic'/>
         <input type='file' id='photo' onChange={(e)=> handleChange(e)}/>
         <span className='pointer round-border grey-border p-2 m-3' onClick={(e) => handleUpload(e) }>upload</span>
 
@@ -62,24 +63,24 @@ return (
        <hr/>
         <div className='d-flex justify-content-between text-center px-2 '>
             <div className='d-flex'>
-                <div className='mx-2'>
+                <div className='grey-hover round-border px-2 pt-1 mx-2'>
                     <p> 
                     <i class="bi bi-pencil-fill"></i>
                    </p>
                     <p>Edit</p>
                 </div>
-                <div className='mx-2'>
+                <div className='grey-hover round-border  px-2 pt-1 mx-2'>
                     <p>
                     <i class="bi bi-camera-fill"/>
                     </p>
                     <p>Add Photo</p>
                 </div>
-                <div className='mx-2'>
+                <div className='grey-hover round-border px-2 pt-1  mx-2'>
                 <p><i class="bi bi-image-fill"/></p>
                     <p>Frame</p>
                 </div>
             </div>
-            <div className='d-flex'>
+            <div className='grey-hover round-border  px-2 pt-1 d-flex'>
                 <div className='mx-2'>
                     <p><i class="bi bi-trash-fill"/></p>
                     <p>Delete</p>
