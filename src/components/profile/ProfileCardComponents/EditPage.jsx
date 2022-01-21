@@ -1,6 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
-
+import {withRouter} from 'react-router-dom'
 export default function EditPage({ profile, setShowEditPage }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -44,7 +44,9 @@ export default function EditPage({ profile, setShowEditPage }) {
       );
       if (response.ok) {
         let data = await response.json();
+        this.props.history.push('/profile')
         console.log(data);
+        alert('Changes is saved!')
         console.log("data changed");
       } else {
         console.log("error");

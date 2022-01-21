@@ -60,8 +60,7 @@ const handleShowAddEditPic = () => setShowAddEditPic(true);
               }}
               fluid
             >
-                <AddEditPic 
-                showAddEditPic={showAddEditPic} 
+                <AddEditPic showAddEditPic={showAddEditPic} 
                 handleCloseAddEditPic = { handleCloseAddEditPic}/>
           </div>
           </div>

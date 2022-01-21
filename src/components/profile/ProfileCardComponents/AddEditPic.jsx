@@ -44,23 +44,26 @@ setSelectedFile(e.target.files[0])
 }
 
 return (
+    
     <Modal show={showAddEditPic} onHide={handleCloseAddEditPic} animation={true} className='w-100'>
     <Modal.Header closeButton>
         <Modal.Title>Helllo</Modal.Title>
     </Modal.Header>
     <Modal.Body>
         <input type='file' id='photo' onChange={(e)=> handleChange(e)}/>
+        <span className='pointer round-border grey-border p-2 m-3' onClick={(e) => handleUpload(e) }>upload</span>
+
        {selectedFile && ( <>
        <p>{selectedFile.name}</p>
-        <p>{selectedFile.type}</p>  </>)}
+        <p className='mb-5'>{selectedFile.type}</p>  </>)}
       
-    </Modal.Body>
-  
-        <div className='d-flex justify-content-between text-center px-5'>
+   
+       <hr/>
+        <div className='d-flex justify-content-between text-center px-2 '>
             <div className='d-flex'>
                 <div className='mx-2'>
                     <p> 
-                     <GrFormEdit />
+                    <i class="bi bi-pencil-fill"></i>
                    </p>
                     <p>Edit</p>
                 </div>
@@ -74,7 +77,6 @@ return (
                 <p><i class="bi bi-image-fill"/></p>
                     <p>Frame</p>
                 </div>
-                <span className='pointer round-border grey-border p-2 m-3' onClick={(e) => handleUpload(e) }>upload</span>
             </div>
             <div className='d-flex'>
                 <div className='mx-2'>
@@ -83,7 +85,7 @@ return (
                 </div>
             </div>
         </div>
-    
+        </Modal.Body>
     </Modal>
     )
 }

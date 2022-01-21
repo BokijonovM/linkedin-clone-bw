@@ -13,9 +13,11 @@ const OtherUser = ({userId}) =>{
 const params = useParams()
 const[ profile , setProfile ] = useState ()
 const[ id,setId ] = useState () 
+const [isLoading, setIsloading] = useState()
 
 const fetchProfile = async(id) => {
-  let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/" + id,{
+  try {
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/" + id,{
     headers:{
       Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU2ZWQ0Y2MyYzE4ODAwMTVhYjk0YjUiLCJpYXQiOjE2NDI1MjM5ODEsImV4cCI6MTY0MzczMzU4MX0.Co-ZiB-K6ynPob1rwDlJ3Nkq2YC6J9ewG5ExQJ2sT00'
     }
@@ -23,23 +25,26 @@ const fetchProfile = async(id) => {
   if(response.ok){
     let data = await response.json()
     setProfile(data)
-    console.log("id from other page",id)
-    console.log("data from other page",data)
+  }else{
+    console.log('error response not ok')
+  }
+  } catch (error) {
+    console.log(error)
   }
 }
 
 useEffect(()=>{  
   
-  let isCancelled = true; 
+  
   if(params.userId){
     let userId = params.userId
     setId(userId)
   console.log(userId)
   fetchProfile(userId)
 
-  return () => {
-    isCancelled = false;
-  };
+  // return () => {
+  //   isCancelled = false;
+  // };
   }
 },[params.userId])
 
