@@ -13,8 +13,8 @@ function MyMainFeed({ profile }) {
       <Row className="header-row-myFeed">
         <MyHeaderMain profile={profile} />
       </Row>
-      <Container>
-        <Row className="justify-content-center">
+      <Container className="pt-5">
+        <Row className="justify-content-center pt-4">
           <Col className="text-center" md={3}>
             {profile && <LeftSide profile={profile} />}
           </Col>
