@@ -14,11 +14,11 @@ function MyMainFeed({ profile }) {
         <MyHeaderMain profile={profile} />
       </Row>
       <Container className="pt-5">
-        <Row className="justify-content-center pt-4">
+        <Row xs={1} md={2} className="justify-content-center pt-4">
           <Col className="text-center" md={3}>
             {profile && <LeftSide profile={profile} />}
           </Col>
-          <Col className="px-4" md={6}>
+          <Col className="px-4 newFeed-main-line-col" md={6}>
             <NewsFeed />
           </Col>
           <Col md={3}>

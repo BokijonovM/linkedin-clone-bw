@@ -172,7 +172,18 @@ function SingleNews({ posts }) {
       <Modal show={addPost} onHide={closeAddPost}>
         <Modal.Dialog className="w-100 border-0 px-3">
           <Modal.Header closeButton>
-            <Modal.Title>Updated Post</Modal.Title>
+            <Modal.Title>
+              Updated Post of
+              <a
+                href={"/OtherUser/" + posts.user._id}
+                style={{
+                  color: "black",
+                }}
+              >
+                {" "}
+                {posts.user.name} {posts.user.surname}
+              </a>
+            </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>

@@ -203,6 +203,9 @@
 }
 .header-row-myFeed {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100vw;
+}
+.newFeed-main-line-col {
+  z-index: 1;
 }
