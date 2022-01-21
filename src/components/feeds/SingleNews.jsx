@@ -107,7 +107,7 @@ function SingleNews({ posts }) {
                 <div className="ml-auto d-flex align-items-center">
                   <Button
                     onClick={showAddPost}
-                    className="py-0"
+                    className="py-0 shadow-none"
                     size="sm"
                     variant="secondary"
                   >
@@ -215,19 +215,21 @@ function SingleNews({ posts }) {
                   <i className="bi mr-2 bi-bar-chart-line"></i>
                   <i className="bi mr-2 bi-three-dots"></i>
                 </div>
-                <Button
-                  variant="danger"
-                  className="shadow-none modal-post-btn border-0"
-                  onClick={handleDeletePost}
-                >
-                  Delete
-                </Button>
-                <Button
-                  className="shadow-none modal-post-btn border-0"
-                  onClick={handleUpdatePost}
-                >
-                  Save
-                </Button>
+                <div>
+                  <Button
+                    variant="danger"
+                    className="shadow-none modal-post-btn-delete border-0"
+                    onClick={handleDeletePost}
+                  >
+                    Delete
+                  </Button>
+                  <Button
+                    className="shadow-none modal-post-btn border-0"
+                    onClick={handleUpdatePost}
+                  >
+                    Save
+                  </Button>
+                </div>
               </div>
             </Form>
           </Modal.Body>

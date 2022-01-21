@@ -151,6 +151,10 @@
   font-weight: 600;
   color: grey;
 }
+.modal-post-btn-delete {
+  border-radius: 99px;
+  font-weight: 600;
+}
 .modal-post-btn:hover {
   color: grey;
   background-color: #f3f2ef;
@@ -208,4 +212,13 @@
 }
 .newFeed-main-line-col {
   z-index: 1;
+}
+@media (max-width: 1000px) {
+  .myFeeds-cols {
+    flex-direction: column;
+    width: 100%;
+  }
+  .myFeeds-cols > col {
+    width: 100vw !important;
+  }
 }
