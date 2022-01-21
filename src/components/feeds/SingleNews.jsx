@@ -7,9 +7,64 @@ import { useState } from "react";
 
 function SingleNews({ posts }) {
   const [addPost, setAddPost] = useState(false);
+  const [selectedPostDetails, setSelectedPostDetails] = useState(null);
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
+
+  const [selectedPost, setSelectedPost] = useState([]);
+
+  const handleDeletePost = async () => {
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c
+            `,
+          },
+        }
+      );
+      if (response.status === 401) alert("You Can not Delete others Posts");
+
+      if (response.ok) {
+        closeAddPost();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleUpdatePost = async () => {
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            text: selectedPostDetails.text,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c
+            `,
+          },
+        }
+      );
+      if (response.status === 401) alert("you can not update others posts");
+      if (response.ok) {
+        closeAddPost();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleEdit = id => {
+    setSelectedPost(id);
+    showAddPost();
+  };
 
   return (
     <div>
@@ -31,7 +86,14 @@ function SingleNews({ posts }) {
                     className="mb-n1 mt-n2"
                     style={{ fontSize: "14px", fontWeight: "600" }}
                   >
-                    {posts.user.name} {posts.user.surname}
+                    <a
+                      href={"/OtherUser/" + posts.user._id}
+                      style={{
+                        color: "black",
+                      }}
+                    >
+                      {posts.user.name} {posts.user.surname}
+                    </a>
                     <i className="bi bi-dot"></i> 1st
                   </p>
                   <p className="mb-n1" style={{ fontSize: "12px" }}>
@@ -124,6 +186,12 @@ function SingleNews({ posts }) {
                   value={posts.text}
                   // onChange={e => setPost(e.target.value)}
                   rows={4}
+                  onChange={e =>
+                    setSelectedPostDetails({
+                      ...selectedPostDetails,
+                      text: e.target.value,
+                    })
+                  }
                 />
               </Form.Group>
               <div className="d-flex justify-content-between px-3">
@@ -137,9 +205,15 @@ function SingleNews({ posts }) {
                   <i className="bi mr-2 bi-three-dots"></i>
                 </div>
                 <Button
-                  // onClick={addPostFunction}
+                  variant="danger"
                   className="shadow-none modal-post-btn border-0"
-                  // disabled={!post}
+                  onClick={handleDeletePost}
+                >
+                  Delete
+                </Button>
+                <Button
+                  className="shadow-none modal-post-btn border-0"
+                  onClick={handleUpdatePost}
                 >
                   Save
                 </Button>

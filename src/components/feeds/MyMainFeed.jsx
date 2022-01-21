@@ -12,8 +12,8 @@ function MyMainFeed({ profile }) {
       <MyNavbar />
       <Container>
         <Row className="justify-content-center">
-          <Col md={2}>{profile && <LeftSide profile={profile} />}</Col>
-          <Col className="px-4" md={7}>
+          <Col md={3}>{profile && <LeftSide profile={profile} />}</Col>
+          <Col className="px-4" md={6}>
             <NewsFeed />
           </Col>
           <Col md={3}>

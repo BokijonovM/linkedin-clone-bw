@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import SingleNews from "./SingleNews";
 import Loader from "./Loader";
 
-function NewsFeed({ setPostsAdded, data }) {
+function NewsFeed({ profile }) {
   const [posts, setPosts] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [post, setPost] = useState("");
