@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import AboutCard from "./AboutCard";
+import DashboardCard from "./DashboardCard";
+import ProfileCard from "./ProfileCard";
+import FeaturedCard from "./FeaturedCard";
+import Experience from "./Experience";
+function Main({profile}) {
 
-function Main() {
+  const[userId, setUserId] = useState()
+
+  useEffect(()=>{
+    if(profile){
+      setUserId(profile._id)
+    }
+  },[profile])
   return (
-    <div>
-      <h1>main part</h1>
+
+    <div >    
+      {profile && <ProfileCard profile={profile} />}
+      <DashboardCard/>
+      {profile && <AboutCard/>}
+      <FeaturedCard/>
+     {userId && <Experience userId={userId}/>}
     </div>
   );
 }

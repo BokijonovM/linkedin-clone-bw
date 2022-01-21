@@ -1,0 +1,201 @@
+/* reuseable class for all */
+.round-border {
+  border-radius: 10px !important;
+}
+.blue-link {
+  color: rgb(9, 79, 168) !important;
+}
+
+.rounded-btn {
+  border-radius: 20px !important;
+}
+
+.round-hover {
+  padding: 0px 5px 5px 5px;
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.round-hover:hover {
+  background-color: rgba(128, 128, 128, 0.22);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pRelative {
+  position: relative;
+}
+.pAbsolute {
+  position: absolute;
+}
+
+.grey-border {
+  border: 0.5px solid rgba(162, 162, 162, 0.397);
+}
+
+.grey-border-left {
+  border-right: 0.5px solid rgba(162, 162, 162, 0.2);
+}
+
+.grey-border-bottom {
+  border-bottom: 0.5px solid rgba(162, 162, 162, 0.205);
+}
+
+.italics {
+  font-style: italic;
+}
+
+.font14 {
+  font-size: 14px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+/* Profile Card start */
+.profile-card {
+  position: relative;
+}
+.profile-pic {
+  width: 200px;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 70px;
+  left: 5%;
+}
+.profile-banner-img {
+  height: 200px;
+  object-fit: cover;
+}
+.edit-bg-img {
+  position: absolute;
+  right: 20px;
+  top: 210px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  background-color: #f3f2ee;
+  border-radius: 50%;
+}
+.edit-bg {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #f3f2ee;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+}
+.edit-bg,
+.edit-bg-img {
+  cursor: pointer;
+  background-color: #f3f2ee !important;
+}
+
+.modal-box{
+  z-index: 10;
+  position:fixed;
+  left: 0;
+  top: 0px;
+  height: 100vh;
+  padding-top: 50px;
+  background: rgba(0,0,0,0.3);
+}
+
+.grey-hover:hover{
+  background-color: rgba(128, 128, 128, 0.219);
+}
+
+  /* add-edit-pic-buttons */
+  /* .add-edit-pic-buttons{
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .add-edit-pic-buttons>div:first-of-type{
+    display:flex;
+    text-align: left;
+  }
+
+  .add-edit-pic-buttons>div:first-of-type div,
+  .add-edit-pic-buttons>div:last-of-type
+  {
+    display:flex;
+    flex-direction: column;
+  } */
+  /* backdrop-filter: blur(5px); */
+
+/* Profile Card hover */
+/* Profile Card part end */
+
+/* Dashboard card start */
+.dashboard {
+  background-color: rgb(220, 230, 241);
+}
+.big-numb {
+  font-size: 32px;
+  font-weight: 200;
+  color: #0a66c2;
+}
+.myMain-first-div {
+  width: 100vw !important;
+}
+.drop-open,
+.drop-selection,
+.drop-more {
+  width: 270px;
+  height: auto;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.13);
+  position: absolute;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+#drop-selection {
+  left: 70px;
+  width: 300px;
+}
+.overflow-y-hided-needed::-webkit-scrollbar {
+  display: none;
+}
+#drop-more {
+  left: 120px;
+}
+/* Dashboard card hover*/
+/* Dashboard card End*/
+
+/* Featured Card start */
+.featured-cards {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+/* Featured Card hover */
+/* Featured Card end */
+
+/* sidebar-left-second box */
+.left-sidebar-2 p{
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  margin: 5px 0;
+}
+
+
+/* footer of feed */
+.footer-feeds span:hover {
+  color: rgb(9, 79, 168);
+  text-decoration: underline;
+}

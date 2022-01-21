@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { Row } from "react-bootstrap";
 import MyHeaderMain from "./components/profile/Header/MyHeaderMain";
-import Footer from "./components/profile/Header/Footer";
+import { Container, Row, Col } from "react-bootstrap";
 import MyMain from "./components/profile/MyMain";
+import Footer from "./components/profile/Header/Footer";
+import OtherUser from "./OtherUser";
 
-function Profile({ profile }) {
+const MyLayout = ({ profile }) => {
   return (
     <div>
       <Row className="header-row-profile">
-        <MyHeaderMain profile={profile} />
+        {profile && <MyHeaderMain profile={profile} />}
       </Row>
       <Row className="profile-myMain-row">
-        <MyMain profile={profile} />
+        <OtherUser />
       </Row>
       <Row>
         <Footer />
       </Row>
     </div>
   );
-}
+};
 
-export default Profile;
+export default MyLayout;

@@ -1,19 +1,33 @@
 import React from "react";
 import Main from "./Main";
-import Sidebar from "./Sidebar";
-import { Row, Col } from "react-bootstrap";
-
-function MyMain() {
+import Sidebar from "../profile/Sidebar/Sidebar";
+import { Row, Col, Container } from "react-bootstrap";
+import "./style/profile.css";
+function MyMain({ profile, setProfile }) {
   return (
-    <div>
-      <Row>
-        <Col md={9}>
-          <Main />
+    <div
+      className="myMain-first-div"
+      style={{ backgroundColor: "rgb(243,242,238)" }}
+    >
+      {/* <Container> */}
+      <Row
+        className="justify-content-center mt-4"
+        style={{
+          marginLeft: "-80px",
+          marginRight: "-100px",
+        }}
+      >
+        <Col sm={10} lg={7}>
+          <Main
+            setProfile={setProfile}
+            profile={profile}
+          />
         </Col>
-        <Col md={3}>
+        <Col sm={0} md={3} lg={3}>
           <Sidebar />
         </Col>
       </Row>
+      {/* </Container> */}
     </div>
   );
 }

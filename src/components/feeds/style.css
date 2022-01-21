@@ -1,0 +1,224 @@
+.icons-hover-needed > div > i {
+  color: #666666;
+}
+.icons-hover-needed > div > i:hover {
+  color: #111111;
+}
+.icons-hover-needed > div:hover {
+  cursor: pointer;
+}
+.row-2-col {
+  font-size: 12px;
+}
+.row-2-col > p > a {
+  color: #767675;
+  font-weight: 600;
+}
+.row-2-col > p {
+  margin-bottom: 5px;
+}
+.extra-nav-image {
+  height: 35px;
+  border-radius: 50%;
+}
+.nav-profile-image {
+  height: 30px;
+  border-radius: 50%;
+}
+.nav-profile-image-1 {
+  height: 50px;
+  border-radius: 50%;
+}
+.navbar-profile {
+  border-bottom: 0.5px solid grey;
+}
+.extra-navbar {
+  border-bottom: 0.5px solid grey;
+}
+.extra-nav-button {
+  border-radius: 99px;
+}
+.badge-required {
+  position: relative;
+}
+.badge-required > .badge {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  border-radius: 50%;
+}
+
+.badge-required-1 {
+  position: relative;
+}
+.badge-required-1 > .badge {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .form-main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .icons-hover-needed > div > p {
+    display: none;
+  }
+  .badge-required-1 > .badge {
+    right: -12px;
+  }
+}
+@media (max-width: 650px) {
+  .flex-column-needed {
+    flex-direction: column;
+  }
+}
+@media (max-width: 550px) {
+  .none-550-needed {
+    display: none !important;
+  }
+  .nav-work-div {
+    display: none !important;
+  }
+}
+@media (max-width: 410px) {
+  .d-none-needed-jobs,
+  .d-none-needed-network {
+    display: none !important;
+  }
+}
+.dropdown-menu {
+  left: -200px;
+  position: absolute !important;
+}
+.view-profile-a:hover {
+  color: #fff !important;
+}
+.view-profile-a {
+  color: #111111 !important;
+}
+.start-post-div {
+  background-color: white !important;
+  border-radius: 10px;
+  width: 550px;
+}
+.start-post-form {
+  border-radius: 99px;
+}
+.post-post-icons-div > p > i {
+  font-size: 20px;
+  color: #70b5f9;
+}
+.post-post-icons-div > p {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center !important;
+}
+.post-post-icons-div > p:hover {
+  background-color: #f3f2ef;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.bi-hand-thumbs-up-fill {
+  background-color: #75b1ef;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 3px;
+  padding-top: 1px;
+  border-radius: 50%;
+}
+.like-comment-share-save > p {
+  padding: 10px;
+  border-radius: 10px;
+}
+.like-comment-share-save > p:hover {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f3f2ef;
+  cursor: pointer;
+}
+.like-btn {
+  color: blue !important;
+}
+.modal-post-btn {
+  border-radius: 99px;
+  background-color: #f3f2ef;
+  font-weight: 600;
+  color: grey;
+}
+.modal-post-btn-delete {
+  border-radius: 99px;
+  font-weight: 600;
+}
+.modal-post-btn:hover {
+  color: grey;
+  background-color: #f3f2ef;
+}
+.start-post-btn,
+.start-post-btn:hover {
+  background-color: #f3f2ef;
+  border-radius: 99px;
+  color: grey;
+  border-color: grey;
+}
+.post-dropdown > div {
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.post-dropdown > div:hover {
+  background-color: #f3f2ef;
+  cursor: pointer;
+}
+.post-dropdown > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.left-sidebar-main,
+.right-sidebar-main {
+  background-color: white;
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-sidebar-image {
+  width: 70px;
+  border-radius: 50%;
+}
+.left-sidebar-main > h6,
+.left-sidebar-main > a {
+  display: flex;
+  align-items: center;
+  color: black !important;
+}
+.right-image {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.header-row-myFeed {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+}
+.newFeed-main-line-col {
+  z-index: 1;
+}
+@media (max-width: 1000px) {
+  .myFeeds-cols {
+    flex-direction: column;
+    width: 100%;
+  }
+  .myFeeds-cols > col {
+    width: 100vw !important;
+  }
+}
