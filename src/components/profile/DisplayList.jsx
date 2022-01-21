@@ -24,7 +24,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
  
  
     return (
-      <div className="d-flex justify-content-between  ">
+      <div className="exp-card d-flex justify-content-between  ">
         <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
           <img
             src="https://image.shutterstock.com/image-vector/color-square-composition-text-geometric-600w-1337231156.jpg"
@@ -49,7 +49,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
           </span>
 
           <br />
-          <span style={{display:editable? 'block':'none'}}>
+          <span className="pl-2 round-border grey-hover" style={{display:editable? 'block':'none'}}>
             <GoThreeBars />
           </span>
 
