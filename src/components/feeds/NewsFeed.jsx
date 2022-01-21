@@ -8,8 +8,8 @@ import Loader from "./Loader";
 function NewsFeed({ setPostsAdded, data }) {
   const [posts, setPosts] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [addPost, setAddPost] = useState(false);
   const [post, setPost] = useState("");
+  const [addPost, setAddPost] = useState(false);
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
   const [postValue, setPostValue] = useState("");

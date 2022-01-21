@@ -6,7 +6,7 @@ import NavWork from "./NavWork";
 import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
 
-function Header({profile}) {
+function MyHeaderMain({ profile }) {
   const [navbar, setNavbar] = useState(false);
 
   const extraHeader = () => {
@@ -124,9 +124,13 @@ function Header({profile}) {
           </div>
         </Nav>
       </Navbar>
-       {(profile && navbar)? <ExtraHeader profile={{profile}}/> : <span style={{ width: "0px" }}></span>}
+      {profile && navbar ? (
+        <ExtraHeader profile={{ profile }} />
+      ) : (
+        <span style={{ width: "0px" }}></span>
+      )}
     </div>
   );
 }
 
-export default Header;
+export default MyHeaderMain;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Button, Modal } from "react-bootstrap";
+import { Row, Button, Modal, Form } from "react-bootstrap";
 import "./style.css";
 import { parseISO, format } from "date-fns";
 import PostDropDown from "./PostDropDown";
@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function SingleNews({ posts }) {
   const [addPost, setAddPost] = useState(false);
+
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
 
@@ -100,18 +101,46 @@ function SingleNews({ posts }) {
           </Modal.Header>
 
           <Modal.Body>
-            <p>Modal body text goes here.</p>
+            <Form>
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>What do you want to talk about?</Form.Label>
+                <Form.Control
+                  className="w-100 shadow-none border-0"
+                  as="textarea"
+                  required
+                  value={posts.text}
+                  // onChange={e => setPost(e.target.value)}
+                  rows={4}
+                />
+              </Form.Group>
+              <div className="d-flex justify-content-between px-3">
+                <div className="d-flex justify-content-between align-items-center">
+                  <i className="bi mr-2 bi-image-fill"></i>
+                  <i className="bi mr-2 bi-youtube"></i>
+                  <i className="bi mr-2 bi-calendar-event"></i>
+                  <i className="bi mr-2 bi-briefcase-fill"></i>
+                  <i className="bi mr-2 bi-patch-check-fill"></i>
+                  <i className="bi mr-2 bi-bar-chart-line"></i>
+                  <i className="bi mr-2 bi-three-dots"></i>
+                  <div
+                    style={{ borderRight: "1px solid black", height: "30px" }}
+                  ></div>
+                  <i class="bi mx-2 bi-chat-dots"></i>
+                  <i>Anyone</i>
+                </div>
+                <Button
+                  // onClick={addPostFunction}
+                  className="shadow-none modal-post-btn border-0"
+                  // disabled={!post}
+                >
+                  Save
+                </Button>
+              </div>
+            </Form>
           </Modal.Body>
-
-          <Modal.Footer>
-            <Button className="shadow-none" variant="primary">
-              Edit
-            </Button>
-          </Modal.Footer>
         </Modal.Dialog>
       </Modal>
     </div>
   );
 }
-
 export default SingleNews;
