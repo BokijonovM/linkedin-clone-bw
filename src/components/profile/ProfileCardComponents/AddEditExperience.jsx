@@ -17,6 +17,7 @@ export default function AddEditExperience ({setShowAddExperience, list, userId }
   const[heading,setHeading] = useState('Add Experience')
   const [selectedPic, setSelectedPic] = useState()
   const [showAddPic, setShowAddPic] = useState (false)
+  
   useEffect(() => {
    if(list){
     setRole(list.role);
@@ -122,6 +123,7 @@ const handleSavePic = async(e) => {
 }
 
 
+
   return (
     <Modal.Dialog>
       <Modal.Header closeButton onClick={(e)=>setShowAddExperience(false)}>
@@ -129,13 +131,13 @@ const handleSavePic = async(e) => {
       </Modal.Header>
 
       <Modal.Body className="d-flex flex-column text-left">
-        <div className='d-flex my-3'style={{display:showDeleteBtn? 'block':'none'}} >
-          <div>
-          <label>Add Picture of Company</label>
-        <input type='file' onChange={(e)=> setSelectedPic(e.target.files[0])}/>
-          <span>{selectedPic && selectedPic.name}</span>
+        <div className='d-flex my-3' >
+          <div style={{display:showAddPic? 'block ':'none',}}>
+            <label >Add Picture of Company</label>
+            <input  type='file' onChange={(e)=> handleChangePic(e)}/>
+            <span>{selectedPic && selectedPic.name}</span>
           </div>
-        <Button variant='success' onClick={(e)=>handleSavePic(e)}>Save</Button>
+        <Button style={{display:showAddPic? 'block ':'none'}} variant='success' onClick={(e)=>handleSavePic(e)}>Save</Button>
         </div>
         <label for="role">Role *</label>
         <input
@@ -158,7 +160,7 @@ const handleSavePic = async(e) => {
         <input
           type="date"
           id="startDate"
-          value={startDate}
+          defaultValue={startDate}
           onChange={(e) => setStartDate(e.target.value)}
           placeholder={startDate}
         />

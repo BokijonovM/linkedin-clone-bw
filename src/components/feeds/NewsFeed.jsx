@@ -131,7 +131,7 @@ function NewsFeed({ profile }) {
             <img
               className="nav-profile-image-1 mr-3"
               src={profile.image}
-              alt=""
+              alt="user image"
             />
             <div>
               <Button
