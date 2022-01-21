@@ -42,6 +42,7 @@ setSelectedPic(e.target.files[0])
 
   const handleSubmit = async (e) => {
     // e.preventDefault()
+    setShowAddExperience(false)
     let experience = {
       role: role,
       company: company,
