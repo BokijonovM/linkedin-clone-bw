@@ -1,13 +1,20 @@
 import { GrFormEdit } from "react-icons/gr";
 import React, { useState, useRef, useEffect } from "react";
+import {location, useLocation} from 'react-router-dom'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
 import SingleFeaturedCard from "./SingleFeaturedCard";
 
 const FeaturedCard = () => {
+  
   const [infos, setInfos] = useState();
-
+  const location = useLocation()
+ const[editable, setEditable] = useState(true)
+ 
   useEffect(() => {
+    if(location.pathname!== '/profile'){
+      setEditable(false)
+      }
     setInfos([
       {
         image: "https://www.cta.org/wp-content/uploads/2021/04/Go-4-1.png",
@@ -47,10 +54,10 @@ const FeaturedCard = () => {
           <span className="h4 mx-2 round-hover" onClick={e => this.scroll(+20)}>
             <IoIosArrowForward />
           </span>
-          <span className="h4 mx-2 round-hover">
+          <span className="h4 mx-2 round-hover" style={{display:editable? 'block':'none'}}>
             <GoPlus />
           </span>
-          <span className="h4 round-hover">
+          <span className="h4 round-hover" style={{display:editable? 'block':'none'}}>
             <GrFormEdit />
           </span>
         </div>

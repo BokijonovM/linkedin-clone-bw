@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {location, useLocation} from 'react-router-dom'
 import { Card, Button } from "react-bootstrap";
 import { GrFormEdit, GrDocument } from "react-icons/gr";
 import Profile from "../../Profile";
@@ -8,11 +9,13 @@ import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
 import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
-const ProfileCard = ({ profile }) => {
+const ProfileCard = ({ profile, fetchProfile }) => {
+  const location = useLocation()
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
   
   // edit picture
+  const[editable, setEditable] = useState(true)
   const [showAddEditPic, setShowAddEditPic] = useState(false);
 
 const handleCloseAddEditPic = () => setShowAddEditPic(false);
@@ -20,6 +23,10 @@ const handleShowAddEditPic = () => setShowAddEditPic(true);
 
 useEffect(()=>{
   
+if(location.pathname!== '/profile'){
+setEditable(false)
+}
+console.log(editable)
 },[showEditPage])  
 
 
@@ -47,7 +54,7 @@ useEffect(()=>{
           }
         />
       </div>
-      <span className="edit-bg h4 round-hover">
+      <span className="edit-bg h4 round-hover" style={{display:editable? 'block':'none'}}>
         <GrFormEdit />
       </span>
       <Card.Body>
@@ -70,7 +77,7 @@ useEffect(()=>{
           </div>
         <span
           className="round-hover  h3 text-primary pAbsolute"
-          style={{ right: "20px" }}
+          style={{right: "20px",display:editable? 'block':'none'}}
           onClick={e => setShowEditPage(true)}
         >
           <GrFormEdit />
@@ -85,7 +92,7 @@ useEffect(()=>{
             fluid
           >
             {profile && (
-              <EditPage profile={profile} setShowEditPage={setShowEditPage} />
+              <EditPage fetchProfile={fetchProfile} profile={profile} setShowEditPage={setShowEditPage} />
             )}
           </div>
           <p className="h2 bold">
@@ -159,7 +166,7 @@ useEffect(()=>{
           >
             <div className="m-0 p-0 d-flex justify-content-between">
               <span className="bold">Open to work</span>
-              <span className="h6 round-hover">
+              <span className="h6 round-hover" style={{display:editable? 'block':'none'}}>
                 <GrFormEdit />
               </span>
             </div>

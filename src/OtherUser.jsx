@@ -10,7 +10,7 @@ const OtherUser = ({ userId }) => {
   const params = useParams();
   const [profile, setProfile] = useState();
   const [id, setId] = useState();
-  const [isLoading, setIsloading] = useState();
+  const [isLoading, setIsloading] = useState(true);
 
   const fetchProfile = async id => {
     try {
@@ -34,18 +34,6 @@ const OtherUser = ({ userId }) => {
     }
   };
 
-  useEffect(() => {
-    if (params.userId) {
-      let userId = params.userId;
-      setId(userId);
-      console.log(userId);
-      fetchProfile(userId);
-
-      // return () => {
-      //   isCancelled = false;
-      // };
-    }
-  }, [params.userId]);
 
   useEffect(() => {
     let isCancelled = true;
@@ -57,6 +45,9 @@ const OtherUser = ({ userId }) => {
 
       return () => {
         isCancelled = false;
+        setProfile()
+        setId()
+        setIsloading(false)
       };
     }
   }, [params.userId]);
