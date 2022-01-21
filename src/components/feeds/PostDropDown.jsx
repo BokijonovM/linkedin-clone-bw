@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Dropdown, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// import { showAddPost } from "./SingleNews";
 
 function PostDropDown({ userOnNav, userPic }) {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
