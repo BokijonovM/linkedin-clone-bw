@@ -142,6 +142,9 @@
   background-color: #f3f2ef;
   cursor: pointer;
 }
+.like-btn {
+  color: blue !important;
+}
 .modal-post-btn {
   border-radius: 99px;
   background-color: #f3f2ef;

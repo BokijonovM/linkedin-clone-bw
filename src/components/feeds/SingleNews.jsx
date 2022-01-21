@@ -60,8 +60,21 @@ function SingleNews({ posts }) {
               <div>
                 <hr />
                 <div className="d-flex justify-content-between px-2 like-comment-share-save">
-                  <p>
+                  <p
+                    onClick={() => {
+                      var x = document
+                        .querySelectorAll(".bi-hand-thumbs-up")
+                        .forEach(item => {
+                          item.style.color = "blue";
+                        });
+
+                      // for (let i = 0; i < x.length; i++) {
+                      //   x[i].style.color = "blue";
+                      // }
+                    }}
+                  >
                     <i
+                      id="bi-hand-thumbs-up"
                       class="bi bi-hand-thumbs-up mr-2"
                       style={{ color: "grey", fontSize: "20px" }}
                     ></i>
@@ -122,11 +135,6 @@ function SingleNews({ posts }) {
                   <i className="bi mr-2 bi-patch-check-fill"></i>
                   <i className="bi mr-2 bi-bar-chart-line"></i>
                   <i className="bi mr-2 bi-three-dots"></i>
-                  <div
-                    style={{ borderRight: "1px solid black", height: "30px" }}
-                  ></div>
-                  <i class="bi mx-2 bi-chat-dots"></i>
-                  <i>Anyone</i>
                 </div>
                 <Button
                   // onClick={addPostFunction}
