@@ -17,16 +17,16 @@ const FeaturedCard = () => {
       }
     setInfos([
       {
-        image: "https://www.cta.org/wp-content/uploads/2021/04/Go-4-1.png",
+        image: "https://picsum.photos/640/360",
         title: "Micro Certification",
       },
       {
         image:
-          "https://www.dasharaditsolutions.com/assets/frontend/images/IT-certifications.jpg",
+          "https://placebear.com/640/360",
         title: "Multiple Certified",
       },
       {
-        image: "https://www.cta.org/wp-content/uploads/2021/09/Go2.png",
+        image: "http://placeimg.com/640/360/any",
         title: "Sample Certificate",
       },
       {

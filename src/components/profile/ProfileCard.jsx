@@ -59,7 +59,7 @@ console.log(editable)
       </span>
       <Card.Body>
         <img  
-        onClick={(e)=>setShowAddEditPic(true)}
+        onClick={(e)=>{editable && setShowAddEditPic(true)}}
          className="profile-pic" 
          src={profile.image} 
          alt="linkedin user" />
