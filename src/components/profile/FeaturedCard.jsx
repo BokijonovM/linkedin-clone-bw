@@ -47,7 +47,7 @@ const FeaturedCard = () => {
     <div className="bg-white round-border  p-3 mt-3">
       <div className="d-flex justify-content-between">
         <span className="h4"> Featured</span>
-        <div>
+        <div className='d-flex'>
           <span className="h4 mx-2 round-hover" onClick={e => this.scroll(-20)}>
             <IoIosArrowBack />
           </span>

@@ -51,7 +51,11 @@ return (
         <Modal.Title>Change Profile Picture</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-        <img src={selectedFile || profileImg} alt='change profile pic'/>
+        
+        <div style={{width:'100px',height:'100px', marginBottom:'20px'}}>
+
+        <img className='w-100 ' src={selectedFile || profileImg} alt='change profile pic'/>
+        </div>
         <input type='file' id='photo' onChange={(e)=> handleChange(e)}/>
         <span className='pointer round-border grey-border p-2 m-3' onClick={(e) => handleUpload(e) }>upload</span>
 
