@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {location, useLocation} from 'react-router-dom'
 import { GoThreeBars } from "react-icons/go";
 import { GrFormEdit } from "react-icons/gr";
 import { format, parseISO } from "date-fns";
@@ -8,7 +9,19 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
   
   const[showAddExperience, setShowAddExperience]= useState(false)
   
+  
 
+  const location = useLocation()
+ const[editable, setEditable] = useState(true)
+ 
+ useEffect(()=>{
+
+   if(location.pathname!== '/profile'){
+   setEditable(false)
+   }
+ },[])
+ 
+ 
  
     return (
       <div className="d-flex justify-content-between  ">
@@ -31,12 +44,12 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
           <hr />
         </div>
         <div>
-          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)}>
+          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
             <GrFormEdit />
           </span>
 
           <br />
-          <span>
+          <span style={{display:editable? 'block':'none'}}>
             <GoThreeBars />
           </span>
 

@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
+import {location, useLocation} from 'react-router-dom'
+
 import DisplayList from "./DisplayList";
 import { useEffect, useState } from "react";
 import { GoPlus } from "react-icons/go";
@@ -10,9 +12,13 @@ const Experience = ({ userId }) => {
   const [ experienceId , setExperienceId ] = useState ()
   
 
-  
+  const location = useLocation()
+ const[editable, setEditable] = useState(true)
   
   useEffect(() => {
+    if(location.pathname!== '/profile'){
+      setEditable(false)
+    }
     fetchExperiences();
   }, [userId]);
 
@@ -44,7 +50,7 @@ const Experience = ({ userId }) => {
     <div className="bg-white p-3 mt-3 round-border">
       <p className="h4 d-flex justify-content-between">
         Experience
-       <span className="mx-2 round-hover" onClick={(e)=>setShowAddExperience(true)}>
+       <span className="mx-2 round-hover" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
             <GoPlus />
           </span>
         </p>

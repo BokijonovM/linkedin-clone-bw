@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Card,Button} from 'react-bootstrap'
 import {GiFallingStar} from 'react-icons/gi'
 import {MdGroup} from 'react-icons/md'
 import {FaSatelliteDish} from 'react-icons/fa'
 import {GiPoliceBadge} from 'react-icons/gi'
 
-class DashboardCard extends React.Component {
-    render() { 
+const DashboardCard = () => {
+  
         return <div className='dashboard round-border p-3 mt-3'>
             <div className='d-flex justify-content-between align-items-center'>
                 <div >
@@ -64,7 +64,7 @@ class DashboardCard extends React.Component {
                 </div>
             </div>
         </div>
-    }
+   
 }
  
 export default DashboardCard;
