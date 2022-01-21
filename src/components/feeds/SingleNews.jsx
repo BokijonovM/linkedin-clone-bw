@@ -11,14 +11,15 @@ function SingleNews({ posts }) {
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
-
   const [selectedPost, setSelectedPost] = useState([]);
+  useEffect(() => {
+    handleDeletePost();
+  }, []);
 
-  
   const handleDeletePost = async () => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`,
+        `https://striveschool-api.herokuapp.com/api/posts/`,
         {
           method: "DELETE",
           headers: {
@@ -27,10 +28,14 @@ function SingleNews({ posts }) {
           },
         }
       );
-      if (response.status === 401) alert("You Can not Delete others Posts");
 
       if (response.ok) {
-        closeAddPost();
+        setAddPost(false);
+        alert("Deleteddd");
+      } else if (response.status === 401)
+        alert("You Can not Delete others Posts");
+      else {
+        console.log("delete error");
       }
     } catch (error) {
       console.error(error);
