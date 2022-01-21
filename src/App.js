@@ -35,7 +35,7 @@ function App() {
       <div className="App" style={{backgroundColor:'rgb(243,242,238)'}}></div>
       <Routes>
         <Route path="/" element={profile && <MyMainFeed  profile={profile}/>} />
-        <Route path="/profile" element={profile && <Profile  profile={profile}/>} />
+        <Route path="/profile" element={profile && <Profile  fetchProfile={fetchProfile} profile={profile}/>} />
         <Route path="/OtherUser/:userId" element={<MyLayout profile={profile}>
                                           <OtherUser/>
                                         </MyLayout>} />
