@@ -47,51 +47,56 @@ setSelectedFile(e.target.files[0])
 return (
     
     <Modal  show={showAddEditPic} onHide={handleCloseAddEditPic} animation={true} className='w-100'>
+        <Modal.Dialog className="w-100 border-0 px-3">
     <Modal.Header closeButton>
         <Modal.Title>Change Profile Picture</Modal.Title>
     </Modal.Header>
     <Modal.Body>
         
-        <div style={{width:'100px',height:'100px', marginBottom:'20px'}}>
-
-        <img className='w-100 ' src={selectedFile || profileImg} alt='change profile pic'/>
-        </div>
-        <input type='file' id='photo' onChange={(e)=> handleChange(e)}/>
-        <span className='pointer round-border grey-border p-2 m-3' onClick={(e) => handleUpload(e) }>upload</span>
-
-       {selectedFile && ( <>
-       <p>{selectedFile.name}</p>
-        <p className='mb-5'>{selectedFile.type}</p>  </>)}
+        <div className='d-flex justify-content-between  align-items-center'>
+                
+            <div style={{width:'100px',height:'100px', marginBottom:'20px'}}>
+                <img className='w-100 ' src={selectedFile || profileImg} alt='change profile pic'/>
+                <input type='file' id='photo' onChange={(e)=> handleChange(e)}/>
+                {selectedFile && ( <>
+                    <p>{selectedFile.name}</p>
+                        <p className='mb-5'>{selectedFile.type}</p>  </>)}
       
+            </div>
+            <button className='bg-success text-white pointer round-border grey-border p-2 h-100' onClick={(e) => handleUpload(e) }>upload</button>
+        </div>
+
+       
    
-       <hr/>
-        <div className='d-flex justify-content-between text-center px-2 '>
+    
+        <div className='d-flex justify-content-between text-center px-2 mt-5 border-top pt-2'>
             <div className='d-flex'>
-                <div className='grey-hover round-border px-2 pt-1 mx-2'>
-                    <p> 
+                <div className='d-flex flex-column grey-hover round-border px-2 pt-1 mx-2'>
+                    <span> 
                     <i class="bi bi-pencil-fill"></i>
-                   </p>
-                    <p>Edit</p>
+                   </span>
+                    <span>Edit</span>
                 </div>
-                <div className='grey-hover round-border  px-2 pt-1 mx-2'>
-                    <p>
+                <div className='d-flex flex-column grey-hover round-border  px-2 pt-1 mx-2'>
+                    <span>
                     <i class="bi bi-camera-fill"/>
-                    </p>
-                    <p>Add Photo</p>
+                    </span>
+                    <span>Add Photo</span>
                 </div>
-                <div className='grey-hover round-border px-2 pt-1  mx-2'>
-                <p><i class="bi bi-image-fill"/></p>
-                    <p>Frame</p>
+                <div className='d-flex flex-column grey-hover round-border px-2 pt-1  mx-2'>
+                <span><i class="bi bi-image-fill"/></span>
+                    <span>Frame</span>
                 </div>
             </div>
             <div className='grey-hover round-border  px-2 pt-1 d-flex'>
-                <div className='mx-2'>
-                    <p><i class="bi bi-trash-fill"/></p>
-                    <p>Delete</p>
+                <div className='d-flex flex-column mx-2'>
+                    <span><i class="bi bi-trash-fill"/></span>
+                    <span>Delete</span>
                 </div>
             </div>
         </div>
         </Modal.Body>
+        </Modal.Dialog>
     </Modal>
     )
 }
