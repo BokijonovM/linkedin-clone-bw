@@ -110,13 +110,19 @@
   top: 0px;
   height: 100vh;
   padding-top: 50px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .grey-hover:hover {
   background-color: rgba(128, 128, 128, 0.219);
 }
 
+d-hover {
+  opacity: 0;
+}
+exp-card:hover d-hover {
+  opacity: 1;
+}
 /* add-edit-pic-buttons */
 /* .add-edit-pic-buttons{
     display:flex;
