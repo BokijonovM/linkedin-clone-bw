@@ -34,9 +34,9 @@ function MyMainFeed({ profile }) {
             <h6 className="mb-0">Messaging</h6>
           </div>
           <div className="d-flex align-items-center">
-            <i className="mr-2 bi bi-three-dots"></i>
-            <i className="mr-2 bi bi-pencil-square"></i>
-            <i className="bi bi-caret-up"></i>
+            <i className="text-dark mr-2 bi bi-three-dots"></i>
+            <i className="text-dark mr-2 bi bi-pencil-square"></i>
+            <i className="text-dark bi bi-caret-up"></i>
           </div>
         </div>
       </Row>
