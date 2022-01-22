@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+## Photos
+![Design and Development](https://github.com/BokijonovM/linkedin-clone-bw/blob/main/React-App%20(1).png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
