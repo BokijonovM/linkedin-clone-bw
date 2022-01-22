@@ -8,13 +8,13 @@ import { StylesContext } from "@material-ui/styles";
 
 function SingleNews({ posts, fetchData }) {
   const [addPost, setAddPost] = useState(false);
-  const [selectedPostDetails, setSelectedPostDetails] = useState(null);
-
+  
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
-  const [selectedPost, setSelectedPost] = useState([]);
+  
   const [postId, setPostId] = useState()
-  const[text,setText] = useState()
+  const [text,setText] = useState()
+  
   useEffect(() => {
    setPostId(posts._id)
    setText(posts.text)
@@ -50,11 +50,11 @@ function SingleNews({ posts, fetchData }) {
   const handleUpdatePost = async () => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/${selectedPost}`,
+        `https://striveschool-api.herokuapp.com/api/posts/` + postId,
         {
           method: "PUT",
           body: JSON.stringify({
-            text: selectedPostDetails.text,
+            text:text,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -66,6 +66,7 @@ function SingleNews({ posts, fetchData }) {
       if (response.status === 401) alert("you can not update others posts");
       if (response.ok) {
         closeAddPost();
+        fetchData()
       }
     } catch (error) {
       console.error(error);
@@ -73,7 +74,7 @@ function SingleNews({ posts, fetchData }) {
   };
 
   const handleEdit = id => {
-    setSelectedPost(id);
+    
     showAddPost();
   };
 
@@ -128,7 +129,7 @@ function SingleNews({ posts, fetchData }) {
                 </div>
               </div>
               <div>
-                <p className="w-100">{text}</p>
+                <p className="w-100">{posts.text}</p>
               </div>
               <div>
                 <hr />
@@ -208,12 +209,7 @@ function SingleNews({ posts, fetchData }) {
                   value={text}
                   // onChange={e => setPost(e.target.value)}
                   rows={4}
-                  onChange={e =>
-                    setSelectedPostDetails({
-                      ...selectedPostDetails,
-                      text: e.target.value,
-                    })
-                  }
+                  onChange={e => setText( e.target.value)}
                 />
               </Form.Group>
               <div className="d-flex justify-content-between px-3">
