@@ -59,7 +59,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
               style={{
                 display: showAddExperience? "block" : "none",
               }}
-              fluid
+             
             >
               {userId && (
                 <AddEditExperience  fetchExperiences={fetchExperiences} userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>

@@ -28,7 +28,7 @@ function MyHeaderMain({ profile }) {
               fontSize: "35px",
               color: "#0a66c2",
             }}
-            class="bi bi-linkedin pl-5"
+            className="bi bi-linkedin pl-5"
           ></i>
         </Navbar.Brand>
         <Form inline className="form-main-nav">
@@ -105,20 +105,20 @@ function MyHeaderMain({ profile }) {
                 alt="profile pic"
               />
             </Link>
-            <p style={{ fontSize: "12px" }} className="mb-0 mt-n1">
+            <div style={{ fontSize: "12px" }} className="mb-0 mt-n1">
               <NavDropdown profile={profile} />
-              {/* <i class="bi bi-caret-down-fill"></i> */}
-            </p>
+              {/* <i className="bi bi-caret-down-fill"></i> */}
+            </div>
           </div>
           <div
             className="none-550-needed mx-5"
             style={{ borderRight: "1px solid black" }}
           ></div>
           <div className="d-flex flex-column align-items-center mr-3 nav-work-div">
-            <i style={{ fontSize: "22px" }} class="bi bi-grid-3x3-gap-fill"></i>
-            <p style={{ fontSize: "12px" }} className="mb-0 mt-n2">
+            <i style={{ fontSize: "22px" }} className="bi bi-grid-3x3-gap-fill"></i>
+            <div style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               <NavWork />
-            </p>
+            </div>
           </div>
           <div className="d-flex flex-column align-items-center pr-5">
             <p

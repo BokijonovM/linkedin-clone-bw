@@ -26,7 +26,7 @@ useEffect(()=>{
 if(location.pathname!== '/profile'){
 setEditable(false)
 }
-console.log(editable)
+
 },[showEditPage])  
 
 
@@ -69,7 +69,7 @@ console.log(editable)
               style={{
                 display: showAddEditPic? "block" : "none",
               }}
-              fluid
+             
             >
                 <AddEditPic profileImg={profileImg} showAddEditPic={showAddEditPic} 
                 handleCloseAddEditPic = { handleCloseAddEditPic}/>
@@ -89,7 +89,7 @@ console.log(editable)
             style={{
               display: showEditPage ? "block" : "none",
             }}
-            fluid
+          
           >
             {profile && (
               <EditPage fetchProfile={fetchProfile} profile={profile} setShowEditPage={setShowEditPage} />

@@ -23,9 +23,6 @@ const Experience = ({ userId }) => {
   }, [userId]);
 
   const fetchExperiences = async () => {
-    //preventDefault()
-    console.log("fetch experience")
-
     try {
       let apiCall = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
@@ -38,7 +35,6 @@ const Experience = ({ userId }) => {
       );
       if (apiCall.ok) {
         let data = await apiCall.json();
-        console.log("RESPONSE TEST", data);
         setInfo(data);
       }
     } catch (error) {
@@ -60,7 +56,7 @@ const Experience = ({ userId }) => {
               style={{
                 display: showAddExperience? "block" : "none",
               }}
-              fluid
+           
             >
               {userId && (
                 <AddEditExperience  fetchExperiences={fetchExperiences} userId={userId} setShowAddExperience={setShowAddExperience}/>
