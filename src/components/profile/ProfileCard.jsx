@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {location, useLocation} from 'react-router-dom'
+import { location, useLocation } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { GrFormEdit, GrDocument } from "react-icons/gr";
 import Profile from "../../Profile";
@@ -10,25 +10,23 @@ import DropAddSection from "./ProfileCardComponents/DropAddSection";
 import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
 const ProfileCard = ({ profile, fetchProfile }) => {
-  const location = useLocation()
+  const location = useLocation();
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
-  const [profileImg, setProfilImg] = useState()
+  const [profileImg, setProfilImg] = useState();
   // edit picture
-  const[editable, setEditable] = useState(true)
+  const [editable, setEditable] = useState(true);
   const [showAddEditPic, setShowAddEditPic] = useState(false);
 
-const handleCloseAddEditPic = () => setShowAddEditPic(false);
-const handleShowAddEditPic = () => setShowAddEditPic(true);
+  const handleCloseAddEditPic = () => setShowAddEditPic(false);
+  const handleShowAddEditPic = () => setShowAddEditPic(true);
 
-useEffect(()=>{
-  setProfilImg(profile.image)
-if(location.pathname!== '/profile'){
-setEditable(false)
-}
-
-},[showEditPage])  
-
+  useEffect(() => {
+    setProfilImg(profile.image);
+    if (location.pathname !== "/profile") {
+      setEditable(false);
+    }
+  }, [showEditPage]);
 
   const showDropdown = input => {
     if (dropdown === input) {
@@ -38,7 +36,7 @@ setEditable(false)
     }
   };
 
-/* <span className="mx-2 round-hover" onClick={(e)=>setShowAddEditPic(true)}>
+  /* <span className="mx-2 round-hover" onClick={(e)=>setShowAddEditPic(true)}>
             <GoPlus />
           </span>
         </p>
@@ -54,30 +52,38 @@ setEditable(false)
           }
         />
       </div>
-      <span className="edit-bg h4 round-hover" style={{display:editable? 'block':'none'}}>
+      <span
+        className="edit-bg h4 round-hover"
+        style={{ display: editable ? "block" : "none" }}
+      >
         <GrFormEdit />
       </span>
       <Card.Body>
-        <img  
-        onClick={(e)=>{editable && setShowAddEditPic(true)}}
-         className="profile-pic" 
-         src={profile.image} 
-         alt="linkedin user" />
-           <div style={{ marginTop: "60px" }}>
+        <img
+          onClick={e => {
+            editable && setShowAddEditPic(true);
+          }}
+          className="profile-pic"
+          src={profile.image}
+          alt="linkedin user"
+        />
+        <div style={{ marginTop: "60px" }}>
           <div
-              className="pAbsolute w-100 modal-box"
-              style={{
-                display: showAddEditPic? "block" : "none",
-              }}
-             
-            >
-                <AddEditPic profileImg={profileImg} showAddEditPic={showAddEditPic} 
-                handleCloseAddEditPic = { handleCloseAddEditPic}/>
+            className="pAbsolute w-100 modal-box"
+            style={{
+              display: showAddEditPic ? "block" : "none",
+            }}
+          >
+            <AddEditPic
+              profileImg={profileImg}
+              showAddEditPic={showAddEditPic}
+              handleCloseAddEditPic={handleCloseAddEditPic}
+            />
           </div>
-          </div>
+        </div>
         <span
           className="round-hover  h3 text-primary pAbsolute"
-          style={{right: "20px",display:editable? 'block':'none'}}
+          style={{ right: "20px", display: editable ? "block" : "none" }}
           onClick={e => setShowEditPage(true)}
         >
           <GrFormEdit />
@@ -89,10 +95,13 @@ setEditable(false)
             style={{
               display: showEditPage ? "block" : "none",
             }}
-          
           >
             {profile && (
-              <EditPage fetchProfile={fetchProfile} profile={profile} setShowEditPage={setShowEditPage} />
+              <EditPage
+                fetchProfile={fetchProfile}
+                profile={profile}
+                setShowEditPage={setShowEditPage}
+              />
             )}
           </div>
           <p className="h2 bold">
@@ -103,7 +112,7 @@ setEditable(false)
             <i className="bi bi-dot"></i>
             <span className="h6 bold blue-link">Contact info</span>
           </p>
-          <p className="h6 bold blue-link">96 Connections</p>
+          <p className="h6 bold blue-link">500+ Connections</p>
           <div>
             <Button
               onClick={e => showDropdown(e.target.innerText)}
@@ -166,7 +175,10 @@ setEditable(false)
           >
             <div className="m-0 p-0 d-flex justify-content-between">
               <span className="bold">Open to work</span>
-              <span className="h6 round-hover" style={{display:editable? 'block':'none'}}>
+              <span
+                className="h6 round-hover"
+                style={{ display: editable ? "block" : "none" }}
+              >
                 <GrFormEdit />
               </span>
             </div>

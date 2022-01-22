@@ -34,10 +34,12 @@ function LeftSide({ profile }) {
             }}
           />
         </div>
-        <p className="h5 bold px-3">
-          {profile.name} {profile.surnamename}
-        </p>
-        <p>{profile.bio}</p>
+        <a href="/profile" style={{ color: "black" }}>
+          <p className="h5 bold px-3">
+            {profile.name} {profile.surname}
+          </p>
+        </a>
+        <p className="px-5">{profile.bio}</p>
         <hr />
         <div className="h6 px-3 d-flex justify-content-between">
           <span> Who viewed your profile </span>
