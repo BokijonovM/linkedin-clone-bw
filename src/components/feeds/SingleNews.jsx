@@ -105,7 +105,6 @@ function SingleNews({ posts, fetchData }) {
           aria-labelledby={labeledBy}
         >
           <div className="mx-3 d-flex justify-content-center"></div>
-          <hr />
           <ul className="list-unstyled">
             {React.Children.toArray(children).filter(
               child =>

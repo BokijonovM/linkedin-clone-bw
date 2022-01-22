@@ -26,6 +26,20 @@ function MyMainFeed({ profile }) {
           </Col>
         </Row>
       </Container>
+
+      <Row className="bottom-chat-row">
+        <div className="bottom-cat-main-div d-flex justify-content-between align-items-center">
+          <div className="d-flex align-items-center">
+            <img className="footer-message-img" src={profile.image} alt="" />
+            <h6 className="mb-0">Messaging</h6>
+          </div>
+          <div className="d-flex align-items-center">
+            <i className="mr-2 bi bi-three-dots"></i>
+            <i className="mr-2 bi bi-pencil-square"></i>
+            <i className="bi bi-caret-up"></i>
+          </div>
+        </div>
+      </Row>
       <Footer />
     </div>
   );
