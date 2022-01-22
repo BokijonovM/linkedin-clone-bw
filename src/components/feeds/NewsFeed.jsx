@@ -74,7 +74,7 @@ function NewsFeed({ profile }) {
       if (res.ok) {
         let data = await res.json();
         console.log(data);
-        fetchData()
+        fetchData();
         // setPost(data.stringify());
       } else {
         console.error("fetch failed");
@@ -156,7 +156,13 @@ function NewsFeed({ profile }) {
               .reverse()
               .slice(0, endPost)
               .map(post => {
-                return <SingleNews key={post._id} posts={post}  fetchData={fetchData}/>;
+                return (
+                  <SingleNews
+                    key={post._id}
+                    posts={post}
+                    fetchData={fetchData}
+                  />
+                );
               })
           )}
         </Row>
@@ -188,7 +194,10 @@ function NewsFeed({ profile }) {
                 alt=""
               />
               <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Control className="mt-3 shadow-none" as="select">
+                <Form.Control
+                  className="mt-3 shadow-none anyone-dropdown"
+                  as="select"
+                >
                   <option>Anyone</option>
                   <option>Connections</option>
                   <option>Anyone + Twitter</option>
