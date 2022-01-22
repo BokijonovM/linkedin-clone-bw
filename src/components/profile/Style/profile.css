@@ -112,8 +112,18 @@
   padding-top: 50px;
   background: rgba(0, 0, 0, 0.5);
 }
+.grey-hover {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: grey;
+  font-size: 15px;
+}
 
 .grey-hover:hover {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
   background-color: rgba(128, 128, 128, 0.219);
 }
 
