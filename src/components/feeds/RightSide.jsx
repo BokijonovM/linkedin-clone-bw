@@ -71,6 +71,9 @@ function RightSide() {
           alt=""
         />
       </div>
+      <div>
+        <img className="w-100 right-image" src={logo} alt="" />
+      </div>
 
       <div
         className="footer-feeds d-flex w-100 flex-wrap justify-content-around mt-3 px-4"
