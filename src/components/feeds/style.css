@@ -23,10 +23,15 @@
 }
 .nav-profile-image {
   height: 30px;
+
+  width: 30px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .nav-profile-image-1 {
   height: 50px;
+  width: 50px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .navbar-profile {
