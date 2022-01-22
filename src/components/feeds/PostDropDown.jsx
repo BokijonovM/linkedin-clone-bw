@@ -16,7 +16,7 @@ function PostDropDown({ userOnNav, userPic }) {
       }}
     >
       {children}
-      &#x25bc;
+      {/* &#x25bc; */}
     </a>
   ));
 
@@ -54,7 +54,7 @@ function PostDropDown({ userOnNav, userPic }) {
         id="dropdown-custom-components"
         style={{ color: "black !important" }}
       >
-        ...
+        <i className="bi bi-three-dots"></i>
       </Dropdown.Toggle>
 
       <Dropdown.Menu style={{ width: "240px" }} as={CustomMenu} alignRight>

@@ -22,7 +22,7 @@ function MyHeaderMain({ profile }) {
   return (
     <div style={{ width: "100%" }}>
       <Navbar className="px-5 py-0 navbar-profile " bg="light" expand="lg">
-        <Navbar.Brand href="#home ">
+        <Navbar.Brand href="/">
           <i
             style={{
               fontSize: "35px",
@@ -115,7 +115,10 @@ function MyHeaderMain({ profile }) {
             style={{ borderRight: "1px solid black" }}
           ></div>
           <div className="d-flex flex-column align-items-center mr-3 nav-work-div">
-            <i style={{ fontSize: "22px" }} className="bi bi-grid-3x3-gap-fill"></i>
+            <i
+              style={{ fontSize: "22px" }}
+              className="bi bi-grid-3x3-gap-fill"
+            ></i>
             <div style={{ fontSize: "12px" }} className="mb-0 mt-n2">
               <NavWork />
             </div>

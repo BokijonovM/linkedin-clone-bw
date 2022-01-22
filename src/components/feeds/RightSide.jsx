@@ -8,7 +8,9 @@ function RightSide() {
         className="bg-white p-3 pb-0 w-100 round-border mt-2"
         style={{ fontSize: "12px" }}
       >
-        <p className="h6 bold mb-2">Add to you feed</p>
+        <p className="h6 bold mb-2 d-flex justify-content-between">
+          Add to you feed <i class="bi bi-exclamation-diamond"></i>
+        </p>
         <div className="d-flex mt-2">
           <div style={{ width: "75px", height: "75px", marginRight: "5px" }}>
             <img
@@ -70,6 +72,9 @@ function RightSide() {
           src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
           alt=""
         />
+      </div>
+      <div>
+        <img className="w-100 right-image" src={logo} alt="" />
       </div>
 
       <div
