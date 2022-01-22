@@ -227,3 +227,13 @@
     width: 100vw !important;
   }
 }
+.single-post-three-dots {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.single-post-three-dots:hover {
+  background-color: rgb(185, 185, 185);
+  border-radius: 50%;
+}

@@ -171,7 +171,7 @@ function SingleNews({ posts, fetchData }) {
                       id="dropdown-custom-components"
                       style={{ color: "black !important" }}
                     >
-                      <i className="bi bi-three-dots"></i>
+                      <i className="bi bi-three-dots single-post-three-dots"></i>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu
