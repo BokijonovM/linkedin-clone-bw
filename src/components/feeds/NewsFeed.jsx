@@ -25,33 +25,33 @@ function NewsFeed({ profile }) {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      closeAddPost();
-      try {
-        let response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/posts/ ",
-          {
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
-            },
-          }
-        );
-        if (response.ok) {
-          let dataRes = await response.json();
-
-          setPosts(dataRes);
-          setIsLoading(false);
-        } else {
-          console.log("Error");
-        }
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
     fetchData();
-    addPostFunction();
   }, []);
+
+  const fetchData = async () => {
+    closeAddPost();
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/ ",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+          },
+        }
+      );
+      if (response.ok) {
+        let dataRes = await response.json();
+
+        setPosts(dataRes);
+        setIsLoading(false);
+      } else {
+        console.log("Error");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   const addPostFunction = async e => {
     e.preventDefault();
@@ -74,6 +74,7 @@ function NewsFeed({ profile }) {
       if (res.ok) {
         let data = await res.json();
         console.log(data);
+        fetchData()
         // setPost(data.stringify());
       } else {
         console.error("fetch failed");
@@ -155,7 +156,7 @@ function NewsFeed({ profile }) {
               .reverse()
               .slice(0, endPost)
               .map(post => {
-                return <SingleNews key={post._id} posts={post} />;
+                return <SingleNews key={post._id} posts={post}  fetchData={fetchData}/>;
               })
           )}
         </Row>
@@ -183,7 +184,7 @@ function NewsFeed({ profile }) {
             <Modal.Title className="d-flex align-items-center">
               <img
                 className="nav-profile-image-1 mr-3"
-                src="https://th.bing.com/th/id/R.2d083db2480f8bc1be770e83ced8e705?rik=D17WYQgsM%2fx8Kw&pid=ImgRaw&r=0"
+                src={profile.image}
                 alt=""
               />
               <Form.Group controlId="exampleForm.ControlSelect1">

@@ -4,22 +4,27 @@ import "./style.css";
 import { parseISO, format } from "date-fns";
 import PostDropDown from "./PostDropDown";
 import { useState } from "react";
+import { StylesContext } from "@material-ui/styles";
 
-function SingleNews({ posts }) {
+function SingleNews({ posts, fetchData }) {
   const [addPost, setAddPost] = useState(false);
   const [selectedPostDetails, setSelectedPostDetails] = useState(null);
 
   const showAddPost = () => setAddPost(true);
   const closeAddPost = () => setAddPost(false);
   const [selectedPost, setSelectedPost] = useState([]);
+  const [postId, setPostId] = useState()
+  const[text,setText] = useState()
   useEffect(() => {
-    handleDeletePost();
+   setPostId(posts._id)
+   setText(posts.text)
+    console.log("from single post", posts._id)
   }, []);
 
   const handleDeletePost = async () => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/`,
+        `https://striveschool-api.herokuapp.com/api/posts/` + postId,
         {
           method: "DELETE",
           headers: {
@@ -31,7 +36,7 @@ function SingleNews({ posts }) {
 
       if (response.ok) {
         setAddPost(false);
-        alert("Deleteddd");
+       fetchData()
       } else if (response.status === 401)
         alert("You Can not Delete others Posts");
       else {
@@ -123,7 +128,7 @@ function SingleNews({ posts }) {
                 </div>
               </div>
               <div>
-                <p className="w-100">{posts.text}</p>
+                <p className="w-100">{text}</p>
               </div>
               <div>
                 <hr />
@@ -200,7 +205,7 @@ function SingleNews({ posts }) {
                   className="w-100 shadow-none border-0"
                   as="textarea"
                   required
-                  value={posts.text}
+                  value={text}
                   // onChange={e => setPost(e.target.value)}
                   rows={4}
                   onChange={e =>
