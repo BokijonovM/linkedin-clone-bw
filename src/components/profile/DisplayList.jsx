@@ -37,8 +37,8 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
           <p className="p-0 m-0">{list.company}</p>
           {/* <p className="p-0 m-0 font14">{list.description}</p> */}
           <p className="p-0 m-0 font14">
-            {format(new Date(list.startDate), 'MMMM do yyyy')} -
-            {format(new Date(list.endDate), 'MMMM do yyyy')}
+            {/* {format(new Date(list.startDate), 'MM do yyyy')} -
+            {format(new Date(list.endDate), 'MM do yyyy')} */}
           </p>
           <span>{list.area}</span>
           <hr />
