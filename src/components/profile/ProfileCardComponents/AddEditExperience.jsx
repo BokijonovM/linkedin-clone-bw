@@ -1,6 +1,7 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
+
 export default function AddEditExperience({
   setShowAddExperience,
   list,
@@ -31,7 +32,6 @@ export default function AddEditExperience({
       setEndDate(new Date(list.endDate));
       setDescription(list.description);
       setArea(list.area);
-      console.log(list, userId, "from the add experience page");
       setMethod("PUT");
       setUrl(
         `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`
@@ -39,6 +39,7 @@ export default function AddEditExperience({
       setHeading("Edit Experience");
       SetShowDeleteBtn(true);
       setShowAddPic(true);
+
     }
   }, []);
 
@@ -85,7 +86,7 @@ export default function AddEditExperience({
     setShowAddExperience(false);
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`,
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}/picture`,
         {
           method: "DELETE",
           headers: {
@@ -98,7 +99,6 @@ export default function AddEditExperience({
       if (response.ok) {
         let data = await response.json();
         fetchExperiences();
-        console.log("display after delete experience", data);
       } else {
         console.log("error");
       }
@@ -156,16 +156,16 @@ export default function AddEditExperience({
             Save
           </Button>
         </div>
-        <label for="role">Role *</label>
+        <label htmlFor="role">Role *</label>
         <input
           type="text"
           id="role"
           value={role}
           onChange={e => setRole(e.target.value)}
-          Place
+         
         />
 
-        <label for="company">Company *</label>
+        <label htmlFor="company">Company *</label>
         <input
           type="text"
           id="company"
@@ -173,7 +173,7 @@ export default function AddEditExperience({
           onChange={e => setCompany(e.target.value)}
         />
 
-        <label for="startDate">Start Date *</label>
+        <label htmlFor="startDate">Start Date *</label>
         <input
           type="date"
           id="startDate"
@@ -182,7 +182,7 @@ export default function AddEditExperience({
           placeholder={startDate}
         />
 
-        <label for="endDate">endDate *</label>
+        <label htmlFor="endDate">endDate *</label>
         <input
           type="date"
           id="endDate"
@@ -191,7 +191,7 @@ export default function AddEditExperience({
           placeholder={endDate}
         />
 
-        <label for="description">Description *</label>
+        <label htmlFor="description">Description *</label>
         <textarea
           type="text"
           id="description"
@@ -199,7 +199,7 @@ export default function AddEditExperience({
           onChange={e => setDescription(e.target.value)}
         />
 
-        <label for="area">Area *</label>
+        <label htmlFor="area">Area *</label>
         <input
           type="text"
           id="area"

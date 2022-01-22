@@ -27,7 +27,7 @@ function Footer() {
           </p>
           <p>
             <a href="#">
-              Privacy & Terms <i class="bi bi-caret-down"></i>
+              Privacy & Terms <i className="bi bi-caret-down"></i>
             </a>
           </p>
           <p>
@@ -69,7 +69,7 @@ function Footer() {
           <div className="d-flex">
             <i
               style={{ color: "#767675" }}
-              class="bi bi-question-circle-fill mt-1 pr-1"
+              className="bi bi-question-circle-fill mt-1 pr-1"
             ></i>
             <div>
               <p className="mb-n1">
@@ -92,7 +92,7 @@ function Footer() {
           <div className="d-flex">
             <i
               style={{ color: "#767675" }}
-              class="bi bi-gear-fill mt-1 mr-1"
+              className="bi bi-gear-fill mt-1 mr-1"
             ></i>
             <div>
               <p className="mb-n1">

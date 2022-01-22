@@ -40,7 +40,6 @@ const OtherUser = ({ userId }) => {
     if (params.userId) {
       let userId = params.userId;
       setId(userId);
-      console.log(userId);
       fetchProfile(userId);
 
       return () => {

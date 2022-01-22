@@ -13,7 +13,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
   const location = useLocation()
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
-  
+  const [profileImg, setProfilImg] = useState()
   // edit picture
   const[editable, setEditable] = useState(true)
   const [showAddEditPic, setShowAddEditPic] = useState(false);
@@ -22,11 +22,11 @@ const handleCloseAddEditPic = () => setShowAddEditPic(false);
 const handleShowAddEditPic = () => setShowAddEditPic(true);
 
 useEffect(()=>{
-  
+  setProfilImg(profile.image)
 if(location.pathname!== '/profile'){
 setEditable(false)
 }
-console.log(editable)
+
 },[showEditPage])  
 
 
@@ -59,7 +59,7 @@ console.log(editable)
       </span>
       <Card.Body>
         <img  
-        onClick={(e)=>setShowAddEditPic(true)}
+        onClick={(e)=>{editable && setShowAddEditPic(true)}}
          className="profile-pic" 
          src={profile.image} 
          alt="linkedin user" />
@@ -69,9 +69,9 @@ console.log(editable)
               style={{
                 display: showAddEditPic? "block" : "none",
               }}
-              fluid
+             
             >
-                <AddEditPic showAddEditPic={showAddEditPic} 
+                <AddEditPic profileImg={profileImg} showAddEditPic={showAddEditPic} 
                 handleCloseAddEditPic = { handleCloseAddEditPic}/>
           </div>
           </div>
@@ -89,7 +89,7 @@ console.log(editable)
             style={{
               display: showEditPage ? "block" : "none",
             }}
-            fluid
+          
           >
             {profile && (
               <EditPage fetchProfile={fetchProfile} profile={profile} setShowEditPage={setShowEditPage} />

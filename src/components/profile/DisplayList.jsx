@@ -24,7 +24,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
  
  
     return (
-      <div className="d-flex justify-content-between  ">
+      <div className="exp-card d-flex justify-content-between  ">
         <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
           <img
             src="https://image.shutterstock.com/image-vector/color-square-composition-text-geometric-600w-1337231156.jpg"
@@ -37,19 +37,19 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
           <p className="p-0 m-0">{list.company}</p>
           {/* <p className="p-0 m-0 font14">{list.description}</p> */}
           <p className="p-0 m-0 font14">
-            {format(new Date(list.startDate), 'MMMM do yyyy')} -
-            {format(new Date(list.endDate), 'MMMM do yyyy')}
+            {/* {format(new Date(list.startDate), 'MM do yyyy')} -
+            {format(new Date(list.endDate), 'MM do yyyy')} */}
           </p>
           <span>{list.area}</span>
           <hr />
         </div>
         <div>
-          <span className="h3 text-primary dRelative" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
+          <span className="h3  round-hover text-primary dRelative d-hover" onClick={(e)=>setShowAddExperience(true)} style={{display:editable? 'block':'none'}}>
             <GrFormEdit />
           </span>
 
           <br />
-          <span style={{display:editable? 'block':'none'}}>
+          <span className="pl-2 round-border grey-hover" style={{display:editable? 'block':'none'}}>
             <GoThreeBars />
           </span>
 
@@ -59,7 +59,7 @@ const DisplayList = ({list, userId, fetchExperiences}) => {
               style={{
                 display: showAddExperience? "block" : "none",
               }}
-              fluid
+             
             >
               {userId && (
                 <AddEditExperience  fetchExperiences={fetchExperiences} userId={userId} list={list} setShowAddExperience={setShowAddExperience}/>

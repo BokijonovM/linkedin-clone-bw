@@ -19,11 +19,10 @@ const PeopleViewed = () => {
           },
         }
       );
-      console.log(apiCall);
+      
 
       if (apiCall.ok) {
         let user = await apiCall.json();
-        console.log(user);
         setInfo(user);
       } else {
         console.log("Something wrong");
@@ -48,19 +47,18 @@ const PeopleViewed = () => {
             <h2 className="text-heading-medium pt-3">People also viewed</h2>
           </div>
           {info.slice(0, showMore).map(u => (
-            <Link to={'/OtherUser/' + u._id}>
+            <Link  key={u._id} to={'/OtherUser/' + u._id}>
             <div className="" key={u._id}>
-              <a className="text-dark font-weight-bolder d-flex" href="/">
+              <div className="text-dark font-weight-bolder d-flex" href="/">
                 <img className="img-fluid" src={u.image} alt="user" />
                 <div className="mt-3">
                   <p className="mb-0" style={{ fontSize: "14px" }}>
-                    {u.name} <n />
-                    {u.surname}
+                    {u.name} {u.surname}
                   </p>
                   <p className="text-secondary mb-0">{u.title}</p>
                 </div>
-              </a>
-              <div className="">
+              </div>
+              <div>
                 <button className="btn btn-connect py-0 shadow-none px-4 mt-n3">
                   Connect
                 </button>

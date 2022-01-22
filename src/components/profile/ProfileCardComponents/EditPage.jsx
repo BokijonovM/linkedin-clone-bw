@@ -63,16 +63,16 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
       </Modal.Header>
 
       <Modal.Body className="d-flex flex-column text-left">
-        <label for="firstName">First Name *</label>
+        <label htmlFor="firstName">First Name *</label>
         <input
           type="text"
           id="firstName"
           value={name}
           onChange={e => setName(e.target.value)}
-          Place
+         
         />
 
-        <label for="lastName">Last Name *</label>
+        <label htmlFor="lastName">Last Name *</label>
         <input
           type="text"
           id="lastName"
@@ -80,7 +80,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           onChange={e => setSurname(e.target.value)}
         />
 
-        <label for="addName">Email Address *</label>
+        <label htmlFor="addName">Email Address *</label>
         <input
           type="email"
           id="email"
@@ -88,7 +88,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           onChange={e => setEmail(e.target.value)}
         />
 
-        <label for="bio">Bio *</label>
+        <label htmlFor="bio">Bio *</label>
         <input
           type="text"
           id="bio"
@@ -96,7 +96,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           onChange={e => setBio(e.target.value)}
         />
 
-        <label for="title">Title *</label>
+        <label htmlFor="title">Title *</label>
         <input
           type="text"
           id="title"
@@ -104,7 +104,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           onChange={e => setTitle(e.target.value)}
         />
 
-        <label for="area">Area *</label>
+        <label htmlFor="area">Area *</label>
         <input
           type="text"
           id="area"
