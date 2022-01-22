@@ -1,6 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import {withRouter} from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -20,7 +20,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
 
   const handleSubmit = async e => {
     // e.preventDefault()
-    setShowEditPage(false)
+    setShowEditPage(false);
     let user = {
       name: name,
       surname: surname,
@@ -37,15 +37,16 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           method: "PUT",
           body: JSON.stringify(user),
           headers: {
-            "Content-Type": "application/JSON",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjcwZjczZDVjYjAwMTUzOTVhOWQiLCJpYXQiOjE2NDI0MDc2OTYsImV4cCI6MTY0MzYxNzI5Nn0.B1ilUGNw7LlLAHJb6MgXt6yxthjBHXwzG6x1aMcz1H8",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+
+            "Content-Type": "application/JSON",
           },
         }
       );
       if (response.ok) {
         let data = await response.json();
-        fetchProfile()
+        fetchProfile();
         console.log(data);
         console.log("data changed");
       } else {
@@ -69,7 +70,6 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           id="firstName"
           value={name}
           onChange={e => setName(e.target.value)}
-         
         />
 
         <label htmlFor="lastName">Last Name *</label>

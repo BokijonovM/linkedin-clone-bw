@@ -19,7 +19,7 @@ const OtherUser = ({ userId }) => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU2ZWQ0Y2MyYzE4ODAwMTVhYjk0YjUiLCJpYXQiOjE2NDI1MjM5ODEsImV4cCI6MTY0MzczMzU4MX0.Co-ZiB-K6ynPob1rwDlJ3Nkq2YC6J9ewG5ExQJ2sT00",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
           },
         }
       );
@@ -34,7 +34,6 @@ const OtherUser = ({ userId }) => {
     }
   };
 
-
   useEffect(() => {
     let isCancelled = true;
     if (params.userId) {
@@ -44,9 +43,9 @@ const OtherUser = ({ userId }) => {
 
       return () => {
         isCancelled = false;
-        setProfile()
-        setId()
-        setIsloading(false)
+        setProfile();
+        setId();
+        setIsloading(false);
       };
     }
   }, [params.userId]);

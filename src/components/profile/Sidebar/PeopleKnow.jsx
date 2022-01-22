@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "../style/SideBar.css";
 
 const PeopleKnow = () => {
@@ -14,7 +14,7 @@ const PeopleKnow = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1M2IwMjczZDVjYjAwMTUzOTVhYTEiLCJpYXQiOjE2NDI0MTI4MDIsImV4cCI6MTY0MzYyMjQwMn0.Rbm3B63oIh5acqeuTn3D6U538MLbS0-vfoNT62fpFGA",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
           },
         }
       );
@@ -44,24 +44,26 @@ const PeopleKnow = () => {
             <h2 className="text-heading-medium pt-3">People you may know</h2>
           </div>
           {info.slice(3, showMore).map(u => (
-            <Link  key={u._id} to={'/OtherUser/' + u._id}>
-            <div className="" key={u._id}>
-              <div className="text-dark font-weight-bolder d-flex">
-                <img className="img-fluid" src={u.image} alt="user" />
-                <div className="mt-3">
-                  <p className="mb-0" style={{ fontSize: "14px" }}>
-                    {u.name} &nbsp;
-                    {u.surname}
-                  </p>
-                  <p className="text-secondary mb-0">{u.title.slice(0, 35)}</p>
+            <Link key={u._id} to={"/OtherUser/" + u._id}>
+              <div className="" key={u._id}>
+                <div className="text-dark font-weight-bolder d-flex">
+                  <img className="img-fluid" src={u.image} alt="user" />
+                  <div className="mt-3">
+                    <p className="mb-0" style={{ fontSize: "14px" }}>
+                      {u.name} &nbsp;
+                      {u.surname}
+                    </p>
+                    <p className="text-secondary mb-0">
+                      {u.title.slice(0, 35)}
+                    </p>
+                  </div>
+                </div>
+                <div className="">
+                  <button className="btn btn-connect py-0 shadow-none px-4 mt-n3">
+                    Connect
+                  </button>
                 </div>
               </div>
-              <div className="">
-                <button className="btn btn-connect py-0 shadow-none px-4 mt-n3">
-                  Connect
-                </button>
-              </div>
-            </div>
             </Link>
           ))}
           <div className="button-show">
