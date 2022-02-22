@@ -245,7 +245,8 @@
 }
 .bottom-cat-main-div {
   background-color: white;
-  width: 350px;
+  width: 280px;
+  height: 60px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding-left: 10px;

@@ -19,7 +19,7 @@ function NewsFeed({ profile }) {
   const [image, setImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handlePostValue = e => {
+  const handlePostValue = (e) => {
     setPostValue(e.target.value);
     setSubmitted(false);
   };
@@ -36,7 +36,7 @@ function NewsFeed({ profile }) {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
           },
         }
       );
@@ -53,7 +53,7 @@ function NewsFeed({ profile }) {
     }
   };
 
-  const addPostFunction = async e => {
+  const addPostFunction = async (e) => {
     e.preventDefault();
     closeAddPost();
     try {
@@ -66,7 +66,7 @@ function NewsFeed({ profile }) {
           }),
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
             "Content-type": "application/json",
           },
         }
@@ -74,7 +74,7 @@ function NewsFeed({ profile }) {
       if (res.ok) {
         let data = await res.json();
         console.log(data);
-        fetchData()
+        fetchData();
         // setPost(data.stringify());
       } else {
         console.error("fetch failed");
@@ -84,13 +84,13 @@ function NewsFeed({ profile }) {
     }
   };
 
-  const showMore = number => {
+  const showMore = (number) => {
     if (posts.length > 10) {
       setEndPost(endPost + 10);
     }
   };
 
-  const showLess = number => {
+  const showLess = (number) => {
     if (endPost > 10) {
       setEndPost(endPost - 10);
     }
@@ -155,21 +155,27 @@ function NewsFeed({ profile }) {
             posts
               .reverse()
               .slice(0, endPost)
-              .map(post => {
-                return <SingleNews key={post._id} posts={post}  fetchData={fetchData}/>;
+              .map((post) => {
+                return (
+                  <SingleNews
+                    key={post._id}
+                    posts={post}
+                    fetchData={fetchData}
+                  />
+                );
               })
           )}
         </Row>
         <div>
           <span
             className="mr-4 mb-4 p-2 round-border grey-border pointer"
-            onClick={e => showMore(+10)}
+            onClick={(e) => showMore(+10)}
           >
             Show More
           </span>
           <span
             className="mr-4 mb-4 p-2 round-border grey-border pointer"
-            onClick={e => showLess(-10)}
+            onClick={(e) => showLess(-10)}
           >
             Show Less
           </span>
@@ -206,7 +212,7 @@ function NewsFeed({ profile }) {
                   className="w-100 shadow-none border-0"
                   as="textarea"
                   required
-                  onChange={e => setPost(e.target.value)}
+                  onChange={(e) => setPost(e.target.value)}
                   rows={4}
                 />
               </Form.Group>

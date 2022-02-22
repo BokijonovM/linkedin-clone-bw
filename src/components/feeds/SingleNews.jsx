@@ -28,7 +28,7 @@ function SingleNews({ posts, fetchData }) {
         {
           method: "DELETE",
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY
             `,
           },
         }
@@ -58,7 +58,7 @@ function SingleNews({ posts, fetchData }) {
           }),
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY
             `,
           },
         }
@@ -73,7 +73,7 @@ function SingleNews({ posts, fetchData }) {
     }
   };
 
-  const handleEdit = id => {
+  const handleEdit = (id) => {
     showAddPost();
   };
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -81,7 +81,7 @@ function SingleNews({ posts, fetchData }) {
       style={{ color: "black" }}
       href=""
       ref={ref}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
@@ -107,7 +107,7 @@ function SingleNews({ posts, fetchData }) {
           <div className="mx-3 d-flex justify-content-center"></div>
           <ul className="list-unstyled">
             {React.Children.toArray(children).filter(
-              child =>
+              (child) =>
                 !value || child.props.children.toLowerCase().startsWith(value)
             )}
           </ul>
@@ -289,7 +289,7 @@ function SingleNews({ posts, fetchData }) {
                     onClick={() => {
                       var x = document
                         .querySelectorAll(".bi-hand-thumbs-up")
-                        .forEach(item => {
+                        .forEach((item) => {
                           item.style.color = "blue";
                         });
 
@@ -360,7 +360,7 @@ function SingleNews({ posts, fetchData }) {
                   value={text}
                   // onChange={e => setPost(e.target.value)}
                   rows={4}
-                  onChange={e => setText(e.target.value)}
+                  onChange={(e) => setText(e.target.value)}
                 />
               </Form.Group>
               <div className="d-flex justify-content-between px-3">

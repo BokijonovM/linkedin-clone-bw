@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
-import "../style/SideBar.css";
+import "../Style/SideBar.css";
 
 export default class EditAddProfile extends Component {
   render() {

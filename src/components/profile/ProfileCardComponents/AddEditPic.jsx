@@ -5,7 +5,7 @@ import { axios } from "axios";
 const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleUpload = async e => {
+  const handleUpload = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -22,7 +22,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
           body: formData,
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
           },
         }
       );
@@ -38,7 +38,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
     }
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
 
@@ -63,7 +63,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
                 src={selectedFile || profileImg}
                 alt="change profile pic"
               />
-              <input type="file" id="photo" onChange={e => handleChange(e)} />
+              <input type="file" id="photo" onChange={(e) => handleChange(e)} />
               {selectedFile && (
                 <>
                   <p>{selectedFile.name}</p>
@@ -73,7 +73,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
             </div>
             <button
               className="bg-success text-white pointer round-border grey-border p-2 h-100"
-              onClick={e => handleUpload(e)}
+              onClick={(e) => handleUpload(e)}
             >
               upload
             </button>

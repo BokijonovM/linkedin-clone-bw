@@ -18,7 +18,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
     setArea(profile.area);
   }, []);
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     // e.preventDefault()
     setShowEditPage(false);
     let user = {
@@ -38,7 +38,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           body: JSON.stringify(user),
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
 
             "Content-Type": "application/JSON",
           },
@@ -59,7 +59,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
 
   return (
     <Modal.Dialog>
-      <Modal.Header closeButton onClick={e => setShowEditPage(false)}>
+      <Modal.Header closeButton onClick={(e) => setShowEditPage(false)}>
         <Modal.Title>Edit Intro</Modal.Title>
       </Modal.Header>
 
@@ -69,7 +69,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="text"
           id="firstName"
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <label htmlFor="lastName">Last Name *</label>
@@ -77,7 +77,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="text"
           id="lastName"
           value={surname}
-          onChange={e => setSurname(e.target.value)}
+          onChange={(e) => setSurname(e.target.value)}
         />
 
         <label htmlFor="addName">Email Address *</label>
@@ -85,7 +85,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="email"
           id="email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor="bio">Bio *</label>
@@ -93,7 +93,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="text"
           id="bio"
           value={bio}
-          onChange={e => setBio(e.target.value)}
+          onChange={(e) => setBio(e.target.value)}
         />
 
         <label htmlFor="title">Title *</label>
@@ -101,7 +101,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="text"
           id="title"
           value={title}
-          onChange={e => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
 
         <label htmlFor="area">Area *</label>
@@ -109,15 +109,15 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
           type="text"
           id="area"
           value={area}
-          onChange={e => setArea(e.target.value)}
+          onChange={(e) => setArea(e.target.value)}
         />
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="secondary" onClick={e => setShowEditPage(false)}>
+        <Button variant="secondary" onClick={(e) => setShowEditPage(false)}>
           Close
         </Button>
-        <Button variant="primary" onClick={e => handleSubmit(e)}>
+        <Button variant="primary" onClick={(e) => handleSubmit(e)}>
           Save changes
         </Button>
       </Modal.Footer>

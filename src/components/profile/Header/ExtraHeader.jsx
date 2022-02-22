@@ -3,7 +3,7 @@ import { Nav, Navbar, Button } from "react-bootstrap";
 import DropAddSection from "../ProfileCardComponents/DropAddSection";
 import DropMore from "../ProfileCardComponents/DropMore";
 import DropOpenTo from "../ProfileCardComponents/DropOpenTo";
-import "../style/header.css";
+import "../Style/header.css";
 
 function ExtraHeader({ profile }) {
   const [dropdown, setDropdown] = useState("");
@@ -17,7 +17,7 @@ function ExtraHeader({ profile }) {
     }
   }, [profile]);
 
-  const showDropdown = input => {
+  const showDropdown = (input) => {
     if (dropdown === input) {
       setDropdown("");
     } else {
@@ -53,7 +53,7 @@ function ExtraHeader({ profile }) {
               className="py-1 extra-nav-button shadow-none"
               variant="outline-secondary"
               style={{ fontWeight: "600" }}
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
             >
               More
             </Button>
@@ -61,7 +61,7 @@ function ExtraHeader({ profile }) {
               className="py-1 extra-nav-button shadow-none mx-2"
               variant="outline-secondary"
               style={{ fontWeight: "600" }}
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
             >
               Add Section
             </Button>
@@ -69,7 +69,7 @@ function ExtraHeader({ profile }) {
               className="py-1 extra-nav-button shadow-none"
               variant="primary"
               style={{ fontWeight: "600" }}
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
             >
               Open to
             </Button>

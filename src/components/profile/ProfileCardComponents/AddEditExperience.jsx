@@ -42,11 +42,11 @@ export default function AddEditExperience({
     }
   }, []);
 
-  const handleChangePic = e => {
+  const handleChangePic = (e) => {
     setSelectedPic(e.target.files[0]);
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     // e.preventDefault()
     setShowAddExperience(false);
     let experience = {
@@ -64,7 +64,7 @@ export default function AddEditExperience({
         body: JSON.stringify(experience),
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
 
           "Content-Type": "application/JSON",
         },
@@ -91,7 +91,7 @@ export default function AddEditExperience({
           method: "DELETE",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
 
             "Content-Type": "application/JSON",
           },
@@ -108,7 +108,7 @@ export default function AddEditExperience({
     }
   };
 
-  const handleSavePic = async e => {
+  const handleSavePic = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -121,7 +121,7 @@ export default function AddEditExperience({
           body: formData,
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
           },
         }
       );
@@ -138,7 +138,7 @@ export default function AddEditExperience({
 
   return (
     <Modal.Dialog>
-      <Modal.Header closeButton onClick={e => setShowAddExperience(false)}>
+      <Modal.Header closeButton onClick={(e) => setShowAddExperience(false)}>
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
 
@@ -146,13 +146,13 @@ export default function AddEditExperience({
         <div className="d-flex my-3">
           <div style={{ display: showAddPic ? "block " : "none" }}>
             <label>Add Picture of Company</label>
-            <input type="file" onChange={e => handleChangePic(e)} />
+            <input type="file" onChange={(e) => handleChangePic(e)} />
             <span>{selectedPic && selectedPic.name}</span>
           </div>
           <Button
             style={{ display: showAddPic ? "block " : "none" }}
             variant="success"
-            onClick={e => handleSavePic(e)}
+            onClick={(e) => handleSavePic(e)}
           >
             Save
           </Button>
@@ -162,7 +162,7 @@ export default function AddEditExperience({
           type="text"
           id="role"
           value={role}
-          onChange={e => setRole(e.target.value)}
+          onChange={(e) => setRole(e.target.value)}
         />
 
         <label htmlFor="company">Company *</label>
@@ -170,7 +170,7 @@ export default function AddEditExperience({
           type="text"
           id="company"
           value={company}
-          onChange={e => setCompany(e.target.value)}
+          onChange={(e) => setCompany(e.target.value)}
         />
 
         <label htmlFor="startDate">Start Date *</label>
@@ -178,7 +178,7 @@ export default function AddEditExperience({
           type="date"
           id="startDate"
           defaultValue={startDate}
-          onChange={e => setStartDate(e.target.value)}
+          onChange={(e) => setStartDate(e.target.value)}
           placeholder={startDate}
         />
 
@@ -187,7 +187,7 @@ export default function AddEditExperience({
           type="date"
           id="endDate"
           value={endDate}
-          onChange={e => setEndDate(e.target.value)}
+          onChange={(e) => setEndDate(e.target.value)}
           placeholder={endDate}
         />
 
@@ -196,7 +196,7 @@ export default function AddEditExperience({
           type="text"
           id="description"
           value={description}
-          onChange={e => setDescription(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
         />
 
         <label htmlFor="area">Area *</label>
@@ -204,24 +204,27 @@ export default function AddEditExperience({
           type="text"
           id="area"
           value={area}
-          onChange={e => setArea(e.target.value)}
+          onChange={(e) => setArea(e.target.value)}
         />
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="secondary" onClick={e => setShowAddExperience(false)}>
+        <Button
+          variant="secondary"
+          onClick={(e) => setShowAddExperience(false)}
+        >
           Close
         </Button>
         <Button
           variant="danger"
-          onClick={e => handleDelete(e)}
+          onClick={(e) => handleDelete(e)}
           style={{ display: showDeleteBtn ? "block" : "none" }}
         >
           Delete
         </Button>
         <Button
           variant="primary"
-          onClick={e => {
+          onClick={(e) => {
             handleSubmit(e);
             handleSavePic(e);
           }}

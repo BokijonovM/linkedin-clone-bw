@@ -2,7 +2,7 @@ import React from "react";
 import Main from "./Main";
 import Sidebar from "../profile/Sidebar/Sidebar";
 import { Row, Col, Container } from "react-bootstrap";
-import "./style/profile.css";
+import "./Style/profile.css";
 function MyMain({ profile, setProfile, fetchProfile }) {
   return (
     <div
@@ -19,7 +19,7 @@ function MyMain({ profile, setProfile, fetchProfile }) {
       >
         <Col sm={10} lg={7}>
           <Main
-          fetchProfile={fetchProfile}
+            fetchProfile={fetchProfile}
             setProfile={setProfile}
             profile={profile}
           />

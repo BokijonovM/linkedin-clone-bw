@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import { IoIosArrowDown } from "react-icons/io";
-import "../style/SideBar.css";
+import "../Style/SideBar.css";
 
 const PeopleViewed = () => {
   const [showMore, setShowMore] = useState(5);
@@ -15,7 +15,7 @@ const PeopleViewed = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1MjZmYTczZDVjYjAwMTUzOTVhOWMiLCJpYXQiOjE2NDI2MDg5MjksImV4cCI6MTY0MzgxODUyOX0.D7vLV9VQO7-vFQO8smX7U6ny2zlx8PFwUwdvbb5ra0c",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
           },
         }
       );
@@ -45,7 +45,7 @@ const PeopleViewed = () => {
             {" "}
             <h2 className="text-heading-medium pt-3">People also viewed</h2>
           </div>
-          {info.slice(0, showMore).map(u => (
+          {info.slice(0, showMore).map((u) => (
             <Link key={u._id} to={"/OtherUser/" + u._id}>
               <div className="" key={u._id}>
                 <div className="text-dark font-weight-bolder d-flex" href="/">
@@ -69,7 +69,7 @@ const PeopleViewed = () => {
             <div
               className="pointer"
               id="btn"
-              onClick={e => setShowMore(showMore + 5)}
+              onClick={(e) => setShowMore(showMore + 5)}
             >
               Show more
             </div>
