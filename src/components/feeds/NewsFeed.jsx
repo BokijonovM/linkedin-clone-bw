@@ -26,7 +26,23 @@ function NewsFeed({ profile }) {
 
   useEffect(() => {
     fetchData();
+    newData();
   }, []);
+
+  const newData = async () => {
+    closeAddPost();
+    try {
+      let res = await fetch("http://localhost:3001/postMode");
+      if (res.ok) {
+        let data = await res.json();
+        console.log("new data", data);
+      } else {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const fetchData = async () => {
     closeAddPost();
@@ -42,7 +58,7 @@ function NewsFeed({ profile }) {
       );
       if (response.ok) {
         let dataRes = await response.json();
-
+        console.log("old data", dataRes);
         setPosts(dataRes);
         setIsLoading(false);
       } else {
