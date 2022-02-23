@@ -4,23 +4,27 @@ import DashboardCard from "./DashboardCard";
 import ProfileCard from "./ProfileCard";
 import FeaturedCard from "./FeaturedCard";
 import Experience from "./Experience";
-function Main({profile, fetchProfile}) {
+function Main({ profile, fetchProfile, newProfile }) {
+  const [userId, setUserId] = useState();
 
-  const[userId, setUserId] = useState()
-
-  useEffect(()=>{
-    if(profile){
-      setUserId(profile._id)
+  useEffect(() => {
+    if (profile) {
+      setUserId(profile._id);
     }
-  },[profile])
+  }, [profile]);
   return (
-
-    <div >    
-      {profile && <ProfileCard fetchProfile={fetchProfile} profile={profile} />}
-      <DashboardCard/>
-      {profile && <AboutCard/>}
-      <FeaturedCard/>
-     {userId && <Experience userId={userId}/>}
+    <div>
+      {profile && (
+        <ProfileCard
+          fetchProfile={fetchProfile}
+          profile={profile}
+          newProfile={newProfile}
+        />
+      )}
+      <DashboardCard />
+      {profile && <AboutCard />}
+      <FeaturedCard />
+      {userId && <Experience userId={userId} />}
     </div>
   );
 }

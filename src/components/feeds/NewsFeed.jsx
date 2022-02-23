@@ -37,7 +37,7 @@ function NewsFeed({ profile }) {
         let data = await res.json();
         console.log("new data", data);
       } else {
-        console.log(error);
+        console.log("error");
       }
     } catch (error) {
       console.log(error);

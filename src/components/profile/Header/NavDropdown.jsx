@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { FormControl, Dropdown, Button } from "react-bootstrap";
 
-function NavDropdown({ profile }) {
+function NavDropdown({ profile, newProfile }) {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
       style={{ color: "black" }}
       href=""
       ref={ref}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
@@ -42,9 +42,9 @@ function NavDropdown({ profile }) {
             <div className="p-3">
               <p className="h5">
                 {" "}
-                {profile.name} {profile.surname}
+                {newProfile.firstName} {newProfile.surName}
               </p>
-              <p>{profile.bio}</p>
+              <p>{newProfile.bio}</p>
             </div>
           )}
           <div className="mx-3 d-flex justify-content-center">
@@ -61,7 +61,7 @@ function NavDropdown({ profile }) {
           <hr />
           <ul className="list-unstyled">
             {React.Children.toArray(children).filter(
-              child =>
+              (child) =>
                 !value || child.props.children.toLowerCase().startsWith(value)
             )}
           </ul>

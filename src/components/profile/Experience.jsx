@@ -4,6 +4,7 @@ import { location, useLocation } from "react-router-dom";
 import DisplayList from "./DisplayList";
 import { useEffect, useState } from "react";
 import { GoPlus } from "react-icons/go";
+import { Button } from "react-bootstrap";
 import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 const Experience = ({ userId }) => {
   //
@@ -44,14 +45,22 @@ const Experience = ({ userId }) => {
   return (
     <div className="bg-white p-3 mt-3 round-border">
       <p className="h4 d-flex justify-content-between">
-        Experience
-        <span
-          className="mx-2 round-hover"
-          onClick={(e) => setShowAddExperience(true)}
-          style={{ display: editable ? "block" : "none" }}
-        >
-          <GoPlus />
-        </span>
+        Experiencess
+        <div className="d-flex align-items-center">
+          <span
+            className="mx-2 round-hover"
+            onClick={(e) => setShowAddExperience(true)}
+            style={{ display: editable ? "block" : "none" }}
+          >
+            <GoPlus />
+          </span>
+          <Button
+            variant="outline-secondary"
+            className="h6 bold rounded-btn ml-2 shadow-none ml-2"
+          >
+            Get CSV
+          </Button>
+        </div>
       </p>
       <div style={{ marginTop: "60px" }}>
         <div

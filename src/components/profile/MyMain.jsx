@@ -3,7 +3,7 @@ import Main from "./Main";
 import Sidebar from "../profile/Sidebar/Sidebar";
 import { Row, Col, Container } from "react-bootstrap";
 import "./Style/profile.css";
-function MyMain({ profile, setProfile, fetchProfile }) {
+function MyMain({ profile, setProfile, fetchProfile, newProfile }) {
   return (
     <div
       className="myMain-first-div"
@@ -22,6 +22,7 @@ function MyMain({ profile, setProfile, fetchProfile }) {
             fetchProfile={fetchProfile}
             setProfile={setProfile}
             profile={profile}
+            newProfile={newProfile}
           />
         </Col>
         <Col sm={0} md={3} lg={3}>

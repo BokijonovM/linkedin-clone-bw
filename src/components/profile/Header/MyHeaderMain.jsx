@@ -7,7 +7,7 @@ import ExtraHeader from "./ExtraHeader";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function MyHeaderMain({ profile }) {
+function MyHeaderMain({ profile, newProfile }) {
   const [navbar, setNavbar] = useState(false);
 
   const extraHeader = () => {
@@ -101,12 +101,12 @@ function MyHeaderMain({ profile }) {
             <Link to="/profile">
               <img
                 className="nav-profile-image"
-                src={profile.image}
+                src={newProfile.image}
                 alt="profile pic"
               />
             </Link>
             <div style={{ fontSize: "12px" }} className="mb-0 mt-n1">
-              <NavDropdown profile={profile} />
+              <NavDropdown profile={profile} newProfile={newProfile} />
               {/* <i className="bi bi-caret-down-fill"></i> */}
             </div>
           </div>
@@ -137,7 +137,7 @@ function MyHeaderMain({ profile }) {
         </Nav>
       </Navbar>
       {profile && navbar ? (
-        <ExtraHeader profile={profile} />
+        <ExtraHeader profile={profile} newProfile={newProfile} />
       ) : (
         <span style={{ width: "0px" }}></span>
       )}

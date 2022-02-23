@@ -8,7 +8,7 @@ import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
 import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
-const ProfileCard = ({ profile, fetchProfile }) => {
+const ProfileCard = ({ profile, fetchProfile, newProfile }) => {
   const location = useLocation();
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -21,7 +21,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
   const handleShowAddEditPic = () => setShowAddEditPic(true);
 
   useEffect(() => {
-    setProfilImg(profile.image);
+    setProfilImg(newProfile.image);
     if (location.pathname !== "/profile") {
       setEditable(false);
     }
@@ -63,7 +63,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
             editable && setShowAddEditPic(true);
           }}
           className="profile-pic"
-          src={profile.image}
+          src={newProfile.image}
           alt="linkedin user"
         />
         <div style={{ marginTop: "60px" }}>
@@ -99,15 +99,16 @@ const ProfileCard = ({ profile, fetchProfile }) => {
               <EditPage
                 fetchProfile={fetchProfile}
                 profile={profile}
+                newProfile={newProfile}
                 setShowEditPage={setShowEditPage}
               />
             )}
           </div>
           <p className="h2 bold">
-            {profile.name} {profile.surname}
+            {newProfile.firstName} {newProfile.surName}
           </p>
           <p>
-            {profile.title} at Strive School <br /> {profile.area}
+            {newProfile.title} at Strive School <br /> {newProfile.area}
             <i className="bi bi-dot"></i>
             <span className="h6 bold blue-link">Contact info</span>
           </p>
@@ -188,7 +189,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
               </span>
             </div>
             <p className="bold">
-              {profile.bio}
+              {newProfile.bio}
               <br />
               <span className="h6 blue-link">See all details</span>
             </p>

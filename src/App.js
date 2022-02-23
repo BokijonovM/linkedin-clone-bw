@@ -11,6 +11,7 @@ import MyLayout from "./MyLayout";
 
 function App() {
   const [profile, setProfile] = useState();
+  const [newProfile, setNewProfile] = useState();
 
   const fetchProfile = async () => {
     let response = await fetch(
@@ -25,11 +26,30 @@ function App() {
     let data = await response.json();
     if (data) {
       setProfile(data);
+      console.log(data);
+    }
+  };
+
+  const fetchNew = async () => {
+    try {
+      let res = await fetch(
+        "http://localhost:3001/profiles/6214d6eedc5924e6a8291a06"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        console.log("resNew", data);
+        setNewProfile(data);
+      } else {
+        console.log("new data error");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
   useEffect(() => {
     fetchProfile();
+    fetchNew();
   }, []);
 
   return (
@@ -43,7 +63,13 @@ function App() {
         <Route
           path="/profile"
           element={
-            profile && <Profile fetchProfile={fetchProfile} profile={profile} />
+            profile && (
+              <Profile
+                fetchProfile={fetchProfile}
+                newProfile={newProfile}
+                profile={profile}
+              />
+            )
           }
         />
         <Route

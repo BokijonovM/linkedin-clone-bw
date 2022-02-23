@@ -1,29 +1,34 @@
 import { Modal, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
-export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
+export default function EditPage({
+  profile,
+  setShowEditPage,
+  fetchProfile,
+  newProfile,
+}) {
+  const [firstName, setFirstName] = useState("");
+  const [surName, setSurName] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
   const [title, setTitle] = useState("");
   const [area, setArea] = useState("");
 
   useEffect(() => {
-    setName(profile.name);
-    setSurname(profile.surname);
-    setEmail(profile.email);
-    setBio(profile.bio);
-    setTitle(profile.title);
-    setArea(profile.area);
+    setFirstName(newProfile.firstName);
+    setSurName(newProfile.surName);
+    setEmail(newProfile.email);
+    setBio(newProfile.bio);
+    setTitle(newProfile.title);
+    setArea(newProfile.area);
   }, []);
 
   const handleSubmit = async (e) => {
     // e.preventDefault()
     setShowEditPage(false);
     let user = {
-      name: name,
-      surname: surname,
+      firstName: firstName,
+      surName: surName,
       email: email,
       bio: bio,
       title: title,
@@ -32,13 +37,13 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
     console.log(user);
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
+        "http://localhost:3001/profiles/6214d6eedc5924e6a8291a06",
         {
           method: "PUT",
           body: JSON.stringify(user),
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+            // Authorization:
+            //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
 
             "Content-Type": "application/JSON",
           },
@@ -68,16 +73,16 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
         <input
           type="text"
           id="firstName"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
 
         <label htmlFor="lastName">Last Name *</label>
         <input
           type="text"
           id="lastName"
-          value={surname}
-          onChange={(e) => setSurname(e.target.value)}
+          value={surName}
+          onChange={(e) => setSurName(e.target.value)}
         />
 
         <label htmlFor="addName">Email Address *</label>
