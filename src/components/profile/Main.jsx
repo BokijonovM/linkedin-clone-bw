@@ -19,6 +19,7 @@ function Main({ profile, fetchProfile, newProfile }) {
           fetchProfile={fetchProfile}
           profile={profile}
           newProfile={newProfile}
+          userId={userId}
         />
       )}
       <DashboardCard />

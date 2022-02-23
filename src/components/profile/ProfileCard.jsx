@@ -8,7 +8,7 @@ import EditPage from "./ProfileCardComponents/EditPage";
 import DropAddSection from "./ProfileCardComponents/DropAddSection";
 import AddEditPic from "./ProfileCardComponents/AddEditPic";
 
-const ProfileCard = ({ profile, fetchProfile, newProfile }) => {
+const ProfileCard = ({ profile, fetchProfile, newProfile, userId }) => {
   const location = useLocation();
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -32,6 +32,14 @@ const ProfileCard = ({ profile, fetchProfile, newProfile }) => {
       setDropdown("");
     } else {
       setDropdown(input);
+    }
+  };
+
+  const downloadCV = (e) => {
+    try {
+      window.location.replace(`http://localhost:3001/profiles/${userId}/pdf`);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -136,6 +144,7 @@ const ProfileCard = ({ profile, fetchProfile, newProfile }) => {
               More
             </Button>
             <Button
+              onClick={(e) => downloadCV(e)}
               variant="secondary"
               className="h6 bold rounded-btn ml-2 shadow-none"
             >

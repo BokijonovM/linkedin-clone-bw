@@ -42,6 +42,15 @@ const Experience = ({ userId }) => {
       console.log("THIS IS catch ERROR", error);
     }
   };
+  const downloadPost = (e) => {
+    try {
+      window.location.replace(
+        `http://localhost:3001/profiles/${userId}/experiences/6215f45ad0ef1a1a8d1d4e73/CSV`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="bg-white p-3 mt-3 round-border">
@@ -56,6 +65,7 @@ const Experience = ({ userId }) => {
             <GoPlus />
           </span>
           <Button
+            onClick={(e) => downloadPost(e)}
             variant="outline-secondary"
             className="h6 bold rounded-btn ml-2 shadow-none ml-2"
           >
