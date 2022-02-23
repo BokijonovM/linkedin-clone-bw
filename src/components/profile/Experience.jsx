@@ -7,6 +7,7 @@ import { GoPlus } from "react-icons/go";
 import { Button } from "react-bootstrap";
 import AddEditExperience from "./ProfileCardComponents/AddEditExperience";
 const Experience = ({ userId }) => {
+  console.log("userId", userId);
   //
   const [info, setInfo] = useState([]);
   const [showAddExperience, setShowAddExperience] = useState(false);
@@ -25,17 +26,17 @@ const Experience = ({ userId }) => {
   const fetchExperiences = async () => {
     try {
       let apiCall = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
+        `http://localhost:3001/profiles/6214d6eedc5924e6a8291a06`,
         {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
+          // headers: {
+          //   Authorization:
+          //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+          // },
         }
       );
       if (apiCall.ok) {
         let data = await apiCall.json();
-        setInfo(data);
+        setInfo(data.experiences);
       }
     } catch (error) {
       console.log("THIS IS catch ERROR", error);

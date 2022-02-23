@@ -17,7 +17,7 @@ export default function AddEditExperience({
 
   const [method, setMethod] = useState("POST");
   const [url, setUrl] = useState(
-    `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`
+    `http://localhost:3001/profiles/${userId}/experiences`
   );
   const [showDeleteBtn, SetShowDeleteBtn] = useState(false);
   const [heading, setHeading] = useState("Add Experience");
@@ -34,7 +34,7 @@ export default function AddEditExperience({
       setArea(list.area);
       setMethod("PUT");
       setUrl(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${list._id}`
+        `http://localhost:3001/profiles/${userId}/experiences/${list._id}`
       );
       setHeading("Edit Experience");
       SetShowDeleteBtn(true);
@@ -63,8 +63,8 @@ export default function AddEditExperience({
         method,
         body: JSON.stringify(experience),
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+          // Authorization:
+          //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
 
           "Content-Type": "application/JSON",
         },

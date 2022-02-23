@@ -9,7 +9,7 @@ function Main({ profile, fetchProfile, newProfile }) {
 
   useEffect(() => {
     if (profile) {
-      setUserId(profile._id);
+      setUserId(newProfile._id);
     }
   }, [profile]);
   return (
