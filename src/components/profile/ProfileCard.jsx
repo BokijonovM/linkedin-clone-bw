@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { location, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { GrFormEdit, GrDocument } from "react-icons/gr";
-import Profile from "../../Profile";
 import DropOpenTo from "./ProfileCardComponents/DropOpenTo";
 import DropMore from "./ProfileCardComponents/DropMore";
 import EditPage from "./ProfileCardComponents/EditPage";
@@ -28,7 +27,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
     }
   }, [showEditPage]);
 
-  const showDropdown = input => {
+  const showDropdown = (input) => {
     if (dropdown === input) {
       setDropdown("");
     } else {
@@ -60,7 +59,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
       </span>
       <Card.Body>
         <img
-          onClick={e => {
+          onClick={(e) => {
             editable && setShowAddEditPic(true);
           }}
           className="profile-pic"
@@ -84,7 +83,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
         <span
           className="round-hover  h3 text-primary pAbsolute"
           style={{ right: "20px", display: editable ? "block" : "none" }}
-          onClick={e => setShowEditPage(true)}
+          onClick={(e) => setShowEditPage(true)}
         >
           <GrFormEdit />
         </span>
@@ -115,25 +114,31 @@ const ProfileCard = ({ profile, fetchProfile }) => {
           <p className="h6 bold blue-link">500+ Connections</p>
           <div>
             <Button
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
               className="h6 bold rounded-btn shadow-none"
               style={{ backgroundColor: "rgb(9, 79, 168)" }}
             >
               Open to
             </Button>
             <Button
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
               variant="outline-secondary"
               className="h6 bold rounded-btn ml-2 shadow-none"
             >
               Add Section
             </Button>
             <Button
-              onClick={e => showDropdown(e.target.innerText)}
+              onClick={(e) => showDropdown(e.target.innerText)}
               variant="outline-secondary"
               className="h6 bold rounded-btn ml-2 shadow-none"
             >
               More
+            </Button>
+            <Button
+              variant="secondary"
+              className="h6 bold rounded-btn ml-2 shadow-none"
+            >
+              Get CV
             </Button>
           </div>
           <div className="pRelative">
