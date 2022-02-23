@@ -7,7 +7,7 @@ import RightSide from "./RightSide";
 import Footer from "./Footer";
 import MyHeaderMain from "../profile/Header/MyHeaderMain";
 
-function MyMainFeed({ profile }) {
+function MyMainFeed({ profile, newProfile }) {
   return (
     <div>
       <Row className="header-row-myFeed">
@@ -16,10 +16,10 @@ function MyMainFeed({ profile }) {
       <Container className="pt-5">
         <Row xs={1} md={2} className="justify-content-center myFeeds-cols pt-4">
           <Col className="text-center" md={3}>
-            {profile && <LeftSide profile={profile} />}
+            {profile && <LeftSide profile={profile} newProfile={newProfile} />}
           </Col>
           <Col className="px-4 newFeed-main-line-col" md={6}>
-            <NewsFeed profile={profile} />
+            <NewsFeed profile={profile} newProfile={newProfile} />
           </Col>
           <Col md={3}>
             <RightSide />

@@ -101,7 +101,7 @@ function MyHeaderMain({ profile, newProfile }) {
             <Link to="/profile">
               <img
                 className="nav-profile-image"
-                src={newProfile.image}
+                src={profile.image}
                 alt="profile pic"
               />
             </Link>

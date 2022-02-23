@@ -59,7 +59,12 @@ function App() {
         style={{ backgroundColor: "rgb(243,242,238)" }}
       ></div>
       <Routes>
-        <Route path="/" element={profile && <MyMainFeed profile={profile} />} />
+        <Route
+          path="/"
+          element={
+            profile && <MyMainFeed profile={profile} newProfile={newProfile} />
+          }
+        />
         <Route
           path="/profile"
           element={
@@ -75,7 +80,7 @@ function App() {
         <Route
           path="/OtherUser/:userId"
           element={
-            <MyLayout profile={profile}>
+            <MyLayout profile={profile} newProfile={newProfile}>
               <OtherUser />
             </MyLayout>
           }

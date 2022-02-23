@@ -29,7 +29,7 @@ function ExtraHeader({ profile, newProfile }) {
     <div>
       <Navbar className="px-5  py-1 extra-navbar" bg="light" expand="lg">
         <Navbar.Brand className="pl-5" href="#home">
-          <img className="extra-nav-image" src={newProfile.image} alt="" />
+          <img className="extra-nav-image" src={profile.image} alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -40,10 +40,10 @@ function ExtraHeader({ profile, newProfile }) {
                   className="mb-n1"
                   style={{ fontSize: "14px", fontWeight: "600" }}
                 >
-                  {newProfile.firstName} {newProfile.surName}
+                  {profile.name} {profile.surname}
                 </p>
                 <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
-                  {newProfile.title}
+                  {profile.title}
                 </p>
               </div>
             )}

@@ -42,9 +42,9 @@ function NavDropdown({ profile, newProfile }) {
             <div className="p-3">
               <p className="h5">
                 {" "}
-                {newProfile.firstName} {newProfile.surName}
+                {profile.name} {profile.surname}
               </p>
-              <p>{newProfile.bio}</p>
+              <p>{profile.bio}</p>
             </div>
           )}
           <div className="mx-3 d-flex justify-content-center">

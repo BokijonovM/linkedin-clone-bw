@@ -4,11 +4,11 @@ import MyMain from "./components/profile/MyMain";
 import Footer from "./components/profile/Header/Footer";
 import OtherUser from "./OtherUser";
 
-const MyLayout = ({ profile }) => {
+const MyLayout = ({ profile, newProfile }) => {
   return (
     <div>
       <Row className="header-row-profile">
-        {profile && <MyHeaderMain profile={profile} />}
+        {profile && <MyHeaderMain profile={profile} newProfile={newProfile} />}
       </Row>
       <Row className="profile-myMain-row">
         <OtherUser />

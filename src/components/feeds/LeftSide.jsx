@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoIosPeople } from "react-icons/io";
-function LeftSide({ profile }) {
+function LeftSide({ profile, newProfile }) {
   useEffect(() => {
     console.log("Profile from left side", profile);
   });
@@ -23,7 +23,7 @@ function LeftSide({ profile }) {
           style={{ top: "-30px", width: "75px", height: "75px" }}
         >
           <img
-            src={profile.image}
+            src={newProfile.image}
             alt="user"
             style={{
               borderRadius: "50%",
@@ -36,10 +36,10 @@ function LeftSide({ profile }) {
         </div>
         <a href="/profile" style={{ color: "black" }}>
           <p className="h5 bold px-3">
-            {profile.name} {profile.surname}
+            {newProfile.firstName} {newProfile.surName}
           </p>
         </a>
-        <p className="px-5">{profile.bio}</p>
+        <p className="px-5">{newProfile.bio}</p>
         <hr />
         <div className="h6 px-3 d-flex justify-content-between">
           <span> Who viewed your profile </span>
