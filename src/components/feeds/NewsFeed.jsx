@@ -6,7 +6,7 @@ import SingleNews from "./SingleNews";
 import Loader from "./Loader";
 
 function NewsFeed({ profile }) {
-  const [posts, setPosts] = useState(null);
+  const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [post, setPost] = useState("");
   const [addPost, setAddPost] = useState(false);
@@ -24,43 +24,39 @@ function NewsFeed({ profile }) {
     setSubmitted(false);
   };
 
-  useEffect(() => {
-    fetchData();
-    newData();
-  }, []);
-
-  const newData = async () => {
+  
+  // const newData = async (e) => {
+  //   e.preventDefault();
+  //   closeAddPost();
+  //   try {
+  //     let res = await fetch("http://localhost:3002/postMode");
+  //     let data = await res.json();
+  //     if (data.ok) {
+  //       console.log("new data", data);
+  //     } else {
+    //       console.log(error);
+    //     }
+    //   } catch (error) {
+      //     console.log(error);
+      //   }
+      // };
+      
+      const fetchData = async (e) => {
+        e.preventDefault();
     closeAddPost();
     try {
-      let res = await fetch("http://localhost:3001/postMode");
-      if (res.ok) {
-        let data = await res.json();
-        console.log("new data", data);
-      } else {
-        console.log(error);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchData = async () => {
-    closeAddPost();
-    try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/ ",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
-        }
-      );
+      let response = await fetch("http://localhost:3002/postMode ", {
+        // headers: {
+        //   Authorization:
+        //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+        // },
+      });
       if (response.ok) {
-        let dataRes = await response.json();
-        console.log("old data", dataRes);
-        setPosts(dataRes);
+        let data= await response.json();
+        console.log("newdata" ,data.posts)
+        //  console.log("old data", dataRes);
         setIsLoading(false);
+        setPosts(data.posts);
       } else {
         console.log("Error");
       }
@@ -68,27 +64,28 @@ function NewsFeed({ profile }) {
       console.log("error", error);
     }
   };
+      useEffect(() => {
+        fetchData();
+        // newData();
+      }, []);
 
   const addPostFunction = async (e) => {
     e.preventDefault();
-    closeAddPost();
+    //closeAddPost();
     try {
-      const res = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            text: post,
-          }),
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-            "Content-type": "application/json",
-          },
-        }
-      );
-      if (res.ok) {
-        let data = await res.json();
+      const res = await fetch(`http://localhost:3002/postMode`, {
+        method: "POST",
+        // body: JSON.stringify({
+        //   text: post,
+        // }),
+        // headers: {
+        //   Authorization:
+        //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+        //   "Content-type": "application/json",
+        // },
+      });
+      let data = await res.json();
+      if (data.ok) {
         console.log(data);
         fetchData();
         // setPost(data.stringify());
@@ -171,11 +168,11 @@ function NewsFeed({ profile }) {
             posts
               .reverse()
               .slice(0, endPost)
-              .map((post) => {
+              .map((posts) => {
                 return (
                   <SingleNews
-                    key={post._id}
-                    posts={post}
+                    key={posts._id}
+                    posts={posts}
                     fetchData={fetchData}
                   />
                 );
@@ -228,7 +225,7 @@ function NewsFeed({ profile }) {
                   className="w-100 shadow-none border-0"
                   as="textarea"
                   required
-                  onChange={(e) => setPost(e.target.value)}
+                  onChange={(e) => setPosts(e.target.value)}
                   rows={4}
                 />
               </Form.Group>

@@ -24,7 +24,7 @@ const Experience = ({ userId }) => {
   const fetchExperiences = async () => {
     try {
       let apiCall = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
+        `http://localhost:3002/profile/${id}/experiences`,
         {
           headers: {
             Authorization:
