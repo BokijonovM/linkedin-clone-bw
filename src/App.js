@@ -15,7 +15,7 @@ function App() {
   const fetchProfile = async () => {
     try {
       let res = await fetch(
-        "http://localhost:3001/profiles/6214d6eedc5924e6a8291a06"
+        "https://buildweek3-backend.herokuapp.com/profiles/6214d6eedc5924e6a8291a06"
       );
       if (res.ok) {
         let data = await res.json();

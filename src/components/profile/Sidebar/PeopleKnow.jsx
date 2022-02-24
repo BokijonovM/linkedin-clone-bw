@@ -9,7 +9,9 @@ const PeopleKnow = () => {
 
   let fetchUser = async () => {
     try {
-      let apiCall = await fetch("http://localhost:3001/profiles");
+      let apiCall = await fetch(
+        "https://buildweek3-backend.herokuapp.com/profiles"
+      );
       if (apiCall.ok) {
         let user = await apiCall.json();
         setInfo(user);

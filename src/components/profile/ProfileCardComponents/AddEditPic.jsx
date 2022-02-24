@@ -16,7 +16,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
 
     try {
       let response = await fetch(
-        `http://localhost:3001/profiles/6214d6eedc5924e6a8291a06/image`,
+        `https://buildweek3-backend.herokuapp.com/profiles/6214d6eedc5924e6a8291a06/image`,
         {
           method: "POST",
           body: formData,
