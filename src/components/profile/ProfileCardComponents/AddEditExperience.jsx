@@ -75,7 +75,7 @@ export default function AddEditExperience({
         console.log("error");
       }
     } catch (error) {
-      console.log(error);
+      console.log("error");
     }
   };
 
@@ -83,7 +83,7 @@ export default function AddEditExperience({
     setShowAddExperience(false);
     try {
       let response = await fetch(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}/image`,
+        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}`,
         {
           method: "DELETE",
           headers: {
@@ -93,12 +93,13 @@ export default function AddEditExperience({
       );
       if (response.ok) {
         let data = await response.json();
+
         fetchExperiences();
       } else {
         console.log("error");
       }
     } catch (error) {
-      console.log(error);
+      console.log("error try");
     }
   };
 
@@ -106,18 +107,20 @@ export default function AddEditExperience({
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("experience", selectedPic);
+    formData.append("image", selectedPic);
     try {
       let response = await fetch(
         `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}/image`,
         {
-          method: "POST",
+          method: "PUT",
           body: formData,
         }
       );
-      console.log(userId, formData, selectedPic.name, list._id);
+      console.log("exp data", userId, formData, selectedPic.name, list._id);
       if (response.ok) {
-        console.log("Image saved successfully");
+        let data = await response.json();
+        console.log("Image saved successfully", data);
+        fetchExperiences();
       } else {
         console.log("Error on uploading image");
       }
