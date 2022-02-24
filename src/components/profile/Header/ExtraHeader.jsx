@@ -11,11 +11,11 @@ function ExtraHeader({ profile, newProfile }) {
   const [pic, setPic] = useState();
 
   useEffect(() => {
-    if (profile) {
-      setInfo(profile);
-      setPic(profile.image);
+    if (newProfile) {
+      setInfo(newProfile);
+      setPic(newProfile.image);
     }
-  }, [profile]);
+  }, [newProfile]);
 
   const showDropdown = (input) => {
     if (dropdown === input) {
@@ -29,21 +29,21 @@ function ExtraHeader({ profile, newProfile }) {
     <div>
       <Navbar className="px-5  py-1 extra-navbar" bg="light" expand="lg">
         <Navbar.Brand className="pl-5" href="#home">
-          <img className="extra-nav-image" src={profile.image} alt="" />
+          <img className="extra-nav-image" src="" alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {profile && (
+            {newProfile && (
               <div>
                 <p
                   className="mb-n1"
                   style={{ fontSize: "14px", fontWeight: "600" }}
                 >
-                  {profile.name} {profile.surname}
+                  {newProfile.firstName} {newProfile.surName}
                 </p>
                 <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
-                  {profile.title}
+                  {newProfile.title}
                 </p>
               </div>
             )}
