@@ -36,7 +36,7 @@ function LeftSide({ profile }) {
         </div>
         <a href="/profile" style={{ color: "black" }}>
           <p className="h5 bold px-3">
-            {profile.name} {profile.surname}
+            {profile.firstName} {profile.surName}
           </p>
         </a>
         <p className="px-5">{profile.bio}</p>

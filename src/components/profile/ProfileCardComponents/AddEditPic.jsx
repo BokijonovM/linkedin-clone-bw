@@ -10,20 +10,16 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
 
     const formData = new FormData();
     handleCloseAddEditPic();
-    formData.append("profile", selectedFile);
+    formData.append("image", selectedFile);
 
     console.log(formData);
 
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/61e5270f73d5cb0015395a9d/picture`,
+        `http://localhost:3001/profiles/6214d6eedc5924e6a8291a06/image`,
         {
           method: "POST",
           body: formData,
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
         }
       );
 
@@ -65,10 +61,10 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
               />
               <input type="file" id="photo" onChange={(e) => handleChange(e)} />
               {selectedFile && (
-                <>
+                <div>
                   <p>{selectedFile.name}</p>
                   <p className="mb-5">{selectedFile.type}</p>{" "}
-                </>
+                </div>
               )}
             </div>
             <button
@@ -83,19 +79,19 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
             <div className="d-flex">
               <div className="d-flex flex-column grey-hover round-border px-2 pt-1 mx-2">
                 <span>
-                  <i class="bi bi-pencil-fill"></i>
+                  <i className="bi bi-pencil-fill"></i>
                 </span>
                 <span>Edit</span>
               </div>
               <div className="d-flex flex-column grey-hover round-border  px-2 pt-1 mx-2">
                 <span>
-                  <i class="bi bi-camera-fill" />
+                  <i className="bi bi-camera-fill" />
                 </span>
                 <span>Add Photo</span>
               </div>
               <div className="d-flex flex-column grey-hover round-border px-2 pt-1  mx-2">
                 <span>
-                  <i class="bi bi-image-fill" />
+                  <i className="bi bi-image-fill" />
                 </span>
                 <span>Frame</span>
               </div>
@@ -103,7 +99,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
             <div className="grey-hover round-border  px-2 pt-1 d-flex">
               <div className="d-flex flex-column mx-2">
                 <span>
-                  <i class="bi bi-trash-fill" />
+                  <i className="bi bi-trash-fill" />
                 </span>
                 <span>Delete</span>
               </div>

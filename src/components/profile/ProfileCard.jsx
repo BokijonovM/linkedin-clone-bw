@@ -12,7 +12,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
   const location = useLocation();
   const [showEditPage, setShowEditPage] = useState(false);
   const [dropdown, setDropdown] = useState("");
-  const [profileImg, setProfilImg] = useState();
+  const [profileImg, setProfileImg] = useState();
   // edit picture
   const [editable, setEditable] = useState(true);
   const [showAddEditPic, setShowAddEditPic] = useState(false);
@@ -21,7 +21,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
   const handleShowAddEditPic = () => setShowAddEditPic(true);
 
   useEffect(() => {
-    setProfilImg(profile.image);
+    setProfileImg(profile.image);
     if (location.pathname !== "/profile") {
       setEditable(false);
     }
@@ -35,11 +35,15 @@ const ProfileCard = ({ profile, fetchProfile }) => {
     }
   };
 
-  /* <span className="mx-2 round-hover" onClick={(e)=>setShowAddEditPic(true)}>
-            <GoPlus />
-          </span>
-        </p>
-       */
+  const downloadPost = (e) => {
+    try {
+      window.location.replace(
+        `http://localhost:3001/profiles/${profile._id}/pdf`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Card className="profile-card round-border">
@@ -104,7 +108,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
             )}
           </div>
           <p className="h2 bold">
-            {profile.name} {profile.surname}
+            {profile.firstName} {profile.surName}
           </p>
           <p>
             {profile.title} at Strive School <br /> {profile.area}
@@ -135,6 +139,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
               More
             </Button>
             <Button
+              onClick={(e) => downloadPost(e)}
               variant="secondary"
               className="h6 bold rounded-btn ml-2 shadow-none"
             >

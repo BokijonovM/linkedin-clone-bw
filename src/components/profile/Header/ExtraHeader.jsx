@@ -40,7 +40,7 @@ function ExtraHeader({ profile }) {
                   className="mb-n1"
                   style={{ fontSize: "14px", fontWeight: "600" }}
                 >
-                  {profile.name} {profile.surname}
+                  {profile.firstName} {profile.surName}
                 </p>
                 <p className="text-muted mb-0" style={{ fontSize: "12px" }}>
                   {profile.title}

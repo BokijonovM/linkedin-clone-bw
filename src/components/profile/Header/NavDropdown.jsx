@@ -8,7 +8,7 @@ function NavDropdown({ profile }) {
       style={{ color: "black" }}
       href=""
       ref={ref}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
@@ -42,7 +42,7 @@ function NavDropdown({ profile }) {
             <div className="p-3">
               <p className="h5">
                 {" "}
-                {profile.name} {profile.surname}
+                {profile.firstName} {profile.surName}
               </p>
               <p>{profile.bio}</p>
             </div>
@@ -61,7 +61,7 @@ function NavDropdown({ profile }) {
           <hr />
           <ul className="list-unstyled">
             {React.Children.toArray(children).filter(
-              child =>
+              (child) =>
                 !value || child.props.children.toLowerCase().startsWith(value)
             )}
           </ul>

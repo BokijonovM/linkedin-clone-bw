@@ -24,13 +24,7 @@ const Experience = ({ userId }) => {
   const fetchExperiences = async () => {
     try {
       let apiCall = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
-        }
+        `http://localhost:3001/profiles/${userId}/experiences`
       );
       if (apiCall.ok) {
         let data = await apiCall.json();

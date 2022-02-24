@@ -13,22 +13,40 @@ function App() {
   const [profile, setProfile] = useState();
 
   const fetchProfile = async () => {
-    let response = await fetch(
-      "https://striveschool-api.herokuapp.com/api/profile/me",
-      {
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-        },
+    try {
+      let res = await fetch(
+        "http://localhost:3001/profiles/6214d6eedc5924e6a8291a06"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        console.log("daataaaaa", data);
+        setProfile(data);
+      } else {
+        console.log("error fetch new data");
       }
-    );
-    let data = await response.json();
-    if (data) {
-      setProfile(data);
+    } catch (error) {
+      console.log("error");
     }
   };
 
+  // const fetchProfile = async () => {
+  //   let response = await fetch(
+  //     "https://striveschool-api.herokuapp.com/api/profile/me",
+  //     {
+  //       headers: {
+  //         Authorization:
+  //           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+  //       },
+  //     }
+  //   );
+  //   let data = await response.json();
+  //   if (data) {
+  //     setProfile(data);
+  //   }
+  // };
+
   useEffect(() => {
+    // fetchProfile();
     fetchProfile();
   }, []);
 
