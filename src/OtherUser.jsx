@@ -10,19 +10,11 @@ const OtherUser = ({ userId }) => {
   const params = useParams();
   const [profile, setProfile] = useState();
   const [id, setId] = useState();
-  const [isLoading, setIsloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchProfile = async (id) => {
     try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/" + id,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
-        }
-      );
+      let response = await fetch("http://localhost:3001/profiles/" + id);
       if (response.ok) {
         let data = await response.json();
         setProfile(data);
@@ -45,7 +37,7 @@ const OtherUser = ({ userId }) => {
         isCancelled = false;
         setProfile();
         setId();
-        setIsloading(false);
+        setIsLoading(false);
       };
     }
   }, [params.userId]);

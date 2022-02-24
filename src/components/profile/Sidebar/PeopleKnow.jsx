@@ -9,15 +9,7 @@ const PeopleKnow = () => {
 
   let fetchUser = async () => {
     try {
-      let apiCall = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
-        }
-      );
+      let apiCall = await fetch("http://localhost:3001/profiles");
       if (apiCall.ok) {
         let user = await apiCall.json();
         setInfo(user);
@@ -50,8 +42,8 @@ const PeopleKnow = () => {
                   <img className="img-fluid" src={u.image} alt="user" />
                   <div className="mt-3">
                     <p className="mb-0" style={{ fontSize: "14px" }}>
-                      {u.name} &nbsp;
-                      {u.surname}
+                      {u.firstName} &nbsp;
+                      {u.surName}
                     </p>
                     <p className="text-secondary mb-0">
                       {u.title.slice(0, 35)}
