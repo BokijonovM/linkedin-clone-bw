@@ -1,6 +1,6 @@
 import React from "react";
 import { location, useLocation } from "react-router-dom";
-
+import { Button } from "react-bootstrap";
 import DisplayList from "./DisplayList";
 import { useEffect, useState } from "react";
 import { GoPlus } from "react-icons/go";
@@ -35,17 +35,36 @@ const Experience = ({ userId }) => {
     }
   };
 
+  const downloadPost = (e) => {
+    try {
+      window.location.replace(
+        `http://localhost:3001/profiles/${userId}/experiences/${info._id}/CSV`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="bg-white p-3 mt-3 round-border">
       <p className="h4 d-flex justify-content-between">
         Experience
-        <span
-          className="mx-2 round-hover"
-          onClick={(e) => setShowAddExperience(true)}
-          style={{ display: editable ? "block" : "none" }}
-        >
-          <GoPlus />
-        </span>
+        <div className="d-flex ">
+          <span
+            className="mx-2 round-hover"
+            onClick={(e) => setShowAddExperience(true)}
+            style={{ display: editable ? "block" : "none" }}
+          >
+            <GoPlus />
+          </span>
+          <Button
+            onClick={(e) => downloadPost(e)}
+            variant="secondary"
+            className="h6 bold rounded-btn ml-2 shadow-none"
+          >
+            Get CSV
+          </Button>
+        </div>
       </p>
       <div style={{ marginTop: "60px" }}>
         <div
