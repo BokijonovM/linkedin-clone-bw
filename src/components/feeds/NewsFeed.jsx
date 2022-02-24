@@ -40,8 +40,8 @@ function NewsFeed({ profile }) {
   //   }
   // };
 
-  const fetchData = async (e) => {
-    e.preventDefault();
+  const fetchData = async () => {
+// e.preventDefault();
     closeAddPost();
     try {
       let response = await fetch("http://localhost:3002/postMode ", {
@@ -74,9 +74,9 @@ function NewsFeed({ profile }) {
     try {
       const res = await fetch(`http://localhost:3002/postMode`, {
         method: "POST",
-        // body: JSON.stringify({
-        //   text: post,
-        // }),
+         body: JSON.stringify({
+           text: post,
+         }),
         // headers: {
         //   Authorization:
         //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
