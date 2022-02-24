@@ -24,7 +24,6 @@ function NewsFeed({ profile }) {
     setSubmitted(false);
   };
 
-  
   // const newData = async (e) => {
   //   e.preventDefault();
   //   closeAddPost();
@@ -34,15 +33,15 @@ function NewsFeed({ profile }) {
   //     if (data.ok) {
   //       console.log("new data", data);
   //     } else {
-    //       console.log(error);
-    //     }
-    //   } catch (error) {
-      //     console.log(error);
-      //   }
-      // };
-      
-      const fetchData = async (e) => {
-        e.preventDefault();
+  //       console.log(error);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const fetchData = async (e) => {
+    e.preventDefault();
     closeAddPost();
     try {
       let response = await fetch("http://localhost:3002/postMode ", {
@@ -52,8 +51,8 @@ function NewsFeed({ profile }) {
         // },
       });
       if (response.ok) {
-        let data= await response.json();
-        console.log("newdata" ,data.posts)
+        let data = await response.json();
+        console.log("newdata", data.posts);
         //  console.log("old data", dataRes);
         setIsLoading(false);
         setPosts(data.posts);
@@ -64,10 +63,10 @@ function NewsFeed({ profile }) {
       console.log("error", error);
     }
   };
-      useEffect(() => {
-        fetchData();
-        // newData();
-      }, []);
+  useEffect(() => {
+    fetchData();
+    // newData();
+  }, []);
 
   const addPostFunction = async (e) => {
     e.preventDefault();
