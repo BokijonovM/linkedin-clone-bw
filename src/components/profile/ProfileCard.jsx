@@ -78,6 +78,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
             }}
           >
             <AddEditPic
+              fetchProfile={fetchProfile}
               profileImg={profileImg}
               showAddEditPic={showAddEditPic}
               handleCloseAddEditPic={handleCloseAddEditPic}

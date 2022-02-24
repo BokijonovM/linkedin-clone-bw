@@ -31,6 +31,7 @@ function LeftSide({ profile }) {
               overflow: "hidden",
               width: "75px",
               height: "75px",
+              objectFit: "cover",
             }}
           />
         </div>

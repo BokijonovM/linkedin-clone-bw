@@ -2,7 +2,12 @@ import { Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { GrFormEdit } from "react-icons/gr";
 import { axios } from "axios";
-const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
+const AddEditPic = ({
+  showAddEditPic,
+  handleCloseAddEditPic,
+  profileImg,
+  fetchProfile,
+}) => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleUpload = async (e) => {
@@ -26,6 +31,7 @@ const AddEditPic = ({ showAddEditPic, handleCloseAddEditPic, profileImg }) => {
       if (response.ok) {
         let data = await response.json();
         console.log("successfully Uploaded", data);
+        fetchProfile();
       } else {
         console.log("error on uploading");
       }
