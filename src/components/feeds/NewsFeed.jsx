@@ -15,9 +15,11 @@ function NewsFeed({ profile }) {
   const [postValue, setPostValue] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [endPost, setEndPost] = useState(10);
-
-  const [image, setImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
+
+  const [text, setText] = useState("");
+  const [user, setUser] = useState("");
+  const [image, setImage] = useState(null);
 
   const handlePostValue = (e) => {
     setPostValue(e.target.value);
@@ -31,19 +33,11 @@ function NewsFeed({ profile }) {
   const fetchData = async () => {
     closeAddPost();
     try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/ ",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-          },
-        }
-      );
+      let response = await fetch(process.env.REACT_APP_MAIN_USER + "/postMode");
       if (response.ok) {
         let dataRes = await response.json();
         console.log("old data", dataRes);
-        setPosts(dataRes);
+        setPosts(dataRes.posts);
         setIsLoading(false);
       } else {
         console.log("Error");
@@ -55,29 +49,32 @@ function NewsFeed({ profile }) {
 
   const addPostFunction = async (e) => {
     e.preventDefault();
+    const newPost = {
+      text: text,
+      user: profile._id,
+      image: profile.image,
+    };
     closeAddPost();
     try {
       const res = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts`,
+        "https://buildweek3-backend.herokuapp.com/postMode",
         {
           method: "POST",
-          body: JSON.stringify({
-            text: post,
-          }),
+          body: JSON.stringify(newPost),
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+            // Authorization:
+            //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
             "Content-type": "application/json",
           },
         }
       );
       if (res.ok) {
         let data = await res.json();
-        console.log(data);
+        console.log(data.posts);
         fetchData();
         // setPost(data.stringify());
       } else {
-        console.error("fetch failed");
+        console.error("fetch post failed");
       }
     } catch (error) {
       console.error(error);
@@ -212,7 +209,7 @@ function NewsFeed({ profile }) {
                   className="w-100 shadow-none border-0"
                   as="textarea"
                   required
-                  onChange={(e) => setPost(e.target.value)}
+                  onChange={(e) => setText(e.target.value)}
                   rows={4}
                 />
               </Form.Group>
@@ -232,9 +229,9 @@ function NewsFeed({ profile }) {
                   <i>Anyone</i>
                 </div>
                 <Button
-                  onClick={addPostFunction}
+                  type="submit"
                   className="shadow-none modal-post-btn border-0"
-                  disabled={!post}
+                  disabled={!text}
                 >
                   Post
                 </Button>
