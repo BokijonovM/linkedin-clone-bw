@@ -15,7 +15,7 @@ const OtherUser = ({ userId }) => {
   const fetchProfile = async (id) => {
     try {
       let response = await fetch(
-        "https://buildweek3-backend.herokuapp.com/profiles/" + id
+        process.env.REACT_APP_MAIN_USER + "/profiles/" + id
       );
       if (response.ok) {
         let data = await response.json();

@@ -24,7 +24,7 @@ const Experience = ({ userId }) => {
   const fetchExperiences = async () => {
     try {
       let apiCall = await fetch(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences`
+        process.env.REACT_APP_MAIN_USER + `/profiles/${userId}/experiences`
       );
       if (apiCall.ok) {
         let data = await apiCall.json();
@@ -38,7 +38,8 @@ const Experience = ({ userId }) => {
   const downloadPost = (e) => {
     try {
       window.location.replace(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${info._id}/CSV`
+        process.env.REACT_APP_MAIN_USER +
+          `/profiles/${userId}/experiences/${info._id}/CSV`
       );
     } catch (error) {
       console.log(error);

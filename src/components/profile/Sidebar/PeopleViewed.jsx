@@ -10,9 +10,7 @@ const PeopleViewed = () => {
 
   let fetchUser = async () => {
     try {
-      let apiCall = await fetch(
-        "https://buildweek3-backend.herokuapp.com/profiles"
-      );
+      let apiCall = await fetch(process.env.REACT_APP_MAIN_USER + "/profiles");
 
       if (apiCall.ok) {
         let user = await apiCall.json();

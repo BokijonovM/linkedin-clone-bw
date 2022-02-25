@@ -38,7 +38,7 @@ const ProfileCard = ({ profile, fetchProfile }) => {
   const downloadPost = (e) => {
     try {
       window.location.replace(
-        `https://buildweek3-backend.herokuapp.com/profiles/${profile._id}/pdf`
+        process.env.REACT_APP_MAIN_USER + `/profiles/${profile._id}/pdf`
       );
     } catch (error) {
       console.log(error);

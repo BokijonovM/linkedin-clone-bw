@@ -21,7 +21,8 @@ const AddEditPic = ({
 
     try {
       let response = await fetch(
-        `https://buildweek3-backend.herokuapp.com/profiles/6214d6eedc5924e6a8291a06/image`,
+        process.env.REACT_APP_MAIN_USER +
+          `/profiles/6214d6eedc5924e6a8291a06/image`,
         {
           method: "POST",
           body: formData,

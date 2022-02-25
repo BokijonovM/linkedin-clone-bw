@@ -56,18 +56,15 @@ function NewsFeed({ profile }) {
     };
     closeAddPost();
     try {
-      const res = await fetch(
-        "https://buildweek3-backend.herokuapp.com/postMode",
-        {
-          method: "POST",
-          body: JSON.stringify(newPost),
-          headers: {
-            // Authorization:
-            //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-            "Content-type": "application/json",
-          },
-        }
-      );
+      const res = await fetch(process.env.REACT_APP_MAIN_USER + "/postMode", {
+        method: "POST",
+        body: JSON.stringify(newPost),
+        headers: {
+          // Authorization:
+          //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+          "Content-type": "application/json",
+        },
+      });
       if (res.ok) {
         let data = await res.json();
         console.log(data.posts);

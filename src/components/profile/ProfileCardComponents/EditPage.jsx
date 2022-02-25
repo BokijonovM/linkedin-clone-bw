@@ -32,7 +32,7 @@ export default function EditPage({ profile, setShowEditPage, fetchProfile }) {
     console.log(user);
     try {
       let response = await fetch(
-        "https://buildweek3-backend.herokuapp.com/profiles/6214d6eedc5924e6a8291a06",
+        process.env.REACT_APP_MAIN_USER + "/profiles/6214d6eedc5924e6a8291a06",
         {
           method: "PUT",
           body: JSON.stringify(user),

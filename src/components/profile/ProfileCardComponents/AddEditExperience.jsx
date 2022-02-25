@@ -17,7 +17,7 @@ export default function AddEditExperience({
 
   const [method, setMethod] = useState("POST");
   const [url, setUrl] = useState(
-    `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences`
+    process.env.REACT_APP_MAIN_USER + `/profiles/${userId}/experiences`
   );
   const [showDeleteBtn, SetShowDeleteBtn] = useState(false);
   const [heading, setHeading] = useState("Add Experience");
@@ -34,7 +34,8 @@ export default function AddEditExperience({
       setArea(list.area);
       setMethod("PUT");
       setUrl(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}`
+        process.env.REACT_APP_MAIN_USER +
+          `/profiles/${userId}/experiences/${list._id}`
       );
       setHeading("Edit Experience");
       SetShowDeleteBtn(true);
@@ -83,7 +84,8 @@ export default function AddEditExperience({
     setShowAddExperience(false);
     try {
       let response = await fetch(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}`,
+        process.env.REACT_APP_MAIN_USER +
+          `/profiles/${userId}/experiences/${list._id}`,
         {
           method: "DELETE",
           headers: {
@@ -110,7 +112,8 @@ export default function AddEditExperience({
     formData.append("image", selectedPic);
     try {
       let response = await fetch(
-        `https://buildweek3-backend.herokuapp.com/profiles/${userId}/experiences/${list._id}/image`,
+        process.env.REACT_APP_MAIN_USER +
+          `/profiles/${userId}/experiences/${list._id}/image`,
         {
           method: "PUT",
           body: formData,
