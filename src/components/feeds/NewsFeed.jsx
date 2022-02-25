@@ -41,7 +41,7 @@ function NewsFeed({ profile }) {
   // };
 
   const fetchData = async () => {
-// e.preventDefault();
+    // e.preventDefault();
     closeAddPost();
     try {
       let response = await fetch("http://localhost:3002/postMode ", {
@@ -68,26 +68,26 @@ function NewsFeed({ profile }) {
     // newData();
   }, []);
 
-  const addPostFunction = async (e) => {
-    e.preventDefault();
-    //closeAddPost();
+  const addPostFunction = async () => {
+    //e.preventDefault();
+    closeAddPost();
     try {
       const res = await fetch(`http://localhost:3002/postMode`, {
         method: "POST",
-         body: JSON.stringify({
-           text: post,
-         }),
-        // headers: {
-        //   Authorization:
-        //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
-        //   "Content-type": "application/json",
-        // },
+        // body: JSON.stringify({
+        //   text: post,
+       // }),
+        headers: {
+          //   Authorization:
+          //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY",
+          "Content-type": "application/json",
+        },
       });
-      let data = await res.json();
-      if (data.ok) {
+      if (res.ok) {
+        let data = await res.json();
         console.log(data);
+        setPosts(data.stringify());
         fetchData();
-        // setPost(data.stringify());
       } else {
         console.error("fetch failed");
       }

@@ -56,11 +56,11 @@ function SingleNews({ posts, fetchData }) {
           body: JSON.stringify({
             text: text,
           }),
-          // headers: {
-          //   "Content-Type": "application/json",
+          headers: {
+             "Content-Type": "application/json",
           //   Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjA3YTRjZmY1ZjAwMTU5MGJkYjMiLCJpYXQiOjE2NDU1MTg2MDYsImV4cCI6MTY0NjcyODIwNn0.L81knB72Gai89P9eaaEd-av8iyNYN-iMk-sL_UOU-mY
           //   `,
-          // },
+           },
         }
       );
       if (response.status === 401) alert("you can not update others posts");
