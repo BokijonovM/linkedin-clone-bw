@@ -24,7 +24,7 @@ const Experience = ({ userId }) => {
   const fetchExperiences = async () => {
     try {
       let apiCall = await fetch(
-        `http://localhost:3002/profile/${id}/experiences`,
+        `http://localhost:3002/profile/${userId}/experiences`,
         {
           headers: {
             Authorization:
