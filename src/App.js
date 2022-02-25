@@ -15,7 +15,7 @@ function App() {
   const fetchProfile = async () => {
     try {
       let res = await fetch(
-        "https://buildweek3-backend.herokuapp.com/profiles/6214d6eedc5924e6a8291a06"
+        process.env.REACT_APP_MAIN_USER + "/profiles/6214d6eedc5924e6a8291a06"
       );
       if (res.ok) {
         let data = await res.json();
@@ -25,7 +25,7 @@ function App() {
         console.log("error fetch new data");
       }
     } catch (error) {
-      console.log("error");
+      console.log("error", error);
     }
   };
   useEffect(() => {

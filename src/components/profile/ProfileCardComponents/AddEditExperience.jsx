@@ -130,7 +130,7 @@ export default function AddEditExperience({
   };
 
   return (
-    <Modal.Dialog>
+    <Modal.Dialog className="mt-n5">
       <Modal.Header closeButton onClick={(e) => setShowAddExperience(false)}>
         <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
